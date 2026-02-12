@@ -1,0 +1,35 @@
+heading: "10 Reasons to Use BitcoinVN BTM"
+subheading: "More than just an ATM — a complete, private, and trusted Bitcoin experience."
+
+items:
+  - title: "No Bank Account Needed"
+    description: "Buy or sell Bitcoin with just cash. No bank account, no wire transfers, no financial intermediaries required."
+    icon: "credit-card"
+
+  - title: "Fast & Convenient"
+    description: "Almost as easy as buying a bottle of Coca-Cola from a vending machine. Walk up, transact, and you're done."
+    icon: "clock"
+
+  - title: "Data-minimal Approach"
+    description: "Where permitted, transactions can be completed with limited personal information, helping protect your financial privacy."
+    icon: "eye"
+
+  - title: "Transparent Pricing"
+    description: "The price you see is the price you get. Rates are locked at the moment of your transaction — no hidden fees or surprises."
+    icon: "dollar"
+
+  - title: "Real-Time Confirmation"
+    description: "Transactions are broadcast to the blockchain instantly. Track your transaction in real-time with provided tracking links."
+    icon: "bolt"
+
+  - title: "Bilingual Support"
+    description: "Full support in both English and Vietnamese. Our team is ready to help you in your preferred language."
+    icon: "chat"
+
+  - title: "Instant On-Site Exchange"
+    description: "Complete your transaction directly at the location, without relying on unknown counterparties or advance transfers."
+    icon: "exchange"
+
+  - title: "Reliable & Monitored"
+    description: "All BTMs are continuously monitored with real-time status updates. Availability posted on our Telegram and Facebook channels."
+    icon: "check-circle"

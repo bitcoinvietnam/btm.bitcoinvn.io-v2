@@ -1,0 +1,397 @@
+---
+layout: base.njk
+---
+
+{# ======== Navigation ======== #}
+<nav class="nav" id="nav">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <img src="/images/bitcoinvn-logo-dark.png" alt="BitcoinVN" class="logo-img">
+      <span class="logo-btm">BTM</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#features">Why Us</a>
+      <a href="#locations">Locations</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+{# ======== Hero ======== #}
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-grid"></div>
+    <div class="wireframe-scene">
+      <div class="wireframe-btm">
+        {# Canopy/Visor #}
+        <div class="wf-canopy">
+          <div class="wf-face wf-front"></div>
+          <div class="wf-face wf-back"></div>
+          <div class="wf-face wf-left"></div>
+          <div class="wf-face wf-right"></div>
+          <div class="wf-face wf-top"></div>
+          <div class="wf-face wf-bottom"></div>
+        </div>
+        {# Body #}
+        <div class="wf-body">
+          <div class="wf-face wf-front"></div>
+          <div class="wf-face wf-back"></div>
+          <div class="wf-face wf-left"></div>
+          <div class="wf-face wf-right"></div>
+          <div class="wf-face wf-top"></div>
+          <div class="wf-face wf-bottom"></div>
+        </div>
+        {# Screen with Bitcoin symbol #}
+        <div class="wf-screen">
+          <div class="wf-face wf-front">
+            <span class="wf-btc">&#8383;</span>
+          </div>
+          <div class="wf-face wf-back"></div>
+          <div class="wf-face wf-left"></div>
+          <div class="wf-face wf-right"></div>
+          <div class="wf-face wf-top"></div>
+          <div class="wf-face wf-bottom"></div>
+        </div>
+        {# Keypad #}
+        <div class="wf-keypad">
+          <div class="wf-face wf-front">
+            <div class="wf-keys">
+              <i></i><i></i><i></i>
+              <i></i><i></i><i></i>
+              <i></i><i></i><i></i>
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="wf-face wf-back"></div>
+          <div class="wf-face wf-left"></div>
+          <div class="wf-face wf-right"></div>
+          <div class="wf-face wf-top"></div>
+          <div class="wf-face wf-bottom"></div>
+        </div>
+        {# Cash slot #}
+        <div class="wf-slot">
+          <div class="wf-face wf-front"></div>
+          <div class="wf-face wf-back"></div>
+          <div class="wf-face wf-left"></div>
+          <div class="wf-face wf-right"></div>
+          <div class="wf-face wf-top"></div>
+          <div class="wf-face wf-bottom"></div>
+        </div>
+        {# Base/Pedestal #}
+        <div class="wf-base">
+          <div class="wf-face wf-front"></div>
+          <div class="wf-face wf-back"></div>
+          <div class="wf-face wf-left"></div>
+          <div class="wf-face wf-right"></div>
+          <div class="wf-face wf-top"></div>
+          <div class="wf-face wf-bottom"></div>
+        </div>
+      </div>
+      {# Currency flow — BTC coins on left, cash on right #}
+      <div class="wf-flow">
+        <div class="wf-stream wf-stream-btc">
+          <div class="wf-particle wf-p1"><span>&#8383;</span></div>
+          <div class="wf-particle wf-p2"><span>&#8383;</span></div>
+          <div class="wf-particle wf-p3"><span>&#8383;</span></div>
+          <div class="wf-particle wf-p4"><span>&#8383;</span></div>
+          <div class="wf-particle wf-p5"><span>&#8383;</span></div>
+        </div>
+        <div class="wf-stream wf-stream-cash">
+          <div class="wf-particle wf-p1"><span>&#x20AB;</span></div>
+          <div class="wf-particle wf-p2"><span>&#x20AB;</span></div>
+          <div class="wf-particle wf-p3"><span>&#x20AB;</span></div>
+          <div class="wf-particle wf-p4"><span>&#x20AB;</span></div>
+          <div class="wf-particle wf-p5"><span>&#x20AB;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      Operating since {{ site.since }}
+    </div>
+    <h1 class="hero-title">
+      Buy &amp; Sell <span class="gradient-text">Bitcoin</span><br>
+      for Cash in Vietnam
+    </h1>
+    <p class="hero-subtitle">{{ site.tagline }}</p>
+    <div class="hero-actions">
+      <a href="#locations" class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find a BTM
+      </a>
+      <a href="#how-it-works" class="btn btn-secondary">
+        Learn How It Works
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      {% set totalMachines = 0 %}
+      {% for region in locations.regions %}
+        {% set totalMachines = totalMachines + region.machines.length %}
+      {% endfor %}
+      <div class="stat">
+        <span class="stat-value">{{ totalMachines }}</span>
+        <span class="stat-label">BTM Locations</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">{{ 2025 - site.since }}+</span>
+        <span class="stat-label">Years Operating</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">0</span>
+        <span class="stat-label">KYC Required</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>Scroll to explore</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+  </div>
+</section>
+
+{# ======== Notice Banner ======== #}
+{% if site.notice.enabled %}
+<section class="notice-banner">
+  <div class="container">
+    <div class="notice-content">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p><strong>Notice:</strong> {{ site.notice.message }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ======== Features ======== #}
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Why Choose Us</span>
+      <h2 class="section-title">{{ features.heading | replace("BitcoinVN BTM", '<span class="gradient-text">BitcoinVN BTM</span>') | safe }}</h2>
+      <p class="section-desc">{{ features.subheading }}</p>
+    </div>
+    <div class="features-grid">
+      {% for feature in features.items %}
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">
+          {% include "icons/" + feature.icon + ".svg" %}
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ======== Locations ======== #}
+<section class="locations" id="locations">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Machines</span>
+      <h2 class="section-title">BTM <span class="gradient-text">Locations</span></h2>
+      <p class="section-desc">Find a BitcoinVN BTM near you across Ho Chi Minh City and Vung Tau.</p>
+    </div>
+
+    {# Interactive Map #}
+    <div class="map-wrapper" id="btm-map" data-center-lat="{{ locations.map.center.lat }}" data-center-lng="{{ locations.map.center.lng }}" data-zoom="{{ locations.map.zoom }}">
+    </div>
+
+    <div class="locations-grid">
+      {% for region in locations.regions %}
+      <div class="location-region">
+        <div class="region-header">
+          <h3>{{ region.name }}</h3>
+          <span class="location-count">{{ region.machines.length }} machine{{ "s" if region.machines.length > 1 }}</span>
+        </div>
+        <div class="location-cards">
+          {% for machine in region.machines %}
+          <a href="/locations/{{ machine.slug }}/" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}">
+            <div class="location-pin">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="location-info">
+              <h4>{{ machine.name }}</h4>
+              <span class="location-district">{{ machine.district }}</span>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="locations-cta">
+      <a href="{{ site.mapsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        View All on Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ======== How It Works ======== #}
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Simple Process</span>
+      <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+      <p class="section-desc">Buying or selling Bitcoin at our BTMs is simple and straightforward.</p>
+    </div>
+
+    <div class="process-tabs">
+      <button class="process-tab active" data-tab="buy">Buy Bitcoin</button>
+      <button class="process-tab" data-tab="sell">Sell Bitcoin</button>
+    </div>
+
+    {% for process in ["buy", "sell"] %}
+    <div class="process-content{{ " active" if loop.first }}" id="{{ process }}">
+      <div class="steps">
+        {% for step in howItWorks[process] %}
+        <div class="step" data-animate>
+          <div class="step-number">{{ loop.index | pad }}</div>
+          <div class="step-content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ======== FAQ ======== #}
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Questions?</span>
+      <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      {% for item in faq.items %}
+      <div class="faq-item" data-animate>
+        <button class="faq-question">
+          <span>{{ item.question }}</span>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>{{ item.answer | safe }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ======== Host a BTM ======== #}
+<section class="host-cta">
+  <div class="container">
+    <div class="host-card" data-animate>
+      <div class="host-content">
+        <h2>Want to Host a BTM?</h2>
+        <p>Bring a Bitcoin ATM to your business location. Attract crypto-savvy customers and earn hosting fees. Contact us to learn about our hosting program.</p>
+        <a href="mailto:btm@bitcoinvn.io" class="btn btn-primary">
+          Contact Us About Hosting
+        </a>
+      </div>
+      <div class="host-graphic">
+        <div class="btm-illustration">
+          <div class="btm-body">
+            <div class="btm-screen"><span class="btm-bitcoin">&#8383;</span></div>
+            <div class="btm-slot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ======== Contact ======== #}
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Reach Out</span>
+      <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-desc">Have questions? Our team is available to help you via multiple channels.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" class="contact-card" data-animate>
+        <div class="contact-icon telegram-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <h3>Telegram</h3>
+        <p>{{ site.contact.telegram.handle }}</p>
+      </a>
+      <a href="{{ site.contact.facebook.url }}" target="_blank" rel="noopener" class="contact-card" data-animate>
+        <div class="contact-icon facebook-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <h3>Facebook</h3>
+        <p>{{ site.contact.facebook.handle }}</p>
+      </a>
+      <a href="mailto:{{ site.contact.email }}" class="contact-card" data-animate>
+        <div class="contact-icon email-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Email</h3>
+        <p>{{ site.contact.email }}</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ======== Footer ======== #}
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <img src="/images/bitcoinvn-logo-dark.png" alt="BitcoinVN" class="logo-img">
+          <span class="logo-btm">BTM</span>
+        </a>
+        <p class="footer-tagline">{{ site.tagline }}</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#features">Why Us</a>
+          <a href="#locations">Locations</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">Buy Bitcoin Online</a>
+          <a href="#contact">Contact Support</a>
+          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">BTM Status Updates</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ 2025 }} BitcoinVN. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </a>
+        <a href="{{ site.contact.facebook.url }}" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{# Pass location data to JS for the map #}
+<script>
+  window.BTM_LOCATIONS = {{ locations | dump | safe }};
+</script>

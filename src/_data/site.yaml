@@ -1,0 +1,23 @@
+name: "BitcoinVN BTM"
+tagline: "The fastest & most private way to buy & sell Bitcoin for cash in Vietnam"
+description: "Self-service Bitcoin ATMs across Ho Chi Minh City and Vung Tau. No bank account. No KYC. Walk up, transact, walk away."
+since: 2013
+url: "https://btm.bitcoinvn.io"
+exchangeUrl: "https://bitcoinvn.io"
+mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+
+contact:
+  email: "support@bitcoinvn.io"
+  telegram:
+    url: "https://t.me/BitcoinATMHCMC"
+    handle: "@BitcoinATMHCMC"
+  facebook:
+    url: "https://www.facebook.com/BitcoinATMHCMC"
+    handle: "@BitcoinATMHCMC"
+  whatsapp:
+    url: "#"
+    label: "Message us"
+
+notice:
+  enabled: true
+  message: "SMS delivery for OTP codes is currently affected by domestic telecom changes. Our support team is available to assist with your transaction via Telegram or Facebook."

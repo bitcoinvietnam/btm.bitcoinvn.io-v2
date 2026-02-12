@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:bitcoinvn.io)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:support.bitcoinvn.io)",
+      "Bash(npx @11ty/eleventy:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

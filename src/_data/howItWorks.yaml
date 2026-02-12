@@ -1,0 +1,31 @@
+buy:
+  - title: "Walk Up to a BTM"
+    description: "Find the nearest BitcoinVN BTM location and approach the machine. No appointment needed."
+
+  - title: 'Select "Buy Bitcoin"'
+    description: "Tap the Buy option on the screen. You'll see the current Bitcoin price displayed in VND."
+
+  - title: "Scan Your Wallet or Get a Paper Wallet"
+    description: "Scan the QR code of your existing Bitcoin wallet, or let the machine generate a paper wallet for you."
+
+  - title: "Insert Cash"
+    description: "Feed your VND bills into the machine. The screen will display the corresponding Bitcoin amount in real time."
+
+  - title: "Confirm & Receive Bitcoin"
+    description: "Confirm the transaction and your Bitcoin is sent instantly to your wallet with a real-time tracking link."
+
+sell:
+  - title: "Walk Up to a BTM"
+    description: "Visit any BitcoinVN BTM location. All machines support both buying and selling Bitcoin."
+
+  - title: 'Select "Sell Bitcoin"'
+    description: "Tap the Sell option on the screen. The machine will display the current sell rate in VND."
+
+  - title: "Enter Amount & Send Bitcoin"
+    description: "Enter how much VND you want to receive. The machine will display a QR code — send your Bitcoin to that address."
+
+  - title: "Wait for Confirmation"
+    description: "The machine will wait for blockchain confirmation. You can use the pre-sell option to speed this up."
+
+  - title: "Collect Your Cash"
+    description: "Once confirmed, the machine dispenses your VND cash. It's that simple."

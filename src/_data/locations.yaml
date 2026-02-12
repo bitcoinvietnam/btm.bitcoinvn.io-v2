@@ -1,0 +1,122 @@
+regions:
+  - name: "Ho Chi Minh City"
+    machines:
+      - name: "Big Pig BBQ & Beer"
+        slug: "big-pig-bbq"
+        district: "Airport Area"
+        lat: 10.8189
+        lng: 106.6519
+        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        address: "46 Truong Son, Phuong 2, Tan Binh, HCMC 70000"
+        phone: "02835474034 – 02835474035"
+        hours: "Every day 10:30 AM - 11:30 PM"
+        style: "American Style BBQ"
+        websiteName: "bigpig.vn"
+        websiteUrl: "https://bigpig.vn"
+        description:
+          - "Bitcoin & Meat — what a combination! Big Pig BBQ brings authentic American-style BBQ to Saigon, serving up brisket, ribs, pulled pork and more. Located right next to the airport on Truong Son street, it's one of the most convenient spots to buy or sell Bitcoin in all of Ho Chi Minh City."
+          - "Big Pig is the brainchild of Rob Rankin, a BBQ pitmaster who brought his passion for smoked meats to Vietnam. The restaurant has become a favorite among expats and locals alike, known for its generous portions and lively atmosphere."
+          - "Whether you're arriving in or departing from Saigon, swing by Big Pig to grab some world-class BBQ and use our Bitcoin ATM. The BTM is located inside the restaurant and available during all opening hours."
+
+      - name: "Capone's Chicago Pizza"
+        slug: "capones-chicago-pizza"
+        district: "District 2"
+        lat: 10.7870
+        lng: 106.7480
+        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        address: "8/3 Duong so 49B, Thao Dien, Quan 2, HCMC"
+        phone: "+84338787459"
+        hours: "Every day 11 AM - 11 PM"
+        style: "Authentic Chicago Deep Dish pizza & street food"
+        websiteName: "caponessaigon.com"
+        websiteUrl: "https://caponessaigon.com"
+        description:
+          - "Capone's is the only place in Vietnam serving authentic Chicago-style deep dish pizza. Located in the heart of Thao Dien, District 2, the restaurant offers stunning views of Landmark 81 — the tallest building in Vietnam — from its rooftop terrace."
+          - "In addition to deep dish pizza, Capone's serves a range of American street food favorites. The BitcoinVN BTM is conveniently located inside the restaurant, making it easy to buy or sell Bitcoin while enjoying a meal in one of Saigon's trendiest neighborhoods."
+
+      - name: "Green Box"
+        slug: "green-box"
+        district: "District 2"
+        lat: 10.7890
+        lng: 106.7420
+        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        address: "6 Le Van Mien, Thao Dien, Quan 2, HCMC 71107"
+        phone: "+840795070010"
+        hours: "Every day 8 AM - 12 AM"
+        style: "Healthy food, Poke-style, Viet Fusion"
+        websiteName: "Green Box @ SOMA (Facebook)"
+        websiteUrl: "https://www.facebook.com/greenboxsoma"
+        description:
+          - "Green Box is Thao Dien's go-to destination for healthy, wholesome dining. Serving up a creative menu of poke bowls, Viet fusion dishes, and fresh smoothies, it's the perfect spot for health-conscious diners who also happen to be into Bitcoin."
+          - "Located at SOMA — a popular co-working and social space on Le Van Mien street — Green Box combines great food with a vibrant community atmosphere. The restaurant has been a BitcoinVN BTM partner since the early days, providing a reliable location for crypto transactions in District 2."
+          - "The Thao Dien area is one of the most popular neighborhoods in Ho Chi Minh City for expats and digital nomads, making Green Box an ideal location for a Bitcoin ATM. The area is walkable, well-connected, and full of cafes, restaurants, and co-working spaces."
+          - "Whether you're stopping by for a quick poke bowl on your lunch break or settling in for an afternoon of remote work, the BTM is always available during opening hours. The staff are friendly, knowledgeable, and happy to point you in the right direction."
+          - "Green Box's menu changes seasonally, incorporating fresh local ingredients and international flavors. Their signature poke bowls feature sustainably sourced fish, organic greens, and house-made sauces."
+          - "The restaurant's commitment to healthy living extends beyond just food — they use eco-friendly packaging, minimize waste, and support local farmers and suppliers."
+          - "As part of the SOMA complex, Green Box benefits from a built-in community of entrepreneurs, freelancers, and creatives who appreciate the convenience of having a Bitcoin ATM nearby."
+          - "Thao Dien continues to evolve as one of Saigon's most dynamic neighborhoods, with new restaurants, bars, and shops opening regularly. Green Box has been a constant presence, serving the community with quality food and convenient crypto access."
+          - "Visit Green Box to enjoy a healthy meal and take advantage of the BitcoinVN BTM — open every day from 8 AM to midnight."
+
+      - name: "Italiani's Pizza"
+        slug: "italianis-ben-thanh"
+        district: "Ben Thanh, District 1"
+        lat: 10.7725
+        lng: 106.6980
+        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        address: "46 Nguyen Thai Binh, D1, HCMC"
+        phone: "+84968874992"
+        hours: "Every day 11:00 AM - 11:30 PM"
+        style: "Italian restaurant (Pizza & Pasta)"
+        websiteName: "italianis.vn"
+        websiteUrl: "https://italianis.vn"
+        description:
+          - "Italiani's Pizza on Nguyen Thai Binh street is located in the bustling heart of District 1, just steps from Ben Thanh Market — one of the most iconic landmarks in Ho Chi Minh City."
+          - "Whether you're craving a classic Margherita or something more adventurous, Italiani's delivers quality Italian food in a vibrant setting."
+          - "District 1 is the commercial and tourist heart of Ho Chi Minh City, making this one of the most accessible BTM locations for both visitors and residents. The area is well-served by public transport and is within walking distance of numerous hotels, shops, and attractions."
+          - "Stop by Italiani's for a slice of Italy in Vietnam, and while you're at it, use the BTM to stack some sats."
+
+      - name: "Italiani's Pizza"
+        slug: "italianis-han-thuyen"
+        district: "Han Thuyen, District 1"
+        lat: 10.7800
+        lng: 106.7000
+        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        address: "17 Han Thuyen, Ben Nghe, D1, HCMC"
+        phone: "+84901453194"
+        hours: "Every day 11 AM - 9:45 PM"
+        style: "Italian restaurant (Pizza & Pasta)"
+        websiteName: "italianis.vn"
+        websiteUrl: "https://italianis.vn"
+        description:
+          - "The Italiani's location on Han Thuyen street sits right next to a beautiful park in the Ben Nghe ward of District 1. It's a peaceful spot to enjoy a pizza and make a Bitcoin transaction, away from the hustle of the main streets."
+          - "The Han Thuyen location combines the charm of a neighborhood Italian restaurant with the convenience of Bitcoin access. Whether you're a Bitcoin veteran or making your first purchase, the friendly staff can help guide you through the process."
+
+  - name: "Vung Tau"
+    machines:
+      - name: "Surf Hostel"
+        slug: "surf-hostel"
+        district: "Vung Tau"
+        lat: 10.3460
+        lng: 107.0843
+        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        address: "Hoang Hoa Tham, 160 22/20, Phuong 9, Vung Tau"
+        phone: "+840926328243"
+        hours: "Every day 8 AM - 10 PM"
+        style: "Surf School and Hostel"
+        websiteName: "Instagram @vungtauhostel"
+        websiteUrl: "https://www.instagram.com/vungtauhostel"
+        description:
+          - "Surf Hostel is Vung Tau's premier surf school and backpacker hostel, located just minutes from the beach. It's the perfect base for travelers looking to catch some waves, meet fellow adventurers, and — of course — buy or sell Bitcoin."
+          - "Run by a team of passionate surfers, the hostel offers surf lessons, board rentals, and a laid-back communal atmosphere that attracts backpackers and digital nomads from around the world."
+          - "The BitcoinVN BTM at Surf Hostel brings Bitcoin access to the beach town of Vung Tau, which is a popular weekend getaway destination for Saigon residents. Located about 2 hours from Ho Chi Minh City, Vung Tau offers a refreshing change of pace with its coastal scenery and relaxed vibe."
+          - "Whether you're topping up your Bitcoin wallet between surf sessions or cashing out some crypto for weekend spending money, the BTM at Surf Hostel has you covered. The machine is accessible during all hostel operating hours."
+          - "Vung Tau's growing popularity with the digital nomad crowd makes Surf Hostel an ideal location for a Bitcoin ATM. The hostel's community-oriented atmosphere and beachside location create the perfect backdrop for crypto transactions in a relaxed setting."
+
+# Map config
+map:
+  center:
+    lat: 10.78
+    lng: 106.70
+  zoom: 12
+  tileStyle: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

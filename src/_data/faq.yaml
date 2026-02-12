@@ -1,0 +1,30 @@
+items:
+  - question: "What is a Bitcoin ATM?"
+    answer: "A Bitcoin ATM (or BTM) is a self-service cryptocurrency kiosk that allows you to buy and sell Bitcoin using cash. It works similarly to a regular ATM, but instead of dispensing cash from your bank account, it lets you exchange cash for Bitcoin and vice versa."
+
+  - question: "Why should I use a BitcoinVN BTM?"
+    answer: "BitcoinVN BTMs offer the fastest and most private way to buy and sell Bitcoin in Vietnam. No bank account is needed and transactions are completed in minutes. We've been operating since 2014, making us the most established Bitcoin service in Vietnam."
+
+  - question: "Do I need to provide ID or verify my identity (KYC)?"
+    answer: "No. BitcoinVN BTMs do not require KYC verification. You can buy and sell Bitcoin privately without providing identification documents. Your financial privacy is respected."
+
+  - question: "Are there transaction limits?"
+    answer: "There are currently no transaction limits on our BTMs. You can buy or sell as much Bitcoin as you need in a single transaction."
+
+  - question: "What are the fees?"
+    answer: "Our fee structure is competitive and transparent. The price displayed on the BTM screen includes all fees — what you see is what you get. No hidden charges or surprise deductions."
+
+  - question: "Is Bitcoin legal in Vietnam?"
+    answer: "While Bitcoin is not recognized as legal tender in Vietnam, owning and trading Bitcoin is not illegal. BitcoinVN has been a legally registered and operating business in Vietnam since 2013."
+
+  - question: "How can I check if a BTM is currently online?"
+    answer: "We post real-time BTM status updates on our <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram channel</a> and <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook page</a>. Follow us for the latest availability information."
+
+  - question: "What if I don't have a Bitcoin wallet?"
+    answer: "No problem! Our BTMs can generate a paper wallet for you during the purchase. You'll receive a printed paper with your Bitcoin wallet address and private key. We recommend transferring the funds to a secure digital wallet afterwards."
+
+  - question: "I'm having issues with SMS verification. What should I do?"
+    answer: "Due to recent domestic telecom changes, SMS delivery for OTP codes may be affected. Please contact our support team via <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> or <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> and we'll help you complete your transaction."
+
+  - question: "Can I buy Bitcoin online instead?"
+    answer: "Yes! If you prefer to buy Bitcoin online, visit <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> to use our online exchange service. Bank transfers and other payment methods are available."
