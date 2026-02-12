@@ -7,16 +7,13 @@ exchangeUrl: "https://bitcoinvn.io"
 mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
 
 contact:
-  email: "support@bitcoinvn.io"
+  email: "support+btm@bitcoinvn.io"
   telegram:
     url: "https://t.me/BitcoinATMHCMC"
     handle: "@BitcoinATMHCMC"
   facebook:
     url: "https://www.facebook.com/BitcoinATMHCMC"
     handle: "@BitcoinATMHCMC"
-  whatsapp:
-    url: "#"
-    label: "Message us"
 
 notice:
   enabled: true
