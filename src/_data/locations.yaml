@@ -1,5 +1,6 @@
 regions:
   - name: "Ho Chi Minh City"
+    description: "Vietnam's largest city and economic hub — home to a thriving expat community and growing Bitcoin adoption."
     machines:
       - name: "Big Pig BBQ & Beer"
         slug: "big-pig-bbq"
@@ -92,6 +93,7 @@ regions:
           - "The Han Thuyen location combines the charm of a neighborhood Italian restaurant with the convenience of Bitcoin access. Whether you're a Bitcoin veteran or making your first purchase, the friendly staff can help guide you through the process."
 
   - name: "Vung Tau"
+    description: "A popular coastal getaway just two hours from Saigon — surf, sun, and Bitcoin by the beach."
     machines:
       - name: "Surf Hostel"
         slug: "surf-hostel"

@@ -212,6 +212,7 @@ layout: base.njk
         <div class="region-header">
           <h3>{{ region.name }}</h3>
           <span class="location-count">{{ region.machines.length }} machine{{ "s" if region.machines.length > 1 }}</span>
+          {% if region.description %}<p class="region-description">{{ region.description }}</p>{% endif %}
         </div>
         <div class="location-cards">
           {% for machine in region.machines %}

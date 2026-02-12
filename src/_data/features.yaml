@@ -1,4 +1,4 @@
-heading: "10 Reasons to Use BitcoinVN BTM"
+heading: "9 Reasons to Use BitcoinVN BTM"
 subheading: "More than just an ATM — a complete, private, and trusted Bitcoin experience."
 
 items:
@@ -33,3 +33,7 @@ items:
   - title: "Reliable & Monitored"
     description: "All BTMs are continuously monitored with real-time status updates. Availability posted on our Telegram and Facebook channels."
     icon: "check-circle"
+
+  - title: "Trusted & Established"
+    description: "Operated by BitcoinVN — Vietnam's longest-running Bitcoin company. Years of proven reliability serving thousands of customers."
+    icon: "shield"

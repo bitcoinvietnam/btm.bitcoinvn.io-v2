@@ -804,6 +804,14 @@ button {
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.region-description {
+  width: 100%;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .region-header h3 {
