@@ -10,7 +10,12 @@ regions:
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "46 Truong Son, Phuong 2, Tan Binh, HCMC 70000"
         phone: "02835474034 – 02835474035"
-        hours: "Every day 10:30 AM - 11:30 PM"
+        hours:
+          days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+          open: "10:30"
+          close: "23:30"
+          timezone: "Asia/Ho_Chi_Minh"
+          display: "Every day 10:30 AM – 11:30 PM"
         style: "American Style BBQ"
         websiteName: "bigpig.vn"
         websiteUrl: "https://bigpig.vn"
@@ -27,7 +32,12 @@ regions:
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "8/3 Duong so 49B, Thao Dien, Quan 2, HCMC"
         phone: "+84338787459"
-        hours: "Every day 11 AM - 11 PM"
+        hours:
+          days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+          open: "11:00"
+          close: "23:00"
+          timezone: "Asia/Ho_Chi_Minh"
+          display: "Every day 11 AM – 11 PM"
         style: "Authentic Chicago Deep Dish pizza & street food"
         websiteName: "caponessaigon.com"
         websiteUrl: "https://caponessaigon.com"
@@ -43,7 +53,12 @@ regions:
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "6 Le Van Mien, Thao Dien, Quan 2, HCMC 71107"
         phone: "+840795070010"
-        hours: "Every day 8 AM - 12 AM"
+        hours:
+          days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+          open: "08:00"
+          close: "00:00"
+          timezone: "Asia/Ho_Chi_Minh"
+          display: "Every day 8 AM – 12 AM"
         style: "Healthy food, Poke-style, Viet Fusion"
         websiteName: "Green Box @ SOMA (Facebook)"
         websiteUrl: "https://www.facebook.com/greenboxsoma"
@@ -66,7 +81,12 @@ regions:
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "46 Nguyen Thai Binh, D1, HCMC"
         phone: "+84968874992"
-        hours: "Every day 11:00 AM - 11:30 PM"
+        hours:
+          days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+          open: "11:00"
+          close: "23:30"
+          timezone: "Asia/Ho_Chi_Minh"
+          display: "Every day 11 AM – 11:30 PM"
         style: "Italian restaurant (Pizza & Pasta)"
         websiteName: "italianis.vn"
         websiteUrl: "https://italianis.vn"
@@ -84,7 +104,12 @@ regions:
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "17 Han Thuyen, Ben Nghe, D1, HCMC"
         phone: "+84901453194"
-        hours: "Every day 11 AM - 9:45 PM"
+        hours:
+          days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+          open: "11:00"
+          close: "21:45"
+          timezone: "Asia/Ho_Chi_Minh"
+          display: "Every day 11 AM – 9:45 PM"
         style: "Italian restaurant (Pizza & Pasta)"
         websiteName: "italianis.vn"
         websiteUrl: "https://italianis.vn"
@@ -103,7 +128,12 @@ regions:
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "Hoang Hoa Tham, 160 22/20, Phuong 9, Vung Tau"
         phone: "+840926328243"
-        hours: "Every day 8 AM - 10 PM"
+        hours:
+          days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+          open: "08:00"
+          close: "22:00"
+          timezone: "Asia/Ho_Chi_Minh"
+          display: "Every day 8 AM – 10 PM"
         style: "Surf School and Hostel"
         websiteName: "Instagram @vungtauhostel"
         websiteUrl: "https://www.instagram.com/vungtauhostel"

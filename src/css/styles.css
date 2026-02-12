@@ -883,6 +883,60 @@ button {
   color: var(--text-tertiary);
 }
 
+.location-hours {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.location-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--text-tertiary);
+}
+
+.location-status-dot.open {
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.4);
+}
+
+.location-status-dot.closed {
+  background: #f87171;
+}
+
+.location-status-text {
+  font-weight: 600;
+}
+
+.location-status-dot.open + .location-status-text {
+  color: #4ade80;
+}
+
+.location-status-dot.closed + .location-status-text {
+  color: #f87171;
+}
+
+.location-hours-range {
+  opacity: 0.7;
+}
+
+.location-hours-centered {
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.location-hours-inline {
+  display: inline-flex;
+  margin-top: 0;
+  margin-left: 6px;
+}
+
 .location-map-link {
   flex-shrink: 0;
   width: 36px;

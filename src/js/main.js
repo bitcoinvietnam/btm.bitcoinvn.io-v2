@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationDetailMap();
   initWireframeTilt();
   initCurrencyFlow();
+  initLocationStatus();
 });
 
 /* ======== Navigation ======== */
@@ -134,45 +135,81 @@ function initMap() {
     maxZoom: 18,
   }).addTo(map);
 
-  // Custom marker icon
-  const markerIcon = L.divIcon({
-    className: "btm-marker",
-    html: `<div style="
-      width: 32px;
-      height: 32px;
-      background: #FFE26E;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(255, 226, 110, 0.4);
-      border: 2px solid rgba(255,255,255,0.3);
-    ">
-      <span style="
-        transform: rotate(45deg);
-        font-size: 14px;
-        font-weight: bold;
-        color: #0f2234;
-      ">&#8383;</span>
-    </div>`,
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -34],
-  });
+  // Build a marker icon with an open/closed status dot
+  function makeMarkerIcon(isOpen) {
+    const dotColor = isOpen ? "#4ade80" : "#f87171";
+    const dotShadow = isOpen
+      ? "0 0 4px rgba(74,222,128,0.6)"
+      : "none";
+    return L.divIcon({
+      className: "btm-marker",
+      html: `<div style="
+        position: relative;
+        width: 32px;
+        height: 32px;
+        background: #FFE26E;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(255, 226, 110, 0.4);
+        border: 2px solid rgba(255,255,255,0.3);
+      ">
+        <span style="
+          transform: rotate(45deg);
+          font-size: 14px;
+          font-weight: bold;
+          color: #0f2234;
+        ">&#8383;</span>
+        <span style="
+          position: absolute;
+          top: -2px;
+          right: -2px;
+          width: 10px;
+          height: 10px;
+          background: ${dotColor};
+          border-radius: 50%;
+          border: 2px solid #0f2234;
+          transform: rotate(45deg);
+          box-shadow: ${dotShadow};
+        "></span>
+      </div>`,
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -34],
+    });
+  }
 
   // Add markers for all locations
   const markers = [];
+  const markerRefs = [];
   data.regions.forEach((region) => {
     region.machines.forEach((machine) => {
-      const marker = L.marker([machine.lat, machine.lng], { icon: markerIcon })
+      const h = machine.hours;
+      const daysStr = h.days.join(",");
+      const isOpen = checkIfOpen(daysStr, h.open, h.close, h.timezone);
+      const statusLabel = isOpen ? "Open now" : "Closed";
+
+      const marker = L.marker([machine.lat, machine.lng], {
+        icon: makeMarkerIcon(isOpen),
+      })
         .addTo(map)
         .bindPopup(
-          `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small>`
+          `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small><br><small>${statusLabel} · ${h.display}</small>`
         );
       markers.push(marker);
+      markerRefs.push({ marker, hours: h, daysStr });
     });
   });
+
+  // Re-check marker status every minute
+  setInterval(() => {
+    markerRefs.forEach(({ marker, hours: h, daysStr }) => {
+      const isOpen = checkIfOpen(daysStr, h.open, h.close, h.timezone);
+      marker.setIcon(makeMarkerIcon(isOpen));
+    });
+  }, 60 * 1000);
 
   // Fit bounds to show all markers
   if (markers.length > 0) {
@@ -416,4 +453,75 @@ function initCurrencyFlow() {
   }
 
   requestAnimationFrame(update);
+}
+
+/* ======== Open/Closed Helper ======== */
+const DAY_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+function checkIfOpen(daysStr, openStr, closeStr, tz) {
+  const now = new Date();
+
+  const dayName = now.toLocaleString("en-US", {
+    timeZone: tz,
+    weekday: "short",
+  });
+  const openDays = daysStr.split(",");
+  const todayOpen = openDays.includes(dayName);
+
+  const localeTime = now.toLocaleString("en-US", {
+    timeZone: tz,
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const [h, m] = localeTime.split(":").map(Number);
+  const nowMinutes = h * 60 + m;
+
+  const [openH, openM] = openStr.split(":").map(Number);
+  const [closeH, closeM] = closeStr.split(":").map(Number);
+  const openMinutes = openH * 60 + openM;
+  const closeMinutes = closeH * 60 + closeM;
+
+  if (closeMinutes <= openMinutes) {
+    if (nowMinutes >= openMinutes && todayOpen) return true;
+    if (nowMinutes < closeMinutes) {
+      const jsDay = DAY_MAP[dayName];
+      const yesterdayJs = (jsDay + 6) % 7;
+      const yesterdayName = Object.keys(DAY_MAP).find(
+        (k) => DAY_MAP[k] === yesterdayJs
+      );
+      return openDays.includes(yesterdayName);
+    }
+    return false;
+  }
+
+  return todayOpen && nowMinutes >= openMinutes && nowMinutes < closeMinutes;
+}
+
+/* ======== Location Open/Closed Status (cards) ======== */
+function initLocationStatus() {
+  const cards = document.querySelectorAll("[data-hours-open]");
+  if (!cards.length) return;
+
+  function updateStatuses() {
+    cards.forEach((card) => {
+      const days = card.dataset.hoursDays;
+      const open = card.dataset.hoursOpen;
+      const close = card.dataset.hoursClose;
+      const tz = card.dataset.hoursTz;
+      if (!days || !open || !close || !tz) return;
+
+      const dot = card.querySelector(".location-status-dot");
+      const text = card.querySelector(".location-status-text");
+      if (!dot || !text) return;
+
+      const isOpen = checkIfOpen(days, open, close, tz);
+      dot.classList.toggle("open", isOpen);
+      dot.classList.toggle("closed", !isOpen);
+      text.textContent = isOpen ? "Open now" : "Closed";
+    });
+  }
+
+  updateStatuses();
+  setInterval(updateStatuses, 60 * 1000);
 }

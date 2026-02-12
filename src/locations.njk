@@ -7,7 +7,7 @@ pagination:
 permalink: "locations/{{ machine.slug }}/index.html"
 eleventyComputed:
   pageTitle: "{{ machine.name }} BTM — {{ site.name }}"
-  pageDescription: "Buy & sell Bitcoin for cash at {{ machine.name }}, {{ machine.district }}. {{ machine.hours }}. No KYC required."
+  pageDescription: "Buy & sell Bitcoin for cash at {{ machine.name }}, {{ machine.district }}. {{ machine.hours.display }}. No KYC required."
 ---
 
 {# ======== Navigation ======== #}
@@ -53,12 +53,16 @@ eleventyComputed:
   <section class="location-info-section">
     <div class="container">
       <div class="location-info-grid">
-        <div class="location-info-card">
+        <div class="location-info-card" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
           <div class="location-info-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <h3>Opening Hours</h3>
-          <p>{{ machine.hours }}</p>
+          <span class="location-hours location-hours-centered">
+            <span class="location-status-dot"></span>
+            <span class="location-status-text"></span>
+          </span>
+          <p>{{ machine.hours.display }}</p>
         </div>
         <div class="location-info-card">
           <div class="location-info-card-icon">
@@ -107,11 +111,17 @@ eleventyComputed:
                 <p>{{ machine.phone }}</p>
               </div>
             </div>
-            <div class="location-detail-item">
+            <div class="location-detail-item" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               <div>
                 <strong>Hours</strong>
-                <p>{{ machine.hours }}</p>
+                <p>
+                  {{ machine.hours.display }}
+                  <span class="location-hours location-hours-inline">
+                    <span class="location-status-dot"></span>
+                    <span class="location-status-text"></span>
+                  </span>
+                </p>
               </div>
             </div>
             <div class="location-detail-item">
