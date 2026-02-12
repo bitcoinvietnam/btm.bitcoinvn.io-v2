@@ -4,7 +4,7 @@ pagination:
   data: collections.btmLocations
   size: 1
   alias: machine
-permalink: "/locations/{{ machine.slug }}/"
+permalink: "locations/{{ machine.slug }}/index.html"
 eleventyComputed:
   pageTitle: "{{ machine.name }} BTM — {{ site.name }}"
   pageDescription: "Buy & sell Bitcoin for cash at {{ machine.name }}, {{ machine.district }}. {{ machine.hours }}. No KYC required."
@@ -13,14 +13,14 @@ eleventyComputed:
 {# ======== Navigation ======== #}
 <nav class="nav scrolled" id="nav">
   <div class="nav-container">
-    <a href="/" class="nav-logo">
-      <img src="/images/bitcoinvn-logo-dark.png" alt="BitcoinVN" class="logo-img">
+    <a href="{{ '/' | url }}" class="nav-logo">
+      <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
       <span class="logo-btm">BTM</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="/#locations">All Locations</a>
-      <a href="/#how-it-works">How It Works</a>
-      <a href="/#faq">FAQ</a>
+      <a href="{{ '/' | url }}#locations">All Locations</a>
+      <a href="{{ '/' | url }}#how-it-works">How It Works</a>
+      <a href="{{ '/' | url }}#faq">FAQ</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -32,9 +32,9 @@ eleventyComputed:
   {# ======== Breadcrumb ======== #}
   <div class="container">
     <nav class="breadcrumb">
-      <a href="/">Home</a>
+      <a href="{{ '/' | url }}">Home</a>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <a href="/#locations">Locations</a>
+      <a href="{{ '/' | url }}#locations">Locations</a>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       <span>{{ machine.name }}</span>
     </nav>
@@ -150,7 +150,7 @@ eleventyComputed:
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Open in Google Maps
           </a>
-          <a href="/#locations" class="btn btn-secondary">
+          <a href="{{ '/' | url }}#locations" class="btn btn-secondary">
             View All Locations
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -170,8 +170,8 @@ eleventyComputed:
   <div class="container">
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="/" class="nav-logo">
-          <img src="/images/bitcoinvn-logo-dark.png" alt="BitcoinVN" class="logo-img">
+        <a href="{{ '/' | url }}" class="nav-logo">
+          <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
           <span class="logo-btm">BTM</span>
         </a>
         <p class="footer-tagline">{{ site.tagline }}</p>
@@ -179,15 +179,15 @@ eleventyComputed:
       <div class="footer-links">
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <a href="/#features">Why Us</a>
-          <a href="/#locations">Locations</a>
-          <a href="/#how-it-works">How It Works</a>
-          <a href="/#faq">FAQ</a>
+          <a href="{{ '/' | url }}#features">Why Us</a>
+          <a href="{{ '/' | url }}#locations">Locations</a>
+          <a href="{{ '/' | url }}#how-it-works">How It Works</a>
+          <a href="{{ '/' | url }}#faq">FAQ</a>
         </div>
         <div class="footer-col">
           <h4>Services</h4>
           <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">Buy Bitcoin Online</a>
-          <a href="/#contact">Contact Support</a>
+          <a href="{{ '/' | url }}#contact">Contact Support</a>
           <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">BTM Status Updates</a>
         </div>
       </div>

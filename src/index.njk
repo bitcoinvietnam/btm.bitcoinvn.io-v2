@@ -6,7 +6,7 @@ layout: base.njk
 <nav class="nav" id="nav">
   <div class="nav-container">
     <a href="#" class="nav-logo">
-      <img src="/images/bitcoinvn-logo-dark.png" alt="BitcoinVN" class="logo-img">
+      <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
       <span class="logo-btm">BTM</span>
     </a>
     <div class="nav-links" id="navLinks">
@@ -215,7 +215,7 @@ layout: base.njk
         </div>
         <div class="location-cards">
           {% for machine in region.machines %}
-          <a href="/locations/{{ machine.slug }}/" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}">
+          <a href="{{ ('/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}">
             <div class="location-pin">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
@@ -356,7 +356,7 @@ layout: base.njk
     <div class="footer-content">
       <div class="footer-brand">
         <a href="#" class="nav-logo">
-          <img src="/images/bitcoinvn-logo-dark.png" alt="BitcoinVN" class="logo-img">
+          <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
           <span class="logo-btm">BTM</span>
         </a>
         <p class="footer-tagline">{{ site.tagline }}</p>
