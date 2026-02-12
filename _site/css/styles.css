@@ -804,6 +804,14 @@ button {
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.region-description {
+  width: 100%;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .region-header h3 {
@@ -825,8 +833,8 @@ button {
 
 .location-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .location-card {
@@ -1800,7 +1808,7 @@ button {
   }
 
   .location-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .map-wrapper {
@@ -1900,6 +1908,10 @@ button {
 
   .contact-card {
     flex: 1 1 100%;
+  }
+
+  .location-cards {
+    grid-template-columns: 1fr;
   }
 
   .map-wrapper {

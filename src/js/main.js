@@ -348,16 +348,20 @@ function initCurrencyFlow() {
     else if (ratio < 0.45) targetDir = 1;
   });
 
-  // BTC envelope: t=0 is far left (visible), t=1 is near machine (fade out)
+  // BTC envelope: t=0 is far left (screen edge), t=1 is near machine
+  // Fade at both ends so wrapping is invisible
   function btcEnvelope(t) {
-    if (t < 0.4) return 1;
-    return Math.max(0, (1 - t) / 0.6);
+    const fadeIn = Math.min(1, t / 0.15);       // fade in from screen edge
+    const fadeOut = Math.min(1, (1 - t) / 0.3); // fade out near machine
+    return fadeIn * fadeOut;
   }
 
-  // Cash envelope: t=0 is near machine (fade out), t=1 is far right (visible)
+  // Cash envelope: t=0 is near machine, t=1 is far right (screen edge)
+  // Fade at both ends so wrapping is invisible
   function cashEnvelope(t) {
-    if (t > 0.6) return 1;
-    return Math.max(0, t / 0.6);
+    const fadeIn = Math.min(1, t / 0.3);        // fade in from machine
+    const fadeOut = Math.min(1, (1 - t) / 0.15); // fade out at screen edge
+    return fadeIn * fadeOut;
   }
 
   let lastTime = 0;
@@ -379,14 +383,14 @@ function initCurrencyFlow() {
       const x = BTC_MIN + p.t * (BTC_MAX - BTC_MIN);
       const env = btcEnvelope(p.t);
       const dist = 1 - p.t; // 1 at far edge, 0 at machine
-      const spread = 0.15 + dist * 2.85;
+      const spread = 0.15 + dist * 5;
       const y = p.y * spread;
-      const scale = 0.4 + dist;
+      const scale = 1 + dist * 1.2;
       const rot = p.t * 200;
 
       p.el.style.transform =
         `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${scale})`;
-      p.el.style.opacity = env * 0.5;
+      p.el.style.opacity = env * 0.3;
     });
 
     // Update Cash particles (right side, t: 0→1 = near machine → far right)
@@ -398,14 +402,14 @@ function initCurrencyFlow() {
       const x = CASH_MIN + p.t * (CASH_MAX - CASH_MIN);
       const env = cashEnvelope(p.t);
       const dist = p.t; // 0 at machine, 1 at far edge
-      const spread = 0.15 + dist * 2.85;
+      const spread = 0.15 + dist * 5;
       const y = p.y * spread;
-      const scale = 0.4 + dist * 0.8;
+      const scale = 1 + dist * 1.2;
       const rot = (p.t - 0.5) * -16;
 
       p.el.style.transform =
         `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${scale})`;
-      p.el.style.opacity = env * 0.5;
+      p.el.style.opacity = env * 0.3;
     });
 
     requestAnimationFrame(update);
