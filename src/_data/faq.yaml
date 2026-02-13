@@ -21,7 +21,7 @@ items:
     answer: "We post real-time BTM status updates on our <a href='https://t.me/BitcoinATMHCMC' target='_blank' reladd='noopener'>Telegram channel</a> and <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook page</a>. Follow us for the latest availability information."
 
   - question: "What if I don't have a Bitcoin wallet?"
-    answer: "No problem! Our BTMs can generate a paper wallet for you during the purchase. You'll receive a printed paper with your Bitcoin wallet address and private key. We recommend transferring the funds to a secure digital wallet afterwards."
+    answer: "No problem! Our BTMs can generate a paper wallet for you during the purchase. You'll receive a printed paper with your Bitcoin wallet address and private key. We recommend transferring your funds to a secure wallet afterwards — for long-term storage, a hardware wallet is the safest option. You can get one from the <a href='https://bitcoinvn.io/shop' target='_blank' rel='noopener'>BitcoinVN Shop</a>, an official supplier of devices from leading brands such as Trezor and Ledger."
 
   - question: "I'm having issues with SMS verification. What should I do?"
     answer: "Due to recent domestic telecom changes, SMS delivery for OTP codes may be affected. Please contact our support team via <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> or <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> and we'll help you complete your transaction."

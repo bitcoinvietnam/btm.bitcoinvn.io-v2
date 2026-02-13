@@ -1265,77 +1265,6 @@ button {
 }
 
 /* ========================================
-   Hardware Wallet Shop CTA
-   ======================================== */
-
-.shop-cta {
-  padding: 80px 0;
-  background: var(--bg-primary);
-}
-
-.shop-card {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  padding: 60px;
-  background: linear-gradient(135deg, rgba(255, 226, 110, 0.06) 0%, rgba(255, 226, 110, 0.01) 100%);
-  border: 1px solid rgba(255, 226, 110, 0.12);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.shop-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.shop-content {
-  flex: 1;
-}
-
-.shop-content h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 16px;
-  letter-spacing: -0.03em;
-}
-
-.shop-content p {
-  color: var(--text-secondary);
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.shop-content p a {
-  color: var(--brand-link);
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.shop-content p a:hover {
-  color: var(--accent);
-}
-
-.shop-graphic {
-  flex-shrink: 0;
-}
-
-.shop-icon-wrap {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-glow);
-  border: 1px solid rgba(255, 226, 110, 0.15);
-  border-radius: 50%;
-  color: var(--accent);
-}
-
-/* ========================================
    Contact Section
    ======================================== */
 
@@ -1962,16 +1891,6 @@ button {
   .process-tab {
     padding: 10px 24px;
     font-size: 14px;
-  }
-
-  .shop-card {
-    flex-direction: column;
-    padding: 36px 28px;
-    text-align: center;
-  }
-
-  .shop-graphic {
-    display: none;
   }
 
   .host-card {
