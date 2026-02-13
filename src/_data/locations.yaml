@@ -5,8 +5,8 @@ regions:
       - name: "Big Pig BBQ & Beer"
         slug: "big-pig-bbq"
         district: "Airport Area"
-        lat: 10.8189
-        lng: 106.6519
+        lat: 10.809998036472463
+        lng: 106.66502409983167
         mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
         address: "46 Truong Son, Phuong 2, Tan Binh, HCMC 70000"
         phone: "02835474034 – 02835474035"
@@ -150,5 +150,5 @@ map:
     lat: 10.78
     lng: 106.70
   zoom: 12
-  tileStyle: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+  tileStyle: "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

@@ -15,10 +15,10 @@ items:
     answer: "Our fee structure is competitive and transparent. The price displayed on the BTM screen includes all fees — what you see is what you get. No hidden charges or surprise deductions."
 
   - question: "Is Bitcoin legal in Vietnam?"
-    answer: "While Bitcoin is not recognized as legal tender in Vietnam, owning and trading Bitcoin is not illegal. BitcoinVN has been a legally registered and operating business in Vietnam since 2014."
+    answer: "While Bitcoin is not recognized as legal tender in Vietnam, owning and trading Bitcoin is not illegal."
 
   - question: "How can I check if a BTM is currently online?"
-    answer: "We post real-time BTM status updates on our <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram channel</a> and <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook page</a>. Follow us for the latest availability information."
+    answer: "We post real-time BTM status updates on our <a href='https://t.me/BitcoinATMHCMC' target='_blank' reladd='noopener'>Telegram channel</a> and <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook page</a>. Follow us for the latest availability information."
 
   - question: "What if I don't have a Bitcoin wallet?"
     answer: "No problem! Our BTMs can generate a paper wallet for you during the purchase. You'll receive a printed paper with your Bitcoin wallet address and private key. We recommend transferring the funds to a secure digital wallet afterwards."
