@@ -114,26 +114,9 @@ function initProcessTabs() {
 
 /* ======== Leaflet Map ======== */
 function initMap() {
-  const mapEl = document.getElementById("btm-map");
-  if (!mapEl || typeof L === "undefined" || !window.BTM_LOCATIONS) return;
+  if (typeof L === "undefined" || !window.BTM_LOCATIONS) return;
 
   const data = window.BTM_LOCATIONS;
-  const centerLat = parseFloat(mapEl.dataset.centerLat) || 10.78;
-  const centerLng = parseFloat(mapEl.dataset.centerLng) || 106.7;
-  const zoom = parseInt(mapEl.dataset.zoom) || 12;
-
-  const map = L.map("btm-map", {
-    center: [centerLat, centerLng],
-    zoom: zoom,
-    zoomControl: true,
-    scrollWheelZoom: false,
-  });
-
-  // Dark tile layer
-  L.tileLayer(data.map.tileStyle, {
-    attribution: data.map.attribution,
-    maxZoom: 18,
-  }).addTo(map);
 
   // Build a marker icon with an open/closed status dot
   function makeMarkerIcon(isOpen) {
@@ -181,10 +164,24 @@ function initMap() {
     });
   }
 
-  // Add markers for all locations
-  const markers = [];
-  const markerRefs = [];
-  data.regions.forEach((region) => {
+  const allMarkerRefs = [];
+
+  data.regions.forEach((region, regionIndex) => {
+    const mapEl = document.getElementById(`btm-map-${regionIndex}`);
+    if (!mapEl) return;
+
+    const map = L.map(mapEl, {
+      zoomControl: true,
+      scrollWheelZoom: false,
+    });
+
+    L.tileLayer(data.map.tileStyle, {
+      attribution: data.map.attribution,
+      maxZoom: 18,
+    }).addTo(map);
+
+    // Add markers for this region only
+    const markers = [];
     region.machines.forEach((machine) => {
       const h = machine.hours;
       const daysStr = h.days.join(",");
@@ -199,29 +196,29 @@ function initMap() {
           `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small><br><small>${statusLabel} · ${h.display}</small>`
         );
       markers.push(marker);
-      markerRefs.push({ marker, hours: h, daysStr });
+      allMarkerRefs.push({ marker, hours: h, daysStr });
+    });
+
+    // Fit bounds or center on single marker
+    if (markers.length === 1) {
+      map.setView([region.machines[0].lat, region.machines[0].lng], 14);
+    } else if (markers.length > 0) {
+      map.fitBounds(L.featureGroup(markers).getBounds().pad(0.15));
+    }
+
+    // Enable scroll zoom after first click
+    map.on("click", () => {
+      map.scrollWheelZoom.enable();
     });
   });
 
-  // Re-check marker status every minute
+  // Re-check marker status every minute (all maps)
   setInterval(() => {
-    markerRefs.forEach(({ marker, hours: h, daysStr }) => {
+    allMarkerRefs.forEach(({ marker, hours: h, daysStr }) => {
       const isOpen = checkIfOpen(daysStr, h.open, h.close, h.timezone);
       marker.setIcon(makeMarkerIcon(isOpen));
     });
   }, 60 * 1000);
-
-  // Fit bounds to show all markers
-  if (markers.length > 0) {
-    const group = L.featureGroup(markers);
-    map.fitBounds(group.getBounds().pad(0.15));
-  }
-
-  // Enable scroll zoom after first click
-  map.on("click", () => {
-    map.scrollWheelZoom.enable();
-  });
-
 }
 
 /* ======== Location Detail Map ======== */

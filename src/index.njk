@@ -202,10 +202,6 @@ layout: base.njk
       <p class="section-desc">Find a BitcoinVN BTM near you across Ho Chi Minh City and Vung Tau.</p>
     </div>
 
-    {# Interactive Map #}
-    <div class="map-wrapper" id="btm-map" data-center-lat="{{ locations.map.center.lat }}" data-center-lng="{{ locations.map.center.lng }}" data-zoom="{{ locations.map.zoom }}">
-    </div>
-
     <div class="locations-grid">
       {% for region in locations.regions %}
       <div class="location-region">
@@ -214,6 +210,10 @@ layout: base.njk
           <span class="location-count">{{ region.machines.length }} machine{{ "s" if region.machines.length > 1 }}</span>
           {% if region.description %}<p class="region-description">{{ region.description }}</p>{% endif %}
         </div>
+
+        {# Per-region map #}
+        <div class="map-wrapper region-map" id="btm-map-{{ loop.index0 }}"></div>
+
         <div class="location-cards">
           {% for machine in region.machines %}
           <a href="{{ ('/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">

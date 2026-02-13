@@ -788,8 +788,8 @@ button {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
-  height: 400px;
-  margin-bottom: 48px;
+  height: 350px;
+  margin-bottom: 24px;
   position: relative;
 }
 
@@ -1941,7 +1941,7 @@ button {
   }
 
   .map-wrapper {
-    height: 300px;
+    height: 280px;
     border-radius: var(--radius-md);
   }
 
@@ -2054,6 +2054,6 @@ button {
   }
 
   .map-wrapper {
-    height: 250px;
+    height: 220px;
   }
 }
