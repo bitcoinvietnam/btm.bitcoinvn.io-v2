@@ -91,9 +91,9 @@ regions:
       - name: "Italiani's Pizza"
         slug: "italianis-han-thuyen"
         district: "Han Thuyen, District 1"
-        lat: 10.7800
-        lng: 106.7000
-        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        lat: 10.7788561
+        lng: 106.6982216
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.7788561%2C106.6982216"
         address: "17 Han Thuyen, Ben Nghe, D1, HCMC"
         phone: "+84901453194"
         hours:
