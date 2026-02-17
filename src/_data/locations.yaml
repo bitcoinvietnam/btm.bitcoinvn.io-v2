@@ -26,9 +26,9 @@ regions:
       - name: "Capone's Chicago Pizza"
         slug: "capones-chicago-pizza"
         district: "District 2"
-        lat: 10.8017929
-        lng: 106.7287263
-        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.8017929%2C106.7287263"
+        lat: 10.8019328
+        lng: 106.7285487
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.8019328%2C106.7285487"
         address: "8/3 Duong so 49B, Thao Dien, Quan 2, HCMC"
         phone: "+84338787459"
         hours:
