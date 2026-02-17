@@ -7,7 +7,7 @@ regions:
         district: "Airport Area"
         lat: 10.809998036472463
         lng: 106.66502409983167
-        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.809998036472463%2C106.66502409983167"
         address: "46 Truong Son, Phuong 2, Tan Binh, HCMC 70000"
         phone: "02835474034 – 02835474035"
         hours:
@@ -26,9 +26,9 @@ regions:
       - name: "Capone's Chicago Pizza"
         slug: "capones-chicago-pizza"
         district: "District 2"
-        lat: 10.7870
-        lng: 106.7480
-        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        lat: 10.8017929
+        lng: 106.7287263
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.8017929%2C106.7287263"
         address: "8/3 Duong so 49B, Thao Dien, Quan 2, HCMC"
         phone: "+84338787459"
         hours:
@@ -47,9 +47,9 @@ regions:
       - name: "Green Box"
         slug: "green-box"
         district: "District 2"
-        lat: 10.7890
-        lng: 106.7420
-        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        lat: 10.8046788
+        lng: 106.7321307
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.8046788%2C106.7321307"
         address: "6 Le Van Mien, Thao Dien, Quan 2, HCMC 71107"
         phone: "+840795070010"
         hours:
@@ -115,9 +115,9 @@ regions:
       - name: "Surf Hostel"
         slug: "surf-hostel"
         district: "Vung Tau"
-        lat: 10.3460
-        lng: 107.0843
-        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        lat: 10.3399353
+        lng: 107.0823965
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.3399353%2C107.0823965"
         address: "Hoang Hoa Tham, 160 22/20, Phuong 9, Vung Tau"
         phone: "+840926328243"
         hours:
