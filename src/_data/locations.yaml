@@ -68,9 +68,9 @@ regions:
       - name: "Italiani's Pizza"
         slug: "italianis-ben-thanh"
         district: "Ben Thanh, District 1"
-        lat: 10.7725
-        lng: 106.6980
-        mapsUrl: "https://maps.app.goo.gl/PgTbKpKzfcebuAxi6"
+        lat: 10.7696987
+        lng: 106.7000222
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.7696987%2C106.7000222"
         address: "46 Nguyen Thai Binh, D1, HCMC"
         phone: "+84968874992"
         hours:
