@@ -115,9 +115,9 @@ regions:
       - name: "Surf Hostel"
         slug: "surf-hostel"
         district: "Vung Tau"
-        lat: 10.3399353
-        lng: 107.0823965
-        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.3399353%2C107.0823965"
+        lat: 10.3335304
+        lng: 107.0863612
+        mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=10.3335304%2C107.0863612"
         address: "Hoang Hoa Tham, 160 22/20, Phuong 9, Vung Tau"
         phone: "+840926328243"
         hours:
