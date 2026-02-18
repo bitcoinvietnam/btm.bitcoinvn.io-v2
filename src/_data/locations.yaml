@@ -121,17 +121,17 @@ regions:
         photos:
           - src: "/images/locations/italianis-han-thuyen/italianis-han-thuyen-1.jpg"
             alt: "Italiani's Pizza Han Thuyen venue photo"
-            caption: "Italiani's Pizza Han Thuyen"
+            caption: "Pizza & Bitcoin: the dream combo made famous by Laszlo Hanyecz"
             width: 1280
             height: 719
           - src: "/images/locations/italianis-han-thuyen/italianis-han-thuyen-2.jpg"
             alt: "Italiani's Pizza Han Thuyen interior photo"
-            caption: "Inside Italiani's Pizza Han Thuyen"
+            caption: "Follow the orange ₿ to the entrance of Italiani's Han Thuyen"
             width: 1032
             height: 1280
           - src: "/images/locations/italianis-han-thuyen/italianis-han-thuyen-3.jpg"
             alt: "Italiani's Pizza Han Thuyen location detail photo"
-            caption: "Italiani's Pizza Han Thuyen"
+            caption: "Gustav BTM is located on the upper floor. Your privacy is respected"
             width: 1035
             height: 1280
         description:
