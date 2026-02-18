@@ -118,6 +118,22 @@ regions:
         style: "Italian restaurant (Pizza & Pasta)"
         websiteName: "italianis.vn"
         websiteUrl: "https://italianis.vn"
+        photos:
+          - src: "/images/locations/italianis-han-thuyen/italianis-han-thuyen-1.jpg"
+            alt: "Italiani's Pizza Han Thuyen venue photo"
+            caption: "Italiani's Pizza Han Thuyen"
+            width: 1280
+            height: 719
+          - src: "/images/locations/italianis-han-thuyen/italianis-han-thuyen-2.jpg"
+            alt: "Italiani's Pizza Han Thuyen interior photo"
+            caption: "Inside Italiani's Pizza Han Thuyen"
+            width: 1032
+            height: 1280
+          - src: "/images/locations/italianis-han-thuyen/italianis-han-thuyen-3.jpg"
+            alt: "Italiani's Pizza Han Thuyen location detail photo"
+            caption: "Italiani's Pizza Han Thuyen"
+            width: 1035
+            height: 1280
         description:
           - "The Italiani's location on Han Thuyen street sits right next to a beautiful park in the Ben Nghe ward of District 1. It's a peaceful spot to enjoy a pizza and make a Bitcoin transaction, away from the hustle of the main streets."
           - "The Han Thuyen location combines the charm of a neighborhood Italian restaurant with the convenience of Bitcoin access. Whether you're a Bitcoin veteran or making your first purchase, the friendly staff can help guide you through the process."
