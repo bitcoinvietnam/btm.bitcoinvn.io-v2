@@ -1662,7 +1662,7 @@ button {
 
 .location-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
@@ -1676,8 +1676,8 @@ button {
 .location-gallery-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .location-gallery-card figcaption {
@@ -1689,7 +1689,7 @@ button {
 
 .location-inline-gallery {
   margin-top: 28px;
-  max-width: 760px;
+  max-width: 560px;
 }
 
 .location-inline-gallery h3 {
@@ -1977,10 +1977,6 @@ button {
 
   .location-map-single {
     height: 280px;
-  }
-
-  .location-gallery-grid {
-    grid-template-columns: 1fr;
   }
 
   .location-inline-gallery {
