@@ -103,7 +103,7 @@ eleventyComputed:
         {% if photo.src %}
         <figure class="location-gallery-card">
           <img
-            src="{{ photo.src }}"
+            src="{{ photo.src | url }}"
             alt="{{ photo.alt or (machine.name + ' photo') }}"
             loading="lazy"
             decoding="async"
