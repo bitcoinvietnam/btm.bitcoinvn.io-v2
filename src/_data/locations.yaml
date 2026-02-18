@@ -2,6 +2,19 @@ regions:
   - name: "Ho Chi Minh City"
     description: "Vietnam's largest city and economic hub — home to a thriving expat community and growing Bitcoin adoption."
     machines:
+      # Optional photos section per machine for the location subpage gallery.
+      # Recommended: 2 images (1x BTM machine, 1x signature food/drink).
+      # photos:
+      #   - src: "https://..."
+      #     alt: "BitcoinVN BTM machine inside <venue name>"
+      #     caption: "BitcoinVN BTM at <venue name>"
+      #     width: 1600
+      #     height: 1067
+      #   - src: "https://..."
+      #     alt: "Signature dish served at <venue name>"
+      #     caption: "Popular menu item at <venue name>"
+      #     width: 1600
+      #     height: 1067
       - name: "Big Pig BBQ & Beer"
         slug: "big-pig-bbq"
         district: "Airport Area"
