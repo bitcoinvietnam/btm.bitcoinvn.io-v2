@@ -143,6 +143,17 @@ regions:
         style: "Italian restaurant (Pizza & Pasta)"
         websiteName: "italianis.vn"
         websiteUrl: "https://italianis.vn"
+        photos:
+          - src: "/images/locations/italianis-ben-thanh/italianis-ben-thanh-1.jpg"
+            alt: "Burrata pizza served at Italiani's Ben Thanh"
+            caption: "The famous Burrata pizza - a regular highlight on the Italiani's menu"
+            width: 1280
+            height: 960
+          - src: "/images/locations/italianis-ben-thanh/italianis-ben-thanh-2.jpg"
+            alt: "Fiat Eater Gustav BTM variant at Italiani's Ben Thanh"
+            caption: "Italiani's Ben Thanh features our more colourful 'Fiat Eater' variant of our Gustav BTM series"
+            width: 863
+            height: 1157
         description:
           - "Italiani's Pizza on Nguyen Thai Binh street is located in the bustling heart of District 1, just steps from Ben Thanh Market — one of the most iconic landmarks in Ho Chi Minh City."
           - "Whether you're craving a classic Margherita or something more adventurous, Italiani's delivers quality Italian food in a vibrant setting."
