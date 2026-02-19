@@ -1,6 +1,16 @@
 const yaml = require("js-yaml");
 
 module.exports = function (eleventyConfig) {
+  // Convert root-relative URLs to relative paths so the build works at any mount point
+  eleventyConfig.addTransform("relative-urls", function (content) {
+    if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) {
+      return content;
+    }
+    const depth = (this.page.url.match(/\//g) || []).length - 1;
+    const prefix = depth === 0 ? "./" : "../".repeat(depth);
+    return content.replace(/((?:href|src|action)=")\/(?!\/)/g, `$1${prefix}`);
+  });
+
   // YAML data file support
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
 

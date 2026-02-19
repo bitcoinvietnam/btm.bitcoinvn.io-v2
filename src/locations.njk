@@ -28,7 +28,10 @@ eleventyComputed:
   </div>
 </nav>
 
-<div class="location-detail"{% if machine.photos and machine.photos.length %} style="--hero-bg: url('{{ machine.photos[0].src | url }}')"{% endif %}>
+<div class="location-detail">
+  {% if machine.photos and machine.photos.length %}
+  <img class="location-detail__hero-bg" src="{{ machine.photos[0].src | url }}" alt="" aria-hidden="true">
+  {% endif %}
   {# ======== Breadcrumb ======== #}
   <div class="container">
     <nav class="breadcrumb">
