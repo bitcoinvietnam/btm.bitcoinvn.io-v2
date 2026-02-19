@@ -43,6 +43,11 @@ regions:
             caption: "Big Pig lets you load up on meat aplenty."
             width: 1280
             height: 960
+          - src: "/images/locations/big-pig-bbq/big-pig-bbq-3.jpg"
+            alt: "Gustav BTM series machine inside Big Pig BBQ & Beer"
+            caption: "Gustav BTM series inside - powered by Swedish-Vietnamese engineering"
+            width: 856
+            height: 1148
         description:
           - "Bitcoin & Meat — what a combination! Big Pig BBQ brings authentic American-style BBQ to Saigon, serving up brisket, ribs, pulled pork and more. Located right next to the airport on Truong Son street, it's one of the most convenient spots to buy or sell Bitcoin in all of Ho Chi Minh City."
           - "Whether you're arriving in or departing from Saigon, swing by Big Pig to grab some world-class BBQ and use our Bitcoin ATM. The BTM is located inside the restaurant and available during all opening hours."
