@@ -67,12 +67,12 @@ regions:
         photos:
           - src: "/images/locations/capones-chicago-pizza/capones-chicago-pizza-1.jpg"
             alt: "Capone's Chicago Pizza location photo in Thao Dien"
-            caption: "Capone's Chicago Pizza in Thao Dien"
+            caption: "Capone's - a piece of Chicago in Thao Dien"
             width: 1280
             height: 960
           - src: "/images/locations/capones-chicago-pizza/capones-chicago-pizza-2.jpg"
             alt: "Dining area at Capone's Chicago Pizza"
-            caption: "Inside Capone's Chicago Pizza"
+            caption: "Gustav BTM - next to the staircase inside Capone's"
             width: 1280
             height: 960
           - src: "/images/locations/capones-chicago-pizza/capones-chicago-pizza-3.jpg"
