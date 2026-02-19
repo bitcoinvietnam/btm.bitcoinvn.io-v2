@@ -4,6 +4,9 @@ module.exports = function (eleventyConfig) {
   // YAML data file support
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
 
+  // Expose NODE_ENV to templates
+  eleventyConfig.addGlobalData("isProduction", process.env.NODE_ENV === "production");
+
   // Passthrough copy
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
