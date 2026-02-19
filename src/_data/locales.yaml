@@ -14,3 +14,7 @@
   pathPrefix: "ja/"
   flag: "\U0001F1EF\U0001F1F5"
   label: "日本語"
+- code: zh
+  pathPrefix: "zh/"
+  flag: "\U0001F1E8\U0001F1F3"
+  label: "中文"

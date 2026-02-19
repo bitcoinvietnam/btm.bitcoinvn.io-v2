@@ -1,0 +1,214 @@
+ui:
+  notice_label: "通知："
+  nav:
+    why_us: "为什么选择我们"
+    locations: "机器位置"
+    how_it_works: "使用流程"
+    faq: "常见问题"
+    toggle_menu: "切换菜单"
+    all_locations: "所有位置"
+  hero:
+    operating_since: "运营始于"
+    headline: "在越南用现金买卖比特币"
+    cta_find: "查找 BTM"
+    cta_learn: "了解使用流程"
+    stat_locations: "BTM 位置"
+    stat_years: "运营年数"
+    stat_friction: "零障碍"
+    scroll: "向下滚动探索"
+  features:
+    section_tag: "为什么选择我们"
+  locations_section:
+    section_tag: "我们的机器"
+    subtitle: "在胡志明市和头顿找到您附近的 BitcoinVN BTM。"
+    machine_singular: "台机器"
+    machine_plural: "台机器"
+    view_maps: "在 Google 地图上查看全部"
+  how_it_works:
+    section_tag: "简单流程"
+    subtitle: "在我们的 BTM 上买卖比特币简单直接。"
+    tab_buy: "购买比特币"
+    tab_sell: "出售比特币"
+  faq:
+    section_tag: "有疑问？"
+    heading: "常见问题"
+  host:
+    heading: "想在您的店铺放置 BTM？"
+    body: "将比特币 ATM 引入您的经营场所。吸引加密货币用户，赚取托管费用。联系我们了解托管方案。"
+    cta: "咨询托管事宜"
+  contact:
+    section_tag: "联系我们"
+    heading: "联系我们"
+    subtitle: "有任何问题？我们的团队随时通过多种渠道为您提供帮助。"
+    telegram: "Telegram"
+    facebook: "Facebook"
+    email: "电子邮件"
+  footer:
+    quick_links: "快速链接"
+    services: "服务"
+    buy_online: "在线购买比特币"
+    contact_support: "联系客服"
+    status_updates: "BTM 状态更新"
+    hardware_wallets: "硬件钱包"
+    copyright: "BitcoinVN. 版权所有。"
+  location_page:
+    breadcrumb_home: "首页"
+    breadcrumb_locations: "机器位置"
+    opening_hours: "营业时间"
+    cryptocurrencies: "支持的加密货币"
+    crypto_value: "比特币 (BTC) — 买 & 卖"
+    interface_langs: "界面语言"
+    interface_value: "越南语、英语"
+    about: "关于此位置"
+    address: "地址"
+    phone: "电话"
+    hours: "营业时间"
+    style: "类型"
+    website: "网站"
+    gallery_heading: "内部实景"
+    cta_sub: "用现金买卖比特币——无需 KYC 认证。"
+    cta_maps: "在 Google 地图中打开"
+    cta_all_locations: "查看所有位置"
+    questions: "有疑问？"
+  js:
+    open: "营业中"
+    closed: "已打烊"
+
+site:
+  tagline: "在越南用现金买卖比特币最快速、最私密的方式"
+  description: "自助比特币 ATM，遍布胡志明市和头顿。无需银行账户，无需 KYC。走进来，完成交易，离开。"
+  notice:
+    message: "由于国内电信变动，OTP 短信验证码的发送目前受到影响。我们的客服团队可通过 Telegram 或 Facebook 协助您完成交易。"
+
+features:
+  heading: "选择 BitcoinVN BTM 的 9 大理由"
+  subheading: "我们的服务旨在保护您在越南用现金买卖 BTC 时的财务隐私。"
+  items:
+    - title: "无需银行账户"
+      description: "仅用现金即可买卖比特币。无需银行账户，无需电汇，无需金融中介。"
+    - title: "快速便捷"
+      description: "几乎像从自动售货机买一瓶可乐一样简单。走过来，完成交易，然后离开。"
+    - title: "数据最小化"
+      description: "在法规允许的范围内，交易可在仅提供有限个人信息的情况下完成，帮助保护您的财务隐私。"
+    - title: "价格透明"
+      description: "所见即所得。汇率在交易瞬间锁定——没有隐藏费用或意外收费。"
+    - title: "实时确认"
+      description: "交易即时广播到区块链。通过提供的追踪链接实时跟踪您的交易。"
+    - title: "双语支持"
+      description: "提供英语和越南语全面支持。我们的团队随时以您偏好的语言为您提供帮助。"
+    - title: "现场即时兑换"
+      description: "直接在现场完成交易，无需依赖未知的交易对手或提前转账。"
+    - title: "可靠且受监控"
+      description: "所有 BTM 均受持续监控，并提供实时状态更新。可用性信息发布在我们的 Telegram 和 Facebook 频道。"
+    - title: "值得信赖，历史悠久"
+      description: "由 BitcoinVN 运营——越南运营时间最长的比特币公司。多年来可靠服务数千客户。"
+
+how_it_works:
+  buy:
+    - title: "走向 BTM"
+      description: "找到最近的 BitcoinVN BTM 位置，走到机器前。无需预约。"
+    - title: '选择"购买比特币"'
+      description: '点击屏幕上的"购买"选项。您将看到以越南盾显示的当前比特币价格。'
+    - title: "扫描您的钱包或获取纸钱包"
+      description: "扫描您现有比特币钱包的二维码，或让机器为您生成一个纸钱包。"
+    - title: "放入现金"
+      description: "将越南盾纸币放入机器。屏幕将实时显示对应的比特币金额。"
+    - title: "确认并接收比特币"
+      description: "确认交易，比特币将即时发送到您的钱包，并附带实时追踪链接。"
+  sell:
+    - title: "走向 BTM"
+      description: "前往任何 BitcoinVN BTM 位置。所有机器都支持购买和出售比特币。"
+    - title: '选择"出售比特币"'
+      description: '点击屏幕上的"出售"选项。机器将显示当前的越南盾卖出汇率。'
+    - title: "输入金额并发送比特币"
+      description: "输入您希望收到的越南盾金额。机器将显示一个二维码——将您的比特币发送到该地址。"
+    - title: "等待确认"
+      description: "机器将等待区块链确认。您可以使用预售功能来加速此过程。"
+    - title: "取走现金"
+      description: "确认完成后，机器将出钞。就是这么简单。"
+
+faq:
+  items:
+    - question: "什么是比特币 ATM？"
+      answer: "比特币 ATM（也称 BTM）是一种自助式加密货币终端机，允许您使用现金买卖比特币。它的工作方式类似于普通 ATM，但不是从银行账户取现金，而是让您用现金兑换比特币，反之亦然。"
+    - question: "为什么我应该使用 BitcoinVN BTM？"
+      answer: "BitcoinVN BTM 提供在越南买卖比特币最快速、最私密的方式。无需银行账户，交易只需几分钟即可完成。我们自 2014 年开始运营，是越南历史最悠久的比特币服务商。"
+    - question: "我需要出示身份证件或进行身份验证（KYC）吗？"
+      answer: "BitcoinVN BTM 专为简单直接的现场比特币交易而设计。对于日常普通交易，无需冗长的开户流程即可在机器上快速完成——遵循数据最小化原则，帮助减少不必要的个人信息暴露。"
+    - question: "有交易限额吗？"
+      answer: "我们的 BTM 目前没有交易限额。您可以在单笔交易中买卖任意金额的比特币。"
+    - question: "费用是多少？"
+      answer: "我们的费用结构具有竞争力且透明。BTM 屏幕上显示的价格已包含所有费用——所见即所得，没有隐藏收费或意外扣款。"
+    - question: "比特币在越南合法吗？"
+      answer: "虽然比特币在越南不被认定为法定货币，但拥有和交易比特币并不违法。"
+    - question: "如何查看 BTM 当前是否在线？"
+      answer: "我们在 <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram 频道</a>和 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook 页面</a>上发布实时 BTM 状态更新。关注我们获取最新可用性信息。"
+    - question: "如果我没有比特币钱包怎么办？"
+      answer: "没问题！我们的 BTM 可以在购买过程中为您生成一个纸钱包。您会收到一张印有比特币钱包地址和私钥的纸。我们建议之后将资金转移到安全的钱包中——长期存储的话，硬件钱包是最安全的选择。您可以从 <a href='https://bitcoinvn.io/shop' target='_blank' rel='noopener'>BitcoinVN 商店</a>购买，我们是 Trezor 和 Ledger 等领先品牌的官方供应商。"
+    - question: "短信验证出了问题，该怎么办？"
+      answer: "由于近期国内电信变动，OTP 验证码短信的发送可能受到影响。请通过 <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> 或 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> 联系我们的客服团队，我们将帮助您完成交易。"
+    - question: "我可以在线购买比特币吗？"
+      answer: "可以！如果您更倾向于在线购买比特币，请访问 <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> 使用我们的在线交易服务。支持银行转账及其他支付方式。"
+
+locations:
+  regions:
+    - name: "胡志明市"
+      description: "越南最大的城市和经济中心——拥有蓬勃发展的外籍人士社区和日益增长的比特币使用率。"
+      machines:
+        big-pig-bbq:
+          hours_display: "每天 10:30 – 23:30"
+          description:
+            - "比特币与烤肉——多么完美的组合！Big Pig BBQ 将正宗的美式烧烤带到西贡，供应牛胸肉、排骨、手撕猪肉等美食。位于新山一机场旁的长山街，是整个胡志明市买卖比特币最方便的地点之一。"
+            - "无论您是抵达还是离开西贡，都可以顺便到 Big Pig 品尝世界级烧烤，并使用我们的比特币 ATM。BTM 位于餐厅内部，在所有营业时间内均可使用。"
+          photos:
+            - caption: "2023 年的 Big Pig：还是红色外观风格，当时放置的是我们较早期的机型之一。"
+            - caption: "Big Pig 让您大快朵颐。"
+            - caption: "内部的 Gustav BTM 系列——由瑞典-越南工程技术打造"
+        capones-chicago-pizza:
+          hours_display: "每天 11:00 – 23:00"
+          description:
+            - "Capone's 是越南唯一提供正宗芝加哥风格深盘披萨的地方。位于二郡草田的中心地带，从其屋顶露台可以欣赏到越南最高建筑——地标 81 大厦的壮丽景色。"
+            - "除了深盘披萨，Capone's 还提供各种美式街头美食。BitcoinVN BTM 就设在餐厅内部，让您在西贡最时尚的街区享用美食的同时，轻松买卖比特币。"
+          photos:
+            - caption: "Capone's——草田的一角芝加哥"
+            - caption: "Gustav BTM——就在 Capone's 楼梯旁"
+            - caption: "Capone's 的深盘特色披萨"
+        green-box:
+          hours_display: "每天 8:00 – 0:00"
+          description:
+            - "草田的 Green Box 是一个受欢迎的健康餐饮场所，在 Le Van Mien 街的 SOMA 提供创意波奇碗、越南融合菜和新鲜果昔，氛围轻松舒适。作为 BitcoinVN BTM 的长期合作伙伴，这里是在二郡用现金买卖比特币的便捷地点。"
+            - "位于胡志明市最具活力的外籍人士和数字游民社区之一，该场所周边步行可达，员工友善，每天营业时间从早上 8 点到午夜——无论您是来享用一顿简餐还是远程工作，都能方便地使用 BitcoinVN BTM。"
+          photos:
+            - caption: "草田的 Green Box——跟着橙色招牌走"
+            - caption: "Green Box 的新鲜美食和轻松氛围"
+            - caption: "SOMA 里的 Green Box 内部"
+        italianis-ben-thanh:
+          hours_display: "每天 11:00 – 23:30"
+          description:
+            - "Italiani's Pizza 位于阮太平街，地处一郡繁华的中心地带，距滨城市场仅几步之遥——这是胡志明市最标志性的地标之一。"
+            - "无论您想要经典的玛格丽特披萨还是更具冒险风味的选择，Italiani's 都能在充满活力的环境中为您提供优质意大利美食。"
+            - "一郡是胡志明市的商业和旅游中心，使这里成为游客和居民都最容易到达的 BTM 位置之一。该区域公共交通便利，步行范围内有众多酒店、商店和景点。"
+            - "来 Italiani's 品味越南的意大利风情，顺便使用 BTM 买几聪比特币吧。"
+          photos:
+            - caption: "著名的布拉塔披萨——Italiani's 菜单上的常客亮点"
+            - caption: '滨城市场的 Italiani''s 配备了我们 Gustav BTM 系列中更加多彩的"法币吞噬者"版本'
+        italianis-han-thuyen:
+          hours_display: "每天 11:00 – 21:45"
+          description:
+            - "韩退银街的 Italiani's 门店紧邻一郡 Ben Nghe 坊的一个美丽公园。这里是享用披萨和完成比特币交易的宁静场所，远离主街的喧嚣。"
+            - "韩退银门店将社区意大利餐厅的魅力与比特币服务的便利完美结合。无论您是比特币老手还是首次购买，友善的工作人员都可以引导您完成整个流程。"
+          photos:
+            - caption: "披萨与比特币：Laszlo Hanyecz 让这个梦幻组合名扬天下"
+            - caption: "跟着橙色 ₿ 走：韩退银 Italiani's 的入口"
+            - caption: "我们的 Gustav BTM 位于楼上——尊重您的隐私。"
+    - name: "头顿"
+      description: "距西贡仅两小时车程的热门海滨度假胜地——阳光、沙滩和比特币。"
+      machines:
+        surf-hostel:
+          hours_display: "每天 8:00 – 22:00"
+          description:
+            - "头顿的 Surf Hostel 是一家冲浪学校兼背包客旅馆，距海滩仅几分钟路程，提供冲浪课程、冲浪板租赁以及深受旅行者、背包客和数字游民喜爱的轻松公共空间。作为 BitcoinVN BTM 合作伙伴，这里是在享受海滨风光的同时买卖比特币的便捷场所。"
+            - "位于胡志明市最受欢迎的周末度假胜地之一，旅馆将轻松的海滩氛围与便捷的比特币服务相结合，营业时间为每天早上 8 点到晚上 10 点。无论是在冲浪课之间充值钱包，还是兑现用于当地消费，游客都可以快速方便地使用 BitcoinVN BTM。"
+          photos:
+            - caption: "Surf Hostel 的 BitcoinVN BTM"
+            - caption: "Surf Hostel 的冲浪课氛围"
