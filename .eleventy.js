@@ -19,12 +19,43 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
 
   // Expose NODE_ENV to templates
-  eleventyConfig.addGlobalData("isProduction", process.env.NODE_ENV === "production");
+  const isProduction = process.env.NODE_ENV === "production";
+  eleventyConfig.addGlobalData("isProduction", isProduction);
 
   // Passthrough copy
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
+
+  // Process CSS through build pipeline (minify in production)
+  eleventyConfig.addTemplateFormats("css");
+  eleventyConfig.addExtension("css", {
+    outputFileExtension: "css",
+    compile(inputContent, inputPath) {
+      if (!inputPath.includes("/css/")) return;
+      return async () => {
+        if (!isProduction) return inputContent;
+        const result = new CleanCSS({}).minify(inputContent);
+        if (result.errors?.length) {
+          console.error(`[css] CleanCSS errors:`, result.errors);
+          return inputContent;
+        }
+        return result.styles;
+      };
+    },
+  });
+
+  // Process JS through build pipeline (minify in production)
+  eleventyConfig.addTemplateFormats("js");
+  eleventyConfig.addExtension("js", {
+    outputFileExtension: "js",
+    compile(inputContent, inputPath) {
+      if (!inputPath.includes("/js/")) return;
+      return async () => {
+        if (!isProduction) return inputContent;
+        const result = await minify(inputContent);
+        return result.code;
+      };
+    },
+  });
 
   // Nunjucks filter: format numbers with leading zero
   eleventyConfig.addFilter("pad", (num, size) => {
@@ -134,25 +165,6 @@ module.exports = function (eleventyConfig) {
       });
     });
   });
-
-  // Minify CSS & JS in production builds
-  if (process.env.NODE_ENV === "production") {
-    eleventyConfig.on("eleventy.after", async () => {
-      const outDir = "_site";
-
-      // Minify CSS
-      const cssFile = path.join(outDir, "css", "styles.css");
-      const cssInput = fs.readFileSync(cssFile, "utf8");
-      const cssOutput = new CleanCSS().minify(cssInput);
-      fs.writeFileSync(cssFile, cssOutput.styles);
-
-      // Minify JS
-      const jsFile = path.join(outDir, "js", "main.js");
-      const jsInput = fs.readFileSync(jsFile, "utf8");
-      const jsOutput = await minify(jsInput);
-      fs.writeFileSync(jsFile, jsOutput.code);
-    });
-  }
 
   return {
     pathPrefix: process.env.PATHPREFIX || "/",
