@@ -32,6 +32,17 @@ regions:
         style: "American Style BBQ"
         websiteName: "bigpig.vn"
         websiteUrl: "https://bigpig.vn"
+        photos:
+          - src: "/images/locations/big-pig-bbq/big-pig-bbq-1.jpg"
+            alt: "BitcoinVN BTM at Big Pig BBQ & Beer in Ho Chi Minh City"
+            caption: "BitcoinVN BTM at Big Pig BBQ & Beer"
+            width: 1280
+            height: 960
+          - src: "/images/locations/big-pig-bbq/big-pig-bbq-2.jpg"
+            alt: "Big Pig BBQ & Beer venue photo in Ho Chi Minh City"
+            caption: "Big Pig BBQ & Beer location overview"
+            width: 1280
+            height: 960
         description:
           - "Bitcoin & Meat — what a combination! Big Pig BBQ brings authentic American-style BBQ to Saigon, serving up brisket, ribs, pulled pork and more. Located right next to the airport on Truong Son street, it's one of the most convenient spots to buy or sell Bitcoin in all of Ho Chi Minh City."
           - "Whether you're arriving in or departing from Saigon, swing by Big Pig to grab some world-class BBQ and use our Bitcoin ATM. The BTM is located inside the restaurant and available during all opening hours."
