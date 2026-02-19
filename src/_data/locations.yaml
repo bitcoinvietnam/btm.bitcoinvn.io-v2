@@ -109,19 +109,19 @@ regions:
         photos:
           - src: "/images/locations/green-box/green-box-1.jpg"
             alt: "Green Box venue photo in Thao Dien"
-            caption: "Green Box in Thao Dien"
+            caption: "Green Box in Thao Dien - follow the orange sign"
             width: 1280
             height: 961
-          - src: "/images/locations/green-box/green-box-2.jpg"
-            alt: "Interior detail at Green Box in Thao Dien"
-            caption: "Inside Green Box at SOMA"
-            width: 768
-            height: 1024
           - src: "/images/locations/green-box/green-box-3.jpg"
             alt: "Menu and atmosphere photo at Green Box"
             caption: "Fresh food and relaxed atmosphere at Green Box"
             width: 1269
             height: 1243
+          - src: "/images/locations/green-box/green-box-2.jpg"
+            alt: "Interior detail at Green Box in Thao Dien"
+            caption: "Inside Green Box at SOMA"
+            width: 768
+            height: 1024
         description:
           - "Green Box in Thao Dien is a popular healthy dining spot, serving creative poke bowls, Viet-fusion dishes, and fresh smoothies in a relaxed community setting at SOMA on Le Van Mien Street. As a long-time BitcoinVN BTM partner, it offers a convenient place to buy or sell Bitcoin for cash in District 2."
           - "Located in one of Ho Chi Minh City's most vibrant expat and digital-nomad neighborhoods, the venue features walkable surroundings, friendly staff, and daily opening hours from 8 AM to midnight - making BitcoinVN BTM access simple whether you're stopping by for a quick meal or a remote-work session."
