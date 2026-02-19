@@ -1,28 +1,34 @@
 ---
 layout: base.njk
 pagination:
-  data: collections.btmLocations
+  data: collections.btmLocationsAll
   size: 1
-  alias: machine
-permalink: "locations/{{ machine.slug }}/index.html"
+  alias: item
+permalink: "{{ item.localePrefix }}locations/{{ item.machine.slug }}/index.html"
 eleventyComputed:
-  pageTitle: "{{ machine.name }} BTM — {{ site.name }}"
-  pageDescription: "Buy & sell Bitcoin for cash at {{ machine.name }}, {{ machine.district }}. {{ machine.hours.display }}. No KYC required."
+  locale: "{{ item.locale }}"
+  pageTitle: "{{ item.machine.name }} BTM — {{ site.name }}"
+  pageDescription: "{{ i18n[item.locale].ui.location_page.cta_sub }}"
+  basePath: "locations/{{ item.machine.slug }}/"
 ---
+{% set machine = item.machine %}
+{% set t = i18n[item.locale] %}
+{% set localeHome = "/" + item.localePrefix %}
 
 {# ======== Navigation ======== #}
 <nav class="nav scrolled" id="nav">
   <div class="nav-container">
-    <a href="{{ '/' | url }}" class="nav-logo">
+    <a href="{{ localeHome }}" class="nav-logo">
       <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
       <span class="logo-btm">BTM</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="{{ '/' | url }}#locations">All Locations</a>
-      <a href="{{ '/' | url }}#how-it-works">How It Works</a>
-      <a href="{{ '/' | url }}#faq">FAQ</a>
+      <a href="{{ localeHome }}#locations">{{ t.ui.nav.all_locations }}</a>
+      <a href="{{ localeHome }}#how-it-works">{{ t.ui.nav.how_it_works }}</a>
+      <a href="{{ localeHome }}#faq">{{ t.ui.nav.faq }}</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    {% include "locale-switcher.njk" %}
+    <button class="nav-toggle" id="navToggle" aria-label="{{ t.ui.nav.toggle_menu }}">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -35,9 +41,9 @@ eleventyComputed:
   {# ======== Breadcrumb ======== #}
   <div class="container">
     <nav class="breadcrumb">
-      <a href="{{ '/' | url }}">Home</a>
+      <a href="{{ localeHome }}">{{ t.ui.location_page.breadcrumb_home }}</a>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <a href="{{ '/' | url }}#locations">Locations</a>
+      <a href="{{ localeHome }}#locations">{{ t.ui.location_page.breadcrumb_locations }}</a>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       <span>{{ machine.name }}</span>
     </nav>
@@ -60,7 +66,7 @@ eleventyComputed:
           <div class="location-info-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <h3>Opening Hours</h3>
+          <h3>{{ t.ui.location_page.opening_hours }}</h3>
           <span class="location-hours location-hours-centered">
             <span class="location-status-dot"></span>
             <span class="location-status-text"></span>
@@ -71,15 +77,15 @@ eleventyComputed:
           <div class="location-info-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
-          <h3>Cryptocurrencies</h3>
-          <p>Bitcoin (BTC) — Buy & Sell</p>
+          <h3>{{ t.ui.location_page.cryptocurrencies }}</h3>
+          <p>{{ t.ui.location_page.crypto_value }}</p>
         </div>
         <div class="location-info-card">
           <div class="location-info-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h3>Interface Languages</h3>
-          <p>Vietnamese, English</p>
+          <h3>{{ t.ui.location_page.interface_langs }}</h3>
+          <p>{{ t.ui.location_page.interface_value }}</p>
         </div>
       </div>
     </div>
@@ -98,26 +104,26 @@ eleventyComputed:
     <div class="container">
       <div class="location-about-grid">
         <div class="location-about-details">
-          <h2>About This Location</h2>
+          <h2>{{ t.ui.location_page.about }}</h2>
           <div class="location-detail-list">
             <div class="location-detail-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <div>
-                <strong>Address</strong>
+                <strong>{{ t.ui.location_page.address }}</strong>
                 <p>{{ machine.address }}</p>
               </div>
             </div>
             <div class="location-detail-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <div>
-                <strong>Phone</strong>
+                <strong>{{ t.ui.location_page.phone }}</strong>
                 <p>{{ machine.phone }}</p>
               </div>
             </div>
             <div class="location-detail-item" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               <div>
-                <strong>Hours</strong>
+                <strong>{{ t.ui.location_page.hours }}</strong>
                 <p>
                   {{ machine.hours.display }}
                   <span class="location-hours location-hours-inline">
@@ -130,14 +136,14 @@ eleventyComputed:
             <div class="location-detail-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
               <div>
-                <strong>Style</strong>
+                <strong>{{ t.ui.location_page.style }}</strong>
                 <p>{{ machine.style }}</p>
               </div>
             </div>
             <div class="location-detail-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
               <div>
-                <strong>Website</strong>
+                <strong>{{ t.ui.location_page.website }}</strong>
                 <p><a href="{{ machine.websiteUrl }}" target="_blank" rel="noopener">{{ machine.websiteName }}</a></p>
               </div>
             </div>
@@ -147,7 +153,6 @@ eleventyComputed:
           {% for paragraph in machine.description %}
           <p>{{ paragraph }}</p>
           {% endfor %}
-
         </div>
       </div>
     </div>
@@ -157,7 +162,7 @@ eleventyComputed:
   {% if machine.photos and machine.photos.length %}
   <section class="location-gallery">
     <div class="container">
-      <h2>Inside {{ machine.name }}</h2>
+      <h2>{{ t.ui.location_page.gallery_heading }} {{ machine.name }}</h2>
       <div class="location-gallery-grid">
         {% for photo in machine.photos %}
         {% if photo.src %}
@@ -185,22 +190,22 @@ eleventyComputed:
   <section class="location-cta">
     <div class="container">
       <div class="location-cta-card">
-        <h2>Visit {{ machine.name }}</h2>
-        <p>Buy or sell Bitcoin for cash — no KYC required.</p>
+        <h2>{{ machine.name }}</h2>
+        <p>{{ t.ui.location_page.cta_sub }}</p>
         <div class="location-cta-actions">
           <a href="{{ machine.mapsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Open in Google Maps
+            {{ t.ui.location_page.cta_maps }}
           </a>
-          <a href="{{ '/' | url }}#locations" class="btn btn-secondary">
-            View All Locations
+          <a href="{{ localeHome }}#locations" class="btn btn-secondary">
+            {{ t.ui.location_page.cta_all_locations }}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
         <div class="location-cta-contact">
-          <span>Questions?</span>
-          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">Telegram</a>
-          <a href="mailto:{{ site.contact.email }}">Email</a>
+          <span>{{ t.ui.location_page.questions }}</span>
+          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">{{ t.ui.contact.telegram }}</a>
+          <a href="mailto:{{ site.contact.email }}">{{ t.ui.contact.email }}</a>
         </div>
       </div>
     </div>
@@ -212,30 +217,30 @@ eleventyComputed:
   <div class="container">
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="{{ '/' | url }}" class="nav-logo">
+        <a href="{{ localeHome }}" class="nav-logo">
           <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
           <span class="logo-btm">BTM</span>
         </a>
-        <p class="footer-tagline">{{ site.tagline }}</p>
+        <p class="footer-tagline">{{ t.site.tagline }}</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="{{ '/' | url }}#features">Why Us</a>
-          <a href="{{ '/' | url }}#locations">Locations</a>
-          <a href="{{ '/' | url }}#how-it-works">How It Works</a>
-          <a href="{{ '/' | url }}#faq">FAQ</a>
+          <h4>{{ t.ui.footer.quick_links }}</h4>
+          <a href="{{ localeHome }}#features">{{ t.ui.nav.why_us }}</a>
+          <a href="{{ localeHome }}#locations">{{ t.ui.nav.locations }}</a>
+          <a href="{{ localeHome }}#how-it-works">{{ t.ui.nav.how_it_works }}</a>
+          <a href="{{ localeHome }}#faq">{{ t.ui.nav.faq }}</a>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
-          <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">Buy Bitcoin Online</a>
-          <a href="{{ '/' | url }}#contact">Contact Support</a>
-          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">BTM Status Updates</a>
+          <h4>{{ t.ui.footer.services }}</h4>
+          <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">{{ t.ui.footer.buy_online }}</a>
+          <a href="{{ localeHome }}#contact">{{ t.ui.footer.contact_support }}</a>
+          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">{{ t.ui.footer.status_updates }}</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ 2025 }} BitcoinVN. All rights reserved.</p>
+      <p>&copy; {{ 2025 }} {{ t.ui.footer.copyright }}</p>
       <div class="footer-social">
         <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" aria-label="Telegram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
@@ -247,3 +252,8 @@ eleventyComputed:
     </div>
   </div>
 </footer>
+
+{# Pass UI labels to JS #}
+<script>
+  window.BTM_UI = { open: "{{ t.ui.js.open }}", closed: "{{ t.ui.js.closed }}" };
+</script>

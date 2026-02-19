@@ -1,21 +1,33 @@
 ---
 layout: base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: pageLocale
+permalink: "/{{ pageLocale.pathPrefix }}index.html"
+eleventyComputed:
+  locale: "{{ pageLocale.code }}"
+  pageTitle: "{{ site.name }} — {{ i18n[pageLocale.code].site.tagline }}"
+  pageDescription: "{{ i18n[pageLocale.code].site.description }}"
+  basePath: ""
 ---
+{% set t = i18n[pageLocale.code] %}
 
 {# ======== Navigation ======== #}
 <nav class="nav" id="nav">
   <div class="nav-container">
-    <a href="#" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
       <span class="logo-btm">BTM</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="#features">Why Us</a>
-      <a href="#locations">Locations</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#faq">FAQ</a>
+      <a href="#features">{{ t.ui.nav.why_us }}</a>
+      <a href="#locations">{{ t.ui.nav.locations }}</a>
+      <a href="#how-it-works">{{ t.ui.nav.how_it_works }}</a>
+      <a href="#faq">{{ t.ui.nav.faq }}</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    {% include "locale-switcher.njk" %}
+    <button class="nav-toggle" id="navToggle" aria-label="{{ t.ui.nav.toggle_menu }}">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -115,20 +127,19 @@ layout: base.njk
   <div class="container hero-content">
     <div class="hero-badge">
       <span class="pulse-dot"></span>
-      Operating since {{ site.since }}
+      {{ t.ui.hero.operating_since }} {{ site.since }}
     </div>
     <h1 class="hero-title">
-      Buy &amp; Sell <span class="gradient-text">Bitcoin</span><br>
-      for Cash in Vietnam
+      {{ t.ui.hero.headline | replace("Bitcoin", '<span class="gradient-text">Bitcoin</span><br>') | safe }}
     </h1>
-    <p class="hero-subtitle">{{ site.tagline }}</p>
+    <p class="hero-subtitle">{{ t.site.tagline }}</p>
     <div class="hero-actions">
       <a href="#locations" class="btn btn-primary">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Find a BTM
+        {{ t.ui.hero.cta_find }}
       </a>
       <a href="#how-it-works" class="btn btn-secondary">
-        Learn How It Works
+        {{ t.ui.hero.cta_learn }}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -139,22 +150,22 @@ layout: base.njk
       {% endfor %}
       <div class="stat">
         <span class="stat-value">{{ totalMachines }}</span>
-        <span class="stat-label">BTM Locations</span>
+        <span class="stat-label">{{ t.ui.hero.stat_locations }}</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <span class="stat-value">{{ 2025 - site.since }}+</span>
-        <span class="stat-label">Years Operating</span>
+        <span class="stat-label">{{ t.ui.hero.stat_years }}</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <span class="stat-value">0</span>
-        <span class="stat-label">Friction</span>
+        <span class="stat-label">{{ t.ui.hero.stat_friction }}</span>
       </div>
     </div>
   </div>
   <div class="hero-scroll-indicator">
-    <span>Scroll to explore</span>
+    <span>{{ t.ui.hero.scroll }}</span>
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
   </div>
 </section>
@@ -165,7 +176,7 @@ layout: base.njk
   <div class="container">
     <div class="notice-content">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <p><strong>Notice:</strong> {{ site.notice.message }}</p>
+      <p><strong>{{ t.ui.notice_label }}</strong> {{ t.site.notice.message }}</p>
     </div>
   </div>
 </section>
@@ -175,18 +186,19 @@ layout: base.njk
 <section class="features" id="features">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Why Choose Us</span>
-      <h2 class="section-title">{{ features.heading | replace("BitcoinVN BTM", '<span class="gradient-text">BitcoinVN BTM</span>') | safe }}</h2>
-      <p class="section-desc">{{ features.subheading }}</p>
+      <span class="section-tag">{{ t.ui.features.section_tag }}</span>
+      <h2 class="section-title">{{ t.features.heading | replace("BitcoinVN BTM", '<span class="gradient-text">BitcoinVN BTM</span>') | safe }}</h2>
+      <p class="section-desc">{{ t.features.subheading }}</p>
     </div>
     <div class="features-grid">
       {% for feature in features.items %}
+      {% set ti = t.features.items[loop.index0] %}
       <div class="feature-card" data-animate>
         <div class="feature-icon">
           {% include "icons/" + feature.icon + ".svg" %}
         </div>
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
+        <h3>{{ ti.title }}</h3>
+        <p>{{ ti.description }}</p>
       </div>
       {% endfor %}
     </div>
@@ -197,18 +209,20 @@ layout: base.njk
 <section class="locations" id="locations">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Our Machines</span>
-      <h2 class="section-title">BTM <span class="gradient-text">Locations</span></h2>
-      <p class="section-desc">Find a BitcoinVN BTM near you across Ho Chi Minh City and Vung Tau.</p>
+      <span class="section-tag">{{ t.ui.locations_section.section_tag }}</span>
+      <h2 class="section-title">BTM <span class="gradient-text">{{ t.ui.nav.locations }}</span></h2>
+      <p class="section-desc">{{ t.ui.locations_section.subtitle }}</p>
     </div>
 
     <div class="locations-grid">
       {% for region in locations.regions %}
+      {% set tRegion = t.locations.regions[loop.index0] %}
       <div class="location-region">
         <div class="region-header">
-          <h3>{{ region.name }}</h3>
-          <span class="location-count">{{ region.machines.length }} machine{{ "s" if region.machines.length > 1 }}</span>
-          {% if region.description %}<p class="region-description">{{ region.description }}</p>{% endif %}
+          <h3>{{ tRegion.name if tRegion else region.name }}</h3>
+          <span class="location-count">{{ region.machines.length }} {{ t.ui.locations_section.machine_plural if region.machines.length > 1 else t.ui.locations_section.machine_singular }}</span>
+          {% set regionDesc = tRegion.description if tRegion else region.description %}
+          {% if regionDesc %}<p class="region-description">{{ regionDesc }}</p>{% endif %}
         </div>
 
         {# Per-region map #}
@@ -216,7 +230,8 @@ layout: base.njk
 
         <div class="location-cards">
           {% for machine in region.machines %}
-          <a href="{{ ('/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
+          {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
+          <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
             <div class="location-pin">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
@@ -226,7 +241,8 @@ layout: base.njk
               <span class="location-hours">
                 <span class="location-status-dot"></span>
                 <span class="location-status-text"></span>
-                <span class="location-hours-range">{{ machine.hours.display }}</span>
+                {% set tMachine = tRegion.machines[machine.slug] if tRegion and tRegion.machines else none %}
+                <span class="location-hours-range">{{ tMachine.hours_display if tMachine and tMachine.hours_display else machine.hours.display }}</span>
               </span>
             </div>
           </a>
@@ -238,7 +254,7 @@ layout: base.njk
     <div class="locations-cta">
       <a href="{{ site.mapsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        View All on Google Maps
+        {{ t.ui.locations_section.view_maps }}
       </a>
     </div>
   </div>
@@ -248,20 +264,20 @@ layout: base.njk
 <section class="how-it-works" id="how-it-works">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Simple Process</span>
-      <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
-      <p class="section-desc">Buying or selling Bitcoin at our BTMs is simple and straightforward.</p>
+      <span class="section-tag">{{ t.ui.how_it_works.section_tag }}</span>
+      <h2 class="section-title">{{ t.ui.nav.how_it_works | replace("It Works", 'It <span class="gradient-text">Works</span>') | safe }}</h2>
+      <p class="section-desc">{{ t.ui.how_it_works.subtitle }}</p>
     </div>
 
     <div class="process-tabs">
-      <button class="process-tab active" data-tab="buy">Buy Bitcoin</button>
-      <button class="process-tab" data-tab="sell">Sell Bitcoin</button>
+      <button class="process-tab active" data-tab="buy">{{ t.ui.how_it_works.tab_buy }}</button>
+      <button class="process-tab" data-tab="sell">{{ t.ui.how_it_works.tab_sell }}</button>
     </div>
 
     {% for process in ["buy", "sell"] %}
     <div class="process-content{{ " active" if loop.first }}" id="{{ process }}">
       <div class="steps">
-        {% for step in howItWorks[process] %}
+        {% for step in t.how_it_works[process] %}
         <div class="step" data-animate>
           <div class="step-number">{{ loop.index | pad }}</div>
           <div class="step-content">
@@ -280,11 +296,11 @@ layout: base.njk
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Questions?</span>
-      <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <span class="section-tag">{{ t.ui.faq.section_tag }}</span>
+      <h2 class="section-title">{{ t.ui.faq.heading | replace("Questions", '<span class="gradient-text">Questions</span>') | safe }}</h2>
     </div>
     <div class="faq-list">
-      {% for item in faq.items %}
+      {% for item in t.faq.items %}
       <div class="faq-item" data-animate>
         <button class="faq-question">
           <span>{{ item.question }}</span>
@@ -304,10 +320,10 @@ layout: base.njk
   <div class="container">
     <div class="host-card" data-animate>
       <div class="host-content">
-        <h2>Want to Host a BTM?</h2>
-        <p>Bring a Bitcoin ATM to your business location. Attract crypto-savvy customers and earn hosting fees. Contact us to learn about our hosting program.</p>
+        <h2>{{ t.ui.host.heading }}</h2>
+        <p>{{ t.ui.host.body }}</p>
         <a href="mailto:{{ site.contact.email }}" class="btn btn-primary">
-          Contact Us About Hosting
+          {{ t.ui.host.cta }}
         </a>
       </div>
       <div class="host-graphic">
@@ -326,30 +342,30 @@ layout: base.njk
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Reach Out</span>
-      <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-      <p class="section-desc">Have questions? Our team is available to help you via multiple channels.</p>
+      <span class="section-tag">{{ t.ui.contact.section_tag }}</span>
+      <h2 class="section-title">{{ t.ui.contact.heading | replace("Touch", '<span class="gradient-text">Touch</span>') | safe }}</h2>
+      <p class="section-desc">{{ t.ui.contact.subtitle }}</p>
     </div>
     <div class="contact-grid">
       <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" class="contact-card" data-animate>
         <div class="contact-icon telegram-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         </div>
-        <h3>Telegram</h3>
+        <h3>{{ t.ui.contact.telegram }}</h3>
         <p>{{ site.contact.telegram.handle }}</p>
       </a>
       <a href="{{ site.contact.facebook.url }}" target="_blank" rel="noopener" class="contact-card" data-animate>
         <div class="contact-icon facebook-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </div>
-        <h3>Facebook</h3>
+        <h3>{{ t.ui.contact.facebook }}</h3>
         <p>{{ site.contact.facebook.handle }}</p>
       </a>
       <a href="mailto:{{ site.contact.email }}" class="contact-card" data-animate>
         <div class="contact-icon email-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <h3>Email</h3>
+        <h3>{{ t.ui.contact.email }}</h3>
         <p>{{ site.contact.email }}</p>
       </a>
     </div>
@@ -361,31 +377,31 @@ layout: base.njk
   <div class="container">
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="#" class="nav-logo">
+        <a href="/" class="nav-logo">
           <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
           <span class="logo-btm">BTM</span>
         </a>
-        <p class="footer-tagline">{{ site.tagline }}</p>
+        <p class="footer-tagline">{{ t.site.tagline }}</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="#features">Why Us</a>
-          <a href="#locations">Locations</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#faq">FAQ</a>
+          <h4>{{ t.ui.footer.quick_links }}</h4>
+          <a href="#features">{{ t.ui.nav.why_us }}</a>
+          <a href="#locations">{{ t.ui.nav.locations }}</a>
+          <a href="#how-it-works">{{ t.ui.nav.how_it_works }}</a>
+          <a href="#faq">{{ t.ui.nav.faq }}</a>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
-          <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">Buy Bitcoin Online</a>
-          <a href="#contact">Contact Support</a>
-          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">BTM Status Updates</a>
-          <a href="https://bitcoinvn.io/shop" target="_blank" rel="noopener">Hardware Wallets</a>
+          <h4>{{ t.ui.footer.services }}</h4>
+          <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">{{ t.ui.footer.buy_online }}</a>
+          <a href="#contact">{{ t.ui.footer.contact_support }}</a>
+          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">{{ t.ui.footer.status_updates }}</a>
+          <a href="https://bitcoinvn.io/shop" target="_blank" rel="noopener">{{ t.ui.footer.hardware_wallets }}</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ 2025 }} BitcoinVN. All rights reserved.</p>
+      <p>&copy; {{ 2025 }} {{ t.ui.footer.copyright }}</p>
       <div class="footer-social">
         <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" aria-label="Telegram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
@@ -398,7 +414,17 @@ layout: base.njk
   </div>
 </footer>
 
-{# Pass location data to JS for the map #}
+{# Pass location data and UI labels to JS #}
 <script>
   window.BTM_LOCATIONS = {{ locations | dump | safe }};
+  window.BTM_UI = { open: "{{ t.ui.js.open }}", closed: "{{ t.ui.js.closed }}" };
+  window.BTM_HOURS_I18N = {
+    {% for region in locations.regions %}
+    {% set tRegion = t.locations.regions[loop.index0] %}
+    {% for machine in region.machines %}
+    {% set tMachine = tRegion.machines[machine.slug] if tRegion and tRegion.machines else none %}
+    "{{ machine.slug }}": "{{ tMachine.hours_display if tMachine and tMachine.hours_display else machine.hours.display }}",
+    {% endfor %}
+    {% endfor %}
+  };
 </script>

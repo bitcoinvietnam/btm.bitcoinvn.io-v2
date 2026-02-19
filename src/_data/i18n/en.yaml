@@ -1,0 +1,214 @@
+ui:
+  notice_label: "Notice:"
+  nav:
+    why_us: "Why Us"
+    locations: "Locations"
+    how_it_works: "How It Works"
+    faq: "FAQ"
+    toggle_menu: "Toggle menu"
+    all_locations: "All Locations"
+  hero:
+    operating_since: "Operating since"
+    headline: "Buy & Sell Bitcoin for Cash in Vietnam"
+    cta_find: "Find a BTM"
+    cta_learn: "Learn How It Works"
+    stat_locations: "BTM Locations"
+    stat_years: "Years Operating"
+    stat_friction: "Friction"
+    scroll: "Scroll to explore"
+  features:
+    section_tag: "Why Choose Us"
+  locations_section:
+    section_tag: "Our Machines"
+    subtitle: "Find a BitcoinVN BTM near you across Ho Chi Minh City and Vung Tau."
+    machine_singular: "machine"
+    machine_plural: "machines"
+    view_maps: "View All on Google Maps"
+  how_it_works:
+    section_tag: "Simple Process"
+    subtitle: "Buying or selling Bitcoin at our BTMs is simple and straightforward."
+    tab_buy: "Buy Bitcoin"
+    tab_sell: "Sell Bitcoin"
+  faq:
+    section_tag: "Questions?"
+    heading: "Frequently Asked Questions"
+  host:
+    heading: "Want to Host a BTM?"
+    body: "Bring a Bitcoin ATM to your business location. Attract crypto-savvy customers and earn hosting fees. Contact us to learn about our hosting program."
+    cta: "Contact Us About Hosting"
+  contact:
+    section_tag: "Reach Out"
+    heading: "Get In Touch"
+    subtitle: "Have questions? Our team is available to help you via multiple channels."
+    telegram: "Telegram"
+    facebook: "Facebook"
+    email: "Email"
+  footer:
+    quick_links: "Quick Links"
+    services: "Services"
+    buy_online: "Buy Bitcoin Online"
+    contact_support: "Contact Support"
+    status_updates: "BTM Status Updates"
+    hardware_wallets: "Hardware Wallets"
+    copyright: "BitcoinVN. All rights reserved."
+  location_page:
+    breadcrumb_home: "Home"
+    breadcrumb_locations: "Locations"
+    opening_hours: "Opening Hours"
+    cryptocurrencies: "Cryptocurrencies"
+    crypto_value: "Bitcoin (BTC) — Buy & Sell"
+    interface_langs: "Interface Languages"
+    interface_value: "Vietnamese, English"
+    about: "About This Location"
+    address: "Address"
+    phone: "Phone"
+    hours: "Hours"
+    style: "Style"
+    website: "Website"
+    gallery_heading: "Inside"
+    cta_sub: "Buy or sell Bitcoin for cash — no KYC required."
+    cta_maps: "Open in Google Maps"
+    cta_all_locations: "View All Locations"
+    questions: "Questions?"
+  js:
+    open: "Open now"
+    closed: "Closed"
+
+site:
+  tagline: "The fastest & most private way to buy & sell Bitcoin for cash in Vietnam"
+  description: "Self-service Bitcoin ATMs across Ho Chi Minh City and Vung Tau. No bank account. No KYC. Walk up, transact, walk away."
+  notice:
+    message: "SMS delivery for OTP codes is currently affected by domestic telecom changes. Our support team is available to assist with your transaction via Telegram or Facebook."
+
+features:
+  heading: "9 Reasons to Use BitcoinVN BTM"
+  subheading: "Our service is designed to protect your financial privacy when buying or selling BTC for cash in Vietnam."
+  items:
+    - title: "No Bank Account Needed"
+      description: "Buy or sell Bitcoin with just cash. No bank account, no wire transfers, no financial intermediaries required."
+    - title: "Fast & Convenient"
+      description: "Almost as easy as buying a bottle of Coca-Cola from a vending machine. Walk up, transact, and you're done."
+    - title: "Data-minimal Approach"
+      description: "Where permitted, transactions can be completed with limited personal information, helping protect your financial privacy."
+    - title: "Transparent Pricing"
+      description: "The price you see is the price you get. Rates are locked at the moment of your transaction — no hidden fees or surprises."
+    - title: "Real-Time Confirmation"
+      description: "Transactions are broadcast to the blockchain instantly. Track your transaction in real-time with provided tracking links."
+    - title: "Bilingual Support"
+      description: "Full support in both English and Vietnamese. Our team is ready to help you in your preferred language."
+    - title: "Instant On-Site Exchange"
+      description: "Complete your transaction directly at the location, without relying on unknown counterparties or advance transfers."
+    - title: "Reliable & Monitored"
+      description: "All BTMs are continuously monitored with real-time status updates. Availability posted on our Telegram and Facebook channels."
+    - title: "Trusted & Established"
+      description: "Operated by BitcoinVN — Vietnam's longest-running Bitcoin company. Years of proven reliability serving thousands of customers."
+
+how_it_works:
+  buy:
+    - title: "Walk Up to a BTM"
+      description: "Find the nearest BitcoinVN BTM location and approach the machine. No appointment needed."
+    - title: 'Select "Buy Bitcoin"'
+      description: "Tap the Buy option on the screen. You'll see the current Bitcoin price displayed in VND."
+    - title: "Scan Your Wallet or Get a Paper Wallet"
+      description: "Scan the QR code of your existing Bitcoin wallet, or let the machine generate a paper wallet for you."
+    - title: "Insert Cash"
+      description: "Feed your VND bills into the machine. The screen will display the corresponding Bitcoin amount in real time."
+    - title: "Confirm & Receive Bitcoin"
+      description: "Confirm the transaction and your Bitcoin is sent instantly to your wallet with a real-time tracking link."
+  sell:
+    - title: "Walk Up to a BTM"
+      description: "Visit any BitcoinVN BTM location. All machines support both buying and selling Bitcoin."
+    - title: 'Select "Sell Bitcoin"'
+      description: "Tap the Sell option on the screen. The machine will display the current sell rate in VND."
+    - title: "Enter Amount & Send Bitcoin"
+      description: "Enter how much VND you want to receive. The machine will display a QR code — send your Bitcoin to that address."
+    - title: "Wait for Confirmation"
+      description: "The machine will wait for blockchain confirmation. You can use the pre-sell option to speed this up."
+    - title: "Collect Your Cash"
+      description: "Once confirmed, the machine dispenses your VND cash. It's that simple."
+
+faq:
+  items:
+    - question: "What is a Bitcoin ATM?"
+      answer: "A Bitcoin ATM (or BTM) is a self-service cryptocurrency kiosk that allows you to buy and sell Bitcoin using cash. It works similarly to a regular ATM, but instead of dispensing cash from your bank account, it lets you exchange cash for Bitcoin and vice versa."
+    - question: "Why should I use a BitcoinVN BTM?"
+      answer: "BitcoinVN BTMs offer the fastest and most private way to buy and sell Bitcoin in Vietnam. No bank account is needed and transactions are completed in minutes. We've been operating since 2014, making us the most established Bitcoin service in Vietnam."
+    - question: "Do I need to provide ID or verify my identity (KYC)?"
+      answer: "BitcoinVN BTMs are designed for straightforward, in-person Bitcoin transactions. For typical everyday usage, transactions can be completed quickly at the machine without a lengthy onboarding process — following a data-minimal approach that helps limit unnecessary exposure of personal information."
+    - question: "Are there transaction limits?"
+      answer: "There are currently no transaction limits on our BTMs. You can buy or sell as much Bitcoin as you need in a single transaction."
+    - question: "What are the fees?"
+      answer: "Our fee structure is competitive and transparent. The price displayed on the BTM screen includes all fees — what you see is what you get. No hidden charges or surprise deductions."
+    - question: "Is Bitcoin legal in Vietnam?"
+      answer: "While Bitcoin is not recognized as legal tender in Vietnam, owning and trading Bitcoin is not illegal."
+    - question: "How can I check if a BTM is currently online?"
+      answer: "We post real-time BTM status updates on our <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram channel</a> and <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook page</a>. Follow us for the latest availability information."
+    - question: "What if I don't have a Bitcoin wallet?"
+      answer: "No problem! Our BTMs can generate a paper wallet for you during the purchase. You'll receive a printed paper with your Bitcoin wallet address and private key. We recommend transferring your funds to a secure wallet afterwards — for long-term storage, a hardware wallet is the safest option. You can get one from the <a href='https://bitcoinvn.io/shop' target='_blank' rel='noopener'>BitcoinVN Shop</a>, an official supplier of devices from leading brands such as Trezor and Ledger."
+    - question: "I'm having issues with SMS verification. What should I do?"
+      answer: "Due to recent domestic telecom changes, SMS delivery for OTP codes may be affected. Please contact our support team via <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> or <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> and we'll help you complete your transaction."
+    - question: "Can I buy Bitcoin online instead?"
+      answer: "Yes! If you prefer to buy Bitcoin online, visit <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> to use our online exchange service. Bank transfers and other payment methods are available."
+
+locations:
+  regions:
+    - name: "Ho Chi Minh City"
+      description: "Vietnam's largest city and economic hub — home to a thriving expat community and growing Bitcoin adoption."
+      machines:
+        big-pig-bbq:
+          hours_display: "Every day 10:30 AM – 11:30 PM"
+          description:
+            - "Bitcoin & Meat — what a combination! Big Pig BBQ brings authentic American-style BBQ to Saigon, serving up brisket, ribs, pulled pork and more. Located right next to the airport on Truong Son street, it's one of the most convenient spots to buy or sell Bitcoin in all of Ho Chi Minh City."
+            - "Whether you're arriving in or departing from Saigon, swing by Big Pig to grab some world-class BBQ and use our Bitcoin ATM. The BTM is located inside the restaurant and available during all opening hours."
+          photos:
+            - caption: "Big Pig in 2023: still in its red exterior style, and at the time hosting one of the older models in our lineup."
+            - caption: "Big Pig lets you load up on meat aplenty."
+            - caption: "Gustav BTM series inside - powered by Swedish-Vietnamese engineering"
+        capones-chicago-pizza:
+          hours_display: "Every day 11 AM – 11 PM"
+          description:
+            - "Capone's is the only place in Vietnam serving authentic Chicago-style deep dish pizza. Located in the heart of Thao Dien, District 2, the restaurant offers stunning views of Landmark 81 — the tallest building in Vietnam — from its rooftop terrace."
+            - "In addition to deep dish pizza, Capone's serves a range of American street food favorites. The BitcoinVN BTM is conveniently located inside the restaurant, making it easy to buy or sell Bitcoin while enjoying a meal in one of Saigon's trendiest neighborhoods."
+          photos:
+            - caption: "Capone's - a piece of Chicago in Thao Dien"
+            - caption: "Gustav BTM - next to the staircase inside Capone's"
+            - caption: "Deep-dish specialty at Capone's"
+        green-box:
+          hours_display: "Every day 8 AM – 12 AM"
+          description:
+            - "Green Box in Thao Dien is a popular healthy dining spot, serving creative poke bowls, Viet-fusion dishes, and fresh smoothies in a relaxed community setting at SOMA on Le Van Mien Street. As a long-time BitcoinVN BTM partner, it offers a convenient place to buy or sell Bitcoin for cash in District 2."
+            - "Located in one of Ho Chi Minh City's most vibrant expat and digital-nomad neighborhoods, the venue features walkable surroundings, friendly staff, and daily opening hours from 8 AM to midnight - making BitcoinVN BTM access simple whether you're stopping by for a quick meal or a remote-work session."
+          photos:
+            - caption: "Green Box in Thao Dien - follow the orange sign"
+            - caption: "Fresh food and relaxed atmosphere at Green Box"
+            - caption: "Inside Green Box at SOMA"
+        italianis-ben-thanh:
+          hours_display: "Every day 11 AM – 11:30 PM"
+          description:
+            - "Italiani's Pizza on Nguyen Thai Binh street is located in the bustling heart of District 1, just steps from Ben Thanh Market — one of the most iconic landmarks in Ho Chi Minh City."
+            - "Whether you're craving a classic Margherita or something more adventurous, Italiani's delivers quality Italian food in a vibrant setting."
+            - "District 1 is the commercial and tourist heart of Ho Chi Minh City, making this one of the most accessible BTM locations for both visitors and residents. The area is well-served by public transport and is within walking distance of numerous hotels, shops, and attractions."
+            - "Stop by Italiani's for a slice of Italy in Vietnam, and while you're at it, use the BTM to stack some sats."
+          photos:
+            - caption: "The famous Burrata pizza - a regular highlight on the Italiani's menu"
+            - caption: "Italiani's Ben Thanh features our more colourful 'Fiat Eater' variant of our Gustav BTM series"
+        italianis-han-thuyen:
+          hours_display: "Every day 11 AM – 9:45 PM"
+          description:
+            - "The Italiani's location on Han Thuyen street sits right next to a beautiful park in the Ben Nghe ward of District 1. It's a peaceful spot to enjoy a pizza and make a Bitcoin transaction, away from the hustle of the main streets."
+            - "The Han Thuyen location combines the charm of a neighborhood Italian restaurant with the convenience of Bitcoin access. Whether you're a Bitcoin veteran or making your first purchase, the friendly staff can help guide you through the process."
+          photos:
+            - caption: "Pizza & Bitcoin: the dream combo made famous by Laszlo Hanyecz"
+            - caption: "Follow the orange ₿: The entrance of Italiani's Han Thuyen"
+            - caption: "Our Gustav BTM is located on the upper floor - your privacy, respected."
+    - name: "Vung Tau"
+      description: "A popular coastal getaway just two hours from Saigon — surf, sun, and Bitcoin by the beach."
+      machines:
+        surf-hostel:
+          hours_display: "Every day 8 AM – 10 PM"
+          description:
+            - "Surf Hostel in Vung Tau is a surf school and backpacker hostel located just minutes from the beach, offering surf lessons, board rentals, and a relaxed communal atmosphere popular with travelers, backpackers, and digital nomads. As a BitcoinVN BTM partner, it provides a convenient place to buy or sell Bitcoin while enjoying the coastal setting."
+            - "Situated in one of southern Vietnam's favorite weekend getaways from Ho Chi Minh City, the hostel combines a laid-back beach vibe with easy access to Bitcoin services during operating hours from 8 AM to 10 PM. Whether topping up a wallet between surf sessions or cashing out for local spending, visitors can use the BitcoinVN BTM quickly and conveniently."
+          photos:
+            - caption: "BitcoinVN BTM at Surf Hostel"
+            - caption: "Surf class atmosphere at Surf Hostel"

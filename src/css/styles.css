@@ -187,6 +187,90 @@ button {
 }
 
 /* ========================================
+   Locale Switcher
+   ======================================== */
+
+.locale-switcher {
+  position: relative;
+  margin-left: 16px;
+}
+
+.locale-switcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.locale-switcher-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.locale-switcher-btn[aria-expanded="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.locale-arrow {
+  transition: transform 0.2s ease;
+}
+
+.locale-switcher-btn[aria-expanded="true"] .locale-arrow {
+  transform: rotate(180deg);
+}
+
+.locale-switcher-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px;
+  min-width: 130px;
+  z-index: 200;
+  list-style: none;
+  margin: 0;
+}
+
+.locale-switcher-menu li {
+  margin: 0;
+}
+
+.locale-switcher-menu a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.locale-switcher-menu a:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.locale-switcher-menu a.active {
+  color: var(--accent);
+}
+
+/* ========================================
    Hero Section
    ======================================== */
 
@@ -519,7 +603,7 @@ button {
 }
 
 .hero-title {
-  font-size: clamp(42px, 7vw, 80px);
+  font-size: clamp(36px, 5vw, 60px);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
@@ -2038,13 +2122,18 @@ button {
   }
 }
 
+:lang(ja) .hero-title,
+:lang(ko) .hero-title {
+  letter-spacing: 0;
+}
+
 @media (max-width: 480px) {
   .wireframe-scene {
     display: none;
   }
 
   .hero-title {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .hero-actions {

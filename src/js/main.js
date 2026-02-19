@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCurrencyFlow();
   initLocationStatus();
   initGalleryLightbox();
+  initLocaleSwitcher();
 });
 
 /* ======== Navigation ======== */
@@ -187,14 +188,16 @@ function initMap() {
       const h = machine.hours;
       const daysStr = h.days.join(",");
       const isOpen = checkIfOpen(daysStr, h.open, h.close, h.timezone);
-      const statusLabel = isOpen ? "Open now" : "Closed";
+      const openLabel = window.BTM_UI?.open ?? "Open now";
+      const closedLabel = window.BTM_UI?.closed ?? "Closed";
+      const statusLabel = isOpen ? openLabel : closedLabel;
 
       const marker = L.marker([machine.lat, machine.lng], {
         icon: makeMarkerIcon(isOpen),
       })
         .addTo(map)
         .bindPopup(
-          `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small><br><small>${statusLabel} · ${h.display}</small>`
+          `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small><br><small>${statusLabel} · ${window.BTM_HOURS_I18N?.[machine.slug] ?? h.display}</small>`
         );
       markers.push(marker);
       allMarkerRefs.push({ marker, hours: h, daysStr });
@@ -516,12 +519,41 @@ function initLocationStatus() {
       const isOpen = checkIfOpen(days, open, close, tz);
       dot.classList.toggle("open", isOpen);
       dot.classList.toggle("closed", !isOpen);
-      text.textContent = isOpen ? "Open now" : "Closed";
+      const openLabel = window.BTM_UI?.open ?? "Open now";
+      const closedLabel = window.BTM_UI?.closed ?? "Closed";
+      text.textContent = isOpen ? openLabel : closedLabel;
     });
   }
 
   updateStatuses();
   setInterval(updateStatuses, 60 * 1000);
+}
+
+/* ======== Locale Switcher Dropdown ======== */
+function initLocaleSwitcher() {
+  const switcher = document.getElementById("localeSwitcher");
+  if (!switcher) return;
+  const btn = switcher.querySelector(".locale-switcher-btn");
+  const menu = switcher.querySelector(".locale-switcher-menu");
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!open));
+    menu.hidden = open;
+  });
+
+  document.addEventListener("click", () => {
+    btn.setAttribute("aria-expanded", "false");
+    menu.hidden = true;
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      btn.setAttribute("aria-expanded", "false");
+      menu.hidden = true;
+    }
+  });
 }
 
 /* ======== Gallery Lightbox ======== */

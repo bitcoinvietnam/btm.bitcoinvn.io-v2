@@ -1,0 +1,214 @@
+ui:
+  notice_label: "공지:"
+  nav:
+    why_us: "왜 저희인가"
+    locations: "위치"
+    how_it_works: "이용 방법"
+    faq: "자주 묻는 질문"
+    toggle_menu: "메뉴 열기"
+    all_locations: "전체 위치"
+  hero:
+    operating_since: "운영 시작"
+    headline: "베트남에서 현금으로 Bitcoin 구매 및 판매"
+    cta_find: "BTM 찾기"
+    cta_learn: "이용 방법 알아보기"
+    stat_locations: "BTM 위치"
+    stat_years: "운영 연수"
+    stat_friction: "번거로움"
+    scroll: "스크롤하여 더 알아보기"
+  features:
+    section_tag: "왜 저희를 선택하는가"
+  locations_section:
+    section_tag: "저희 기기"
+    subtitle: "Ho Chi Minh City와 Vung Tau에서 가까운 BitcoinVN BTM을 찾아보세요."
+    machine_singular: "기기"
+    machine_plural: "기기"
+    view_maps: "Google Maps에서 모두 보기"
+  how_it_works:
+    section_tag: "간단한 절차"
+    subtitle: "저희 BTM에서 Bitcoin을 사고파는 것은 간단하고 쉽습니다."
+    tab_buy: "Bitcoin 구매"
+    tab_sell: "Bitcoin 판매"
+  faq:
+    section_tag: "궁금하신가요?"
+    heading: "자주 묻는 질문"
+  host:
+    heading: "BTM을 설치하고 싶으신가요?"
+    body: "사업장에 Bitcoin ATM을 설치해 보세요. 암호화폐를 사용하는 고객을 유치하고 설치 수수료를 받으실 수 있습니다. 설치 프로그램에 대해 자세히 알아보려면 문의해 주세요."
+    cta: "설치 문의하기"
+  contact:
+    section_tag: "연락하기"
+    heading: "문의하기"
+    subtitle: "궁금한 점이 있으신가요? 저희 팀이 다양한 채널을 통해 도움을 드립니다."
+    telegram: "Telegram"
+    facebook: "Facebook"
+    email: "이메일"
+  footer:
+    quick_links: "빠른 링크"
+    services: "서비스"
+    buy_online: "온라인으로 Bitcoin 구매"
+    contact_support: "고객 지원"
+    status_updates: "BTM 상태 업데이트"
+    hardware_wallets: "하드웨어 지갑"
+    copyright: "BitcoinVN. All rights reserved."
+  location_page:
+    breadcrumb_home: "홈"
+    breadcrumb_locations: "위치"
+    opening_hours: "영업 시간"
+    cryptocurrencies: "취급 암호화폐"
+    crypto_value: "Bitcoin (BTC) — 구매 및 판매"
+    interface_langs: "인터페이스 언어"
+    interface_value: "베트남어, 영어"
+    about: "이 위치에 대하여"
+    address: "주소"
+    phone: "전화"
+    hours: "영업 시간"
+    style: "스타일"
+    website: "웹사이트"
+    gallery_heading: "내부 모습"
+    cta_sub: "현금으로 Bitcoin 구매 및 판매 — KYC가 필요 없습니다."
+    cta_maps: "Google Maps에서 열기"
+    cta_all_locations: "전체 위치 보기"
+    questions: "궁금한 점이 있으신가요?"
+  js:
+    open: "영업 중"
+    closed: "영업 종료"
+
+site:
+  tagline: "베트남에서 현금으로 Bitcoin을 사고파는 가장 빠르고 프라이빗한 방법"
+  description: "Ho Chi Minh City와 Vung Tau 전역의 셀프 서비스 Bitcoin ATM. 은행 계좌 불필요. KYC 불필요. 방문하고, 거래하고, 떠나세요."
+  notice:
+    message: "국내 통신사 변경으로 인해 OTP 코드 SMS 전송이 일시적으로 영향을 받고 있습니다. 거래에 도움이 필요하시면 Telegram 또는 Facebook을 통해 지원팀에 문의해 주세요."
+
+features:
+  heading: "BitcoinVN BTM을 이용해야 하는 9가지 이유"
+  subheading: "저희 서비스는 베트남에서 현금으로 BTC를 사고팔 때 금융 프라이버시를 보호하도록 설계되었습니다."
+  items:
+    - title: "은행 계좌 불필요"
+      description: "현금만으로 Bitcoin을 사고팔 수 있습니다. 은행 계좌, 송금, 금융 중개기관이 필요 없습니다."
+    - title: "빠르고 편리함"
+      description: "자판기에서 음료를 사는 것만큼 간단합니다. 방문하고, 거래하면 끝입니다."
+    - title: "최소한의 데이터 수집"
+      description: "허용되는 범위 내에서 제한된 개인 정보만으로 거래를 완료할 수 있어 금융 프라이버시를 보호하는 데 도움이 됩니다."
+    - title: "투명한 가격"
+      description: "화면에 표시된 가격이 실제 가격입니다. 거래 시점에 환율이 고정되며, 숨겨진 수수료나 추가 비용이 없습니다."
+    - title: "실시간 확인"
+      description: "거래가 즉시 블록체인에 전송됩니다. 제공된 추적 링크로 거래를 실시간으로 확인하세요."
+    - title: "이중 언어 지원"
+      description: "영어와 베트남어 모두 완벽하게 지원합니다. 저희 팀이 원하시는 언어로 도움을 드립니다."
+    - title: "현장 즉시 교환"
+      description: "알 수 없는 거래 상대방이나 사전 송금 없이, 현장에서 직접 거래를 완료하세요."
+    - title: "안정적이며 모니터링됨"
+      description: "모든 BTM은 실시간 상태 업데이트와 함께 지속적으로 모니터링됩니다. Telegram 및 Facebook 채널에서 가동 상태를 확인하세요."
+    - title: "신뢰할 수 있는 오랜 운영"
+      description: "베트남에서 가장 오래 운영되고 있는 Bitcoin 회사인 BitcoinVN이 운영합니다. 수천 명의 고객에게 수년간 입증된 신뢰성을 제공합니다."
+
+how_it_works:
+  buy:
+    - title: "BTM 방문하기"
+      description: "가장 가까운 BitcoinVN BTM 위치를 찾아 기기로 다가가세요. 예약이 필요 없습니다."
+    - title: '"Bitcoin 구매" 선택하기'
+      description: "화면에서 구매 옵션을 누르세요. 현재 Bitcoin 가격이 VND로 표시됩니다."
+    - title: "지갑 스캔 또는 종이 지갑 받기"
+      description: "기존 Bitcoin 지갑의 QR 코드를 스캔하거나, 기기에서 종이 지갑을 생성받으세요."
+    - title: "현금 넣기"
+      description: "VND 지폐를 기기에 넣으세요. 화면에 해당하는 Bitcoin 금액이 실시간으로 표시됩니다."
+    - title: "확인 및 Bitcoin 수령"
+      description: "거래를 확인하면 Bitcoin이 즉시 지갑으로 전송되며, 실시간 추적 링크가 제공됩니다."
+  sell:
+    - title: "BTM 방문하기"
+      description: "아무 BitcoinVN BTM 위치나 방문하세요. 모든 기기에서 Bitcoin 구매와 판매가 모두 가능합니다."
+    - title: '"Bitcoin 판매" 선택하기'
+      description: "화면에서 판매 옵션을 누르세요. 기기에 현재 판매 환율이 VND로 표시됩니다."
+    - title: "금액 입력 및 Bitcoin 전송"
+      description: "받으실 VND 금액을 입력하세요. 기기에 QR 코드가 표시되면 해당 주소로 Bitcoin을 보내세요."
+    - title: "확인 대기"
+      description: "기기가 블록체인 확인을 기다립니다. 사전 판매 옵션을 이용하면 이 과정을 단축할 수 있습니다."
+    - title: "현금 수령"
+      description: "확인이 완료되면 기기에서 VND 현금이 지급됩니다. 정말 간단합니다."
+
+faq:
+  items:
+    - question: "Bitcoin ATM이란 무엇인가요?"
+      answer: "Bitcoin ATM(또는 BTM)은 현금으로 Bitcoin을 사고팔 수 있는 셀프 서비스 암호화폐 키오스크입니다. 일반 ATM과 비슷하게 작동하지만, 은행 계좌에서 현금을 인출하는 대신 현금과 Bitcoin을 교환할 수 있습니다."
+    - question: "왜 BitcoinVN BTM을 이용해야 하나요?"
+      answer: "BitcoinVN BTM은 베트남에서 Bitcoin을 사고파는 가장 빠르고 프라이빗한 방법을 제공합니다. 은행 계좌가 필요 없으며 거래는 몇 분 안에 완료됩니다. 2014년부터 운영해 온 베트남에서 가장 오래된 Bitcoin 서비스입니다."
+    - question: "신분증을 제시하거나 본인 인증(KYC)을 해야 하나요?"
+      answer: "BitcoinVN BTM은 간편한 대면 Bitcoin 거래를 위해 설계되었습니다. 일반적인 일상 사용의 경우, 긴 가입 절차 없이 기기에서 빠르게 거래를 완료할 수 있습니다. 불필요한 개인 정보 노출을 최소화하는 데이터 최소화 방식을 따릅니다."
+    - question: "거래 한도가 있나요?"
+      answer: "현재 저희 BTM에는 거래 한도가 없습니다. 한 번의 거래로 필요한 만큼 Bitcoin을 사고팔 수 있습니다."
+    - question: "수수료는 얼마인가요?"
+      answer: "저희 수수료 구조는 경쟁력 있고 투명합니다. BTM 화면에 표시된 가격에 모든 수수료가 포함되어 있으며, 숨겨진 비용이나 예상치 못한 공제가 없습니다."
+    - question: "베트남에서 Bitcoin은 합법인가요?"
+      answer: "Bitcoin은 베트남에서 법정 화폐로 인정되지 않지만, Bitcoin의 보유 및 거래는 불법이 아닙니다."
+    - question: "BTM이 현재 온라인 상태인지 어떻게 확인하나요?"
+      answer: "저희 <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram 채널</a>과 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook 페이지</a>에 BTM 실시간 상태를 게시합니다. 팔로우하시면 최신 가동 정보를 확인하실 수 있습니다."
+    - question: "Bitcoin 지갑이 없으면 어떻게 하나요?"
+      answer: "걱정하지 마세요! 저희 BTM은 구매 과정에서 종이 지갑을 생성해 드릴 수 있습니다. Bitcoin 지갑 주소와 개인 키가 인쇄된 종이를 받게 됩니다. 이후 안전한 지갑으로 자금을 이체하시는 것을 권장합니다. 장기 보관에는 하드웨어 지갑이 가장 안전한 옵션입니다. <a href='https://bitcoinvn.io/shop' target='_blank' rel='noopener'>BitcoinVN Shop</a>에서 Trezor 및 Ledger 등 주요 브랜드의 공식 기기를 구매하실 수 있습니다."
+    - question: "SMS 인증에 문제가 있습니다. 어떻게 해야 하나요?"
+      answer: "최근 국내 통신사 변경으로 인해 OTP 코드 SMS 전송이 영향을 받을 수 있습니다. <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> 또는 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a>을 통해 저희 지원팀에 연락해 주시면 거래를 완료하실 수 있도록 도와드리겠습니다."
+    - question: "온라인으로도 Bitcoin을 구매할 수 있나요?"
+      answer: "네! 온라인으로 Bitcoin을 구매하시려면 <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a>를 방문하여 저희 온라인 거래소 서비스를 이용해 주세요. 은행 송금 및 기타 결제 수단을 사용하실 수 있습니다."
+
+locations:
+  regions:
+    - name: "Ho Chi Minh City"
+      description: "베트남 최대의 도시이자 경제 중심지 — 활기찬 외국인 커뮤니티와 성장하는 Bitcoin 생태계의 중심지입니다."
+      machines:
+        big-pig-bbq:
+          hours_display: "매일 10:30 – 23:30"
+          description:
+            - "Bitcoin과 고기 — 이 얼마나 멋진 조합인가요! Big Pig BBQ는 Saigon에서 정통 미국식 바비큐를 선보이며, 브리스킷, 립, 풀드포크 등을 제공합니다. Truong Son 거리의 공항 바로 옆에 위치하여, Ho Chi Minh City 전체에서 Bitcoin을 사고팔기에 가장 편리한 장소 중 하나입니다."
+            - "Saigon에 도착하거나 떠나실 때, Big Pig에 들러 세계적 수준의 바비큐를 즐기고 저희 Bitcoin ATM을 이용해 보세요. BTM은 레스토랑 내부에 있으며 영업 시간 중 언제든 이용 가능합니다."
+          photos:
+            - caption: "2023년의 Big Pig: 아직 빨간색 외관이던 시절, 당시 저희 라인업 중 구형 모델을 운영하고 있었습니다."
+            - caption: "Big Pig에서 푸짐한 고기를 마음껏 즐기세요."
+            - caption: "내부의 Gustav BTM 시리즈 — 스웨덴-베트남 합작 엔지니어링의 결실"
+        capones-chicago-pizza:
+          hours_display: "매일 11:00 – 23:00"
+          description:
+            - "Capone's는 베트남에서 유일하게 정통 시카고 스타일 딥디시 피자를 제공하는 곳입니다. Thao Dien, District 2의 중심부에 위치하며, 옥상 테라스에서는 베트남에서 가장 높은 건물인 Landmark 81의 멋진 전망을 감상하실 수 있습니다."
+            - "딥디시 피자 외에도 Capone's는 다양한 미국 스트리트 푸드를 제공합니다. BitcoinVN BTM이 레스토랑 내부에 편리하게 위치해 있어, Saigon에서 가장 트렌디한 동네에서 식사를 즐기면서 Bitcoin을 사고팔 수 있습니다."
+          photos:
+            - caption: "Capone's — Thao Dien의 시카고 한 조각"
+            - caption: "Gustav BTM — Capone's 내부 계단 옆에 위치"
+            - caption: "Capone's의 딥디시 특선 피자"
+        green-box:
+          hours_display: "매일 08:00 – 00:00"
+          description:
+            - "Thao Dien의 Green Box는 Le Van Mien 거리의 SOMA에서 창의적인 포케볼, 베트남 퓨전 요리, 신선한 스무디를 편안한 분위기로 제공하는 인기 건강식 레스토랑입니다. 오랜 BitcoinVN BTM 파트너로서, District 2에서 현금으로 Bitcoin을 사고팔기에 편리한 장소입니다."
+            - "Ho Chi Minh City에서 가장 활기찬 외국인 및 디지털 노마드 동네에 위치하며, 도보 접근성이 좋고 친절한 직원과 매일 오전 8시부터 자정까지의 영업 시간을 갖추고 있어 — 간단한 식사든 원격 근무 중이든 BitcoinVN BTM을 편리하게 이용하실 수 있습니다."
+          photos:
+            - caption: "Thao Dien의 Green Box — 주황색 간판을 따라오세요"
+            - caption: "Green Box의 신선한 음식과 편안한 분위기"
+            - caption: "SOMA 내부의 Green Box"
+        italianis-ben-thanh:
+          hours_display: "매일 11:00 – 23:30"
+          description:
+            - "Nguyen Thai Binh 거리의 Italiani's Pizza는 District 1의 활기찬 중심부에 위치하며, Ho Chi Minh City에서 가장 상징적인 랜드마크 중 하나인 Ben Thanh 시장에서 불과 몇 걸음 거리에 있습니다."
+            - "클래식한 마르게리타든 좀 더 색다른 메뉴든, Italiani's는 활기 넘치는 분위기에서 품질 높은 이탈리아 음식을 제공합니다."
+            - "District 1은 Ho Chi Minh City의 상업 및 관광 중심지로, 이곳은 방문객과 거주자 모두에게 가장 접근하기 쉬운 BTM 위치 중 하나입니다. 대중교통이 잘 갖춰져 있으며 수많은 호텔, 상점, 관광 명소가 도보 거리에 있습니다."
+            - "Italiani's에서 베트남 속 이탈리아를 맛보시고, BTM을 통해 사토시도 쌓아보세요."
+          photos:
+            - caption: "유명한 부라타 피자 — Italiani's 메뉴의 단골 인기 메뉴"
+            - caption: "Italiani's Ben Thanh에는 Gustav BTM 시리즈의 더 화려한 'Fiat Eater' 버전이 설치되어 있습니다"
+        italianis-han-thuyen:
+          hours_display: "매일 11:00 – 21:45"
+          description:
+            - "Han Thuyen 거리의 Italiani's는 District 1의 Ben Nghe 구에 있는 아름다운 공원 바로 옆에 위치해 있습니다. 번잡한 주요 거리에서 벗어나 피자를 즐기며 Bitcoin 거래를 하기에 좋은 조용한 장소입니다."
+            - "Han Thuyen 지점은 동네 이탈리아 레스토랑의 매력과 Bitcoin 접근의 편리함을 겸비하고 있습니다. 오랜 Bitcoin 사용자든 처음 구매하시는 분이든, 친절한 직원이 과정을 안내해 드립니다."
+          photos:
+            - caption: "피자와 Bitcoin: Laszlo Hanyecz가 유명하게 만든 꿈의 조합"
+            - caption: "주황색 ₿를 따라가세요: Italiani's Han Thuyen 입구"
+            - caption: "저희 Gustav BTM은 위층에 있습니다 — 고객님의 프라이버시를 존중합니다."
+    - name: "Vung Tau"
+      description: "Saigon에서 두 시간 거리의 인기 해안 휴양지 — 서핑, 태양, 그리고 해변에서의 Bitcoin."
+      machines:
+        surf-hostel:
+          hours_display: "매일 08:00 – 22:00"
+          description:
+            - "Vung Tau의 Surf Hostel은 해변에서 몇 분 거리에 위치한 서핑 스쿨 겸 배낭여행자 호스텔로, 서핑 강습, 보드 대여, 여행자와 배낭여행자, 디지털 노마드에게 인기 있는 편안한 공용 공간을 제공합니다. BitcoinVN BTM 파트너로서, 해안 분위기를 즐기면서 Bitcoin을 편리하게 사고팔 수 있는 장소입니다."
+            - "Ho Chi Minh City에서의 인기 주말 여행지인 베트남 남부에 위치한 이 호스텔은, 여유로운 해변 분위기와 오전 8시부터 오후 10시까지의 운영 시간 동안 편리한 Bitcoin 서비스 접근을 함께 제공합니다. 서핑 사이에 지갑을 충전하든 현지 소비를 위해 현금으로 바꾸든, BitcoinVN BTM을 빠르고 편리하게 이용하실 수 있습니다."
+          photos:
+            - caption: "Surf Hostel의 BitcoinVN BTM"
+            - caption: "Surf Hostel의 서핑 클래스 분위기"

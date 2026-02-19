@@ -1,0 +1,214 @@
+ui:
+  notice_label: "お知らせ:"
+  nav:
+    why_us: "選ばれる理由"
+    locations: "設置場所"
+    how_it_works: "ご利用方法"
+    faq: "よくある質問"
+    toggle_menu: "メニューを開く"
+    all_locations: "全設置場所"
+  hero:
+    operating_since: "運営開始"
+    headline: "ベトナムで現金によるBitcoinの売買"
+    cta_find: "BTMを探す"
+    cta_learn: "ご利用方法を見る"
+    stat_locations: "BTM設置場所"
+    stat_years: "年の運営実績"
+    stat_friction: "煩わしさ"
+    scroll: "スクロールして詳しく見る"
+  features:
+    section_tag: "選ばれる理由"
+  locations_section:
+    section_tag: "設置マシン"
+    subtitle: "Ho Chi Minh CityとVung Tau周辺でお近くのBitcoinVN BTMを見つけましょう。"
+    machine_singular: "台"
+    machine_plural: "台"
+    view_maps: "Google Mapsで全て表示"
+  how_it_works:
+    section_tag: "かんたん手順"
+    subtitle: "BTMでのBitcoinの購入・売却はシンプルで簡単です。"
+    tab_buy: "Bitcoinを買う"
+    tab_sell: "Bitcoinを売る"
+  faq:
+    section_tag: "ご質問は？"
+    heading: "よくある質問"
+  host:
+    heading: "BTMを設置しませんか？"
+    body: "あなたの店舗にBitcoin ATMを設置しましょう。暗号通貨ユーザーを集客し、設置手数料を得ることができます。設置プログラムの詳細はお問い合わせください。"
+    cta: "設置についてお問い合わせ"
+  contact:
+    section_tag: "お問い合わせ"
+    heading: "ご連絡ください"
+    subtitle: "ご質問がありますか？複数のチャネルでサポートチームがお手伝いいたします。"
+    telegram: "Telegram"
+    facebook: "Facebook"
+    email: "メール"
+  footer:
+    quick_links: "クイックリンク"
+    services: "サービス"
+    buy_online: "Bitcoinをオンラインで購入"
+    contact_support: "サポートに連絡"
+    status_updates: "BTM稼働状況"
+    hardware_wallets: "ハードウェアウォレット"
+    copyright: "BitcoinVN. All rights reserved."
+  location_page:
+    breadcrumb_home: "ホーム"
+    breadcrumb_locations: "設置場所"
+    opening_hours: "営業時間"
+    cryptocurrencies: "対応暗号通貨"
+    crypto_value: "Bitcoin (BTC) — 売買対応"
+    interface_langs: "対応言語"
+    interface_value: "ベトナム語、英語"
+    about: "この設置場所について"
+    address: "住所"
+    phone: "電話番号"
+    hours: "営業時間"
+    style: "スタイル"
+    website: "ウェブサイト"
+    gallery_heading: "店内の様子"
+    cta_sub: "現金でBitcoinを売買 — KYC不要。"
+    cta_maps: "Google Mapsで開く"
+    cta_all_locations: "全設置場所を見る"
+    questions: "ご質問は？"
+  js:
+    open: "営業中"
+    closed: "営業時間外"
+
+site:
+  tagline: "ベトナムで現金によるBitcoin売買の最速・最もプライベートな方法"
+  description: "Ho Chi Minh CityとVung Tau各所にセルフサービスBitcoin ATMを設置。銀行口座不要。KYC不要。来て、取引して、帰るだけ。"
+  notice:
+    message: "国内通信事業者の変更により、OTPコードのSMS配信に影響が出ています。TelegramまたはFacebookからサポートチームがお取引をお手伝いいたします。"
+
+features:
+  heading: "BitcoinVN BTMを使う9つの理由"
+  subheading: "ベトナムで現金によるBTCの売買において、お客様の金融プライバシーを守るために設計されたサービスです。"
+  items:
+    - title: "銀行口座不要"
+      description: "現金だけでBitcoinを売買できます。銀行口座も、銀行振込も、金融仲介業者も必要ありません。"
+    - title: "速くて便利"
+      description: "自動販売機でコーラを買うのとほぼ同じくらい簡単です。マシンの前に行き、取引して、完了です。"
+    - title: "最小限のデータ収集"
+      description: "法令で許可されている範囲内で、最小限の個人情報で取引を完了でき、金融プライバシーの保護に役立ちます。"
+    - title: "透明な価格設定"
+      description: "表示価格がそのままお取引価格です。レートは取引時点で固定され、隠れた手数料や追加料金はありません。"
+    - title: "リアルタイム確認"
+      description: "取引は即座にブロックチェーンにブロードキャストされます。提供されるトラッキングリンクでリアルタイムに取引を追跡できます。"
+    - title: "バイリンガルサポート"
+      description: "英語とベトナム語の両方で完全サポート。お好みの言語でチームがお手伝いいたします。"
+    - title: "その場で即時交換"
+      description: "見知らぬ取引相手や事前送金に頼ることなく、設置場所で直接取引を完了できます。"
+    - title: "信頼性の高い監視体制"
+      description: "全BTMはリアルタイムのステータス更新による継続的な監視を行っています。稼働状況はTelegramおよびFacebookチャネルで公開しています。"
+    - title: "信頼と実績"
+      description: "ベトナムで最も長い歴史を持つBitcoin企業、BitcoinVNが運営。数千人のお客様にサービスを提供してきた長年の実績があります。"
+
+how_it_works:
+  buy:
+    - title: "BTMに行く"
+      description: "最寄りのBitcoinVN BTM設置場所を見つけて、マシンの前へ。予約は不要です。"
+    - title: "「Bitcoinを買う」を選択"
+      description: "画面の購入オプションをタップします。現在のBitcoin価格がVNDで表示されます。"
+    - title: "ウォレットをスキャンまたはペーパーウォレットを取得"
+      description: "お持ちのBitcoinウォレットのQRコードをスキャンするか、マシンにペーパーウォレットを発行してもらいましょう。"
+    - title: "現金を投入"
+      description: "VND紙幣をマシンに投入します。対応するBitcoin金額がリアルタイムで画面に表示されます。"
+    - title: "確認してBitcoinを受け取る"
+      description: "取引を確認すると、Bitcoinが即座にウォレットに送信され、リアルタイムのトラッキングリンクが提供されます。"
+  sell:
+    - title: "BTMに行く"
+      description: "お近くのBitcoinVN BTM設置場所へお越しください。全マシンがBitcoinの購入と売却の両方に対応しています。"
+    - title: "「Bitcoinを売る」を選択"
+      description: "画面の売却オプションをタップします。現在の売却レートがVNDで表示されます。"
+    - title: "金額を入力してBitcoinを送信"
+      description: "受け取りたいVND金額を入力します。マシンにQRコードが表示されるので、そのアドレスにBitcoinを送信してください。"
+    - title: "確認を待つ"
+      description: "マシンがブロックチェーンの確認を待ちます。事前売却オプションを使用すると、このプロセスを短縮できます。"
+    - title: "現金を受け取る"
+      description: "確認が完了すると、マシンからVND現金が払い出されます。とても簡単です。"
+
+faq:
+  items:
+    - question: "Bitcoin ATMとは何ですか？"
+      answer: "Bitcoin ATM（またはBTM）は、現金でBitcoinを売買できるセルフサービスの暗号通貨キオスクです。通常のATMと同様の仕組みですが、銀行口座から現金を引き出すのではなく、現金とBitcoinを交換できます。"
+    - question: "なぜBitcoinVN BTMを利用すべきですか？"
+      answer: "BitcoinVN BTMは、ベトナムでBitcoinを売買する最速かつ最もプライベートな方法です。銀行口座は不要で、取引は数分で完了します。2014年から運営しており、ベトナムで最も歴史のあるBitcoinサービスです。"
+    - question: "身分証明書の提示や本人確認（KYC）は必要ですか？"
+      answer: "BitcoinVN BTMは、シンプルで対面式のBitcoin取引のために設計されています。一般的な日常利用では、長い登録プロセスなしにマシンで素早く取引を完了できます。個人情報の不必要な露出を制限するデータ最小化アプローチを採用しています。"
+    - question: "取引限度額はありますか？"
+      answer: "現在、BTMに取引限度額は設けていません。1回の取引で必要なだけBitcoinを売買できます。"
+    - question: "手数料はいくらですか？"
+      answer: "手数料体系は競争力があり透明です。BTM画面に表示される価格にはすべての手数料が含まれています。表示価格がそのまま取引価格です。隠れた料金や予期しない控除はありません。"
+    - question: "ベトナムでBitcoinは合法ですか？"
+      answer: "Bitcoinはベトナムで法定通貨としては認められていませんが、Bitcoinの所有や取引は違法ではありません。"
+    - question: "BTMが現在稼働しているか確認するにはどうすればいいですか？"
+      answer: "BTMのリアルタイム稼働状況を<a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegramチャネル</a>および<a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebookページ</a>で公開しています。最新の稼働情報はフォローしてご確認ください。"
+    - question: "Bitcoinウォレットを持っていない場合はどうすればいいですか？"
+      answer: "ご安心ください！BTMは購入時にペーパーウォレットを発行できます。Bitcoinウォレットのアドレスと秘密鍵が印刷された用紙を受け取れます。その後、安全なウォレットに資金を移すことをお勧めします。長期保管にはハードウェアウォレットが最も安全です。TrezorやLedgerなどの主要ブランドの正規販売店である<a href='https://bitcoinvn.io/shop' target='_blank' rel='noopener'>BitcoinVN Shop</a>でお求めいただけます。"
+    - question: "SMS認証に問題があります。どうすればいいですか？"
+      answer: "国内通信事業者の最近の変更により、OTPコードのSMS配信に影響が出る場合があります。<a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a>または<a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a>からサポートチームにご連絡ください。お取引の完了をお手伝いいたします。"
+    - question: "Bitcoinをオンラインで購入できますか？"
+      answer: "はい！オンラインでのBitcoin購入をご希望の場合は、<a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a>でオンライン取引サービスをご利用ください。銀行振込やその他の支払い方法に対応しています。"
+
+locations:
+  regions:
+    - name: "Ho Chi Minh City"
+      description: "ベトナム最大の都市であり経済の中心地。活気ある外国人コミュニティとBitcoin普及の拡大が進んでいます。"
+      machines:
+        big-pig-bbq:
+          hours_display: "毎日 10:30 – 23:30"
+          description:
+            - "Bitcoinとお肉 — 最高の組み合わせ！Big Pig BBQは本格的なアメリカンスタイルのBBQをSaigonで提供しています。ブリスケット、リブ、プルドポークなど盛りだくさん。空港のすぐ近く、Truong Son通り沿いに位置し、Ho Chi Minh City全体でBitcoinの売買に最も便利な場所の一つです。"
+            - "Saigonに到着する時も出発する時も、Big Pig に立ち寄ってワールドクラスのBBQを楽しみながらBitcoin ATMをご利用ください。BTMはレストラン内にあり、営業時間中いつでもご利用いただけます。"
+          photos:
+            - caption: "2023年のBig Pig：赤い外観のまま、当時のラインナップの旧モデルを設置していました。"
+            - caption: "Big Pigではお肉をたっぷり堪能できます。"
+            - caption: "店内のGustav BTMシリーズ — スウェーデン・ベトナムのエンジニアリングによる設計"
+        capones-chicago-pizza:
+          hours_display: "毎日 11:00 – 23:00"
+          description:
+            - "Capone'sはベトナムで唯一、本格的なシカゴスタイルのディープディッシュピザを提供しているお店です。Thao Dien、District 2の中心部に位置し、ルーフトップテラスからはベトナムで最も高いビル、Landmark 81の素晴らしい眺めを楽しめます。"
+            - "ディープディッシュピザに加え、Capone'sではアメリカンストリートフードも豊富に揃っています。BitcoinVN BTMはレストラン内に設置されており、Saigonで最もトレンディな地区の一つで食事を楽しみながらBitcoinの売買ができます。"
+          photos:
+            - caption: "Capone's — Thao Dienにあるシカゴの一角"
+            - caption: "Gustav BTM — Capone's店内の階段横に設置"
+            - caption: "Capone'sのディープディッシュスペシャリティ"
+        green-box:
+          hours_display: "毎日 8:00 – 0:00"
+          description:
+            - "Thao DienのGreen Boxは人気のヘルシーダイニングスポットで、Le Van Mien通りのSOMAにて、クリエイティブなポケボウル、ベトナムフュージョン料理、フレッシュスムージーをリラックスした雰囲気で提供しています。BitcoinVN BTMの長年のパートナーとして、District 2で現金によるBitcoin売買に便利な場所です。"
+            - "Ho Chi Minh Cityで最も活気のある外国人・デジタルノマド地区の一つに位置し、徒歩圏内の利便性、フレンドリーなスタッフ、朝8時から深夜0時までの営業時間を備えています。軽い食事やリモートワークの合間にBitcoinVN BTMを手軽にご利用いただけます。"
+          photos:
+            - caption: "Thao DienのGreen Box — オレンジの看板が目印"
+            - caption: "Green Boxのフレッシュな料理とリラックスした雰囲気"
+            - caption: "SOMAにあるGreen Boxの店内"
+        italianis-ben-thanh:
+          hours_display: "毎日 11:00 – 23:30"
+          description:
+            - "Nguyen Thai Binh通りのItaliani's Pizzaは、District 1の賑やかな中心部、Ho Chi Minh Cityで最も象徴的なランドマークの一つであるBen Thanh市場からわずか数歩の場所にあります。"
+            - "定番のマルゲリータからより冒険的なメニューまで、Italiani'sは活気ある雰囲気の中で質の高いイタリア料理を提供しています。"
+            - "District 1はHo Chi Minh Cityの商業・観光の中心地であり、観光客にも住民にも最もアクセスしやすいBTM設置場所の一つです。公共交通機関が充実しており、多くのホテル、ショップ、観光名所が徒歩圏内にあります。"
+            - "Italiani'sでベトナムのイタリアを味わいながら、ついでにBTMでサトシを積み上げましょう。"
+          photos:
+            - caption: "名物のブラータピザ — Italiani'sメニューの定番ハイライト"
+            - caption: "Italiani's Ben Thanhには、Gustav BTMシリーズのカラフルな'Fiat Eater'バリアントを設置"
+        italianis-han-thuyen:
+          hours_display: "毎日 11:00 – 21:45"
+          description:
+            - "Han Thuyen通りのItaliani'sは、District 1のBen Nghe区にある美しい公園のすぐそばに位置しています。メインストリートの喧騒から離れ、ピザを楽しみながらBitcoin取引ができる穏やかなスポットです。"
+            - "Han Thuyen店は、地元に愛されるイタリアンレストランの魅力とBitcoinへの便利なアクセスを兼ね備えています。Bitcoinのベテランでも初めての購入でも、フレンドリーなスタッフがプロセスをご案内します。"
+          photos:
+            - caption: "ピザとBitcoin：Laszlo Hanyeczが有名にした夢の組み合わせ"
+            - caption: "オレンジの₿マークに従って：Italiani's Han Thuyenの入口"
+            - caption: "Gustav BTMは上の階に設置 — プライバシーを大切にしています。"
+    - name: "Vung Tau"
+      description: "Saigonからわずか2時間の人気ビーチリゾート — サーフィン、太陽、そしてビーチサイドのBitcoin。"
+      machines:
+        surf-hostel:
+          hours_display: "毎日 8:00 – 22:00"
+          description:
+            - "Vung TauのSurf Hostelは、ビーチからわずか数分のサーフスクール兼バックパッカーホステルです。サーフレッスン、ボードレンタル、旅行者やバックパッカー、デジタルノマドに人気のリラックスした共有スペースを提供しています。BitcoinVN BTMパートナーとして、海辺の環境を楽しみながらBitcoinの売買ができる便利な場所です。"
+            - "Ho Chi Minh Cityからの週末旅行先として南ベトナムで最も人気のあるスポットの一つに位置し、ビーチの雰囲気と朝8時から夜10時までのBitcoinサービスへの手軽なアクセスを両立しています。サーフセッションの合間にウォレットをチャージしたり、現地での支出のために現金化したり、BitcoinVN BTMを素早く便利にご利用いただけます。"
+          photos:
+            - caption: "Surf HostelのBitcoinVN BTM"
+            - caption: "Surf Hostelのサーフスクールの雰囲気"

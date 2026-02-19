@@ -1,0 +1,16 @@
+- code: en
+  pathPrefix: ""
+  flag: "\U0001F1FA\U0001F1F8"
+  label: English
+- code: ru
+  pathPrefix: "ru/"
+  flag: "\U0001F1F7\U0001F1FA"
+  label: "Русский"
+- code: ko
+  pathPrefix: "ko/"
+  flag: "\U0001F1F0\U0001F1F7"
+  label: "한국어"
+- code: ja
+  pathPrefix: "ja/"
+  flag: "\U0001F1EF\U0001F1F5"
+  label: "日本語"
