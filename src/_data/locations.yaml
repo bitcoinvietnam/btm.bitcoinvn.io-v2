@@ -35,12 +35,12 @@ regions:
         photos:
           - src: "/images/locations/big-pig-bbq/big-pig-bbq-1.jpg"
             alt: "BitcoinVN BTM at Big Pig BBQ & Beer in Ho Chi Minh City"
-            caption: "BitcoinVN BTM at Big Pig BBQ & Beer"
+            caption: "Big Pig in 2023: still in its red exterior style, and at the time hosting one of the older models in our lineup."
             width: 1280
             height: 960
           - src: "/images/locations/big-pig-bbq/big-pig-bbq-2.jpg"
             alt: "Big Pig BBQ & Beer venue photo in Ho Chi Minh City"
-            caption: "Big Pig BBQ & Beer location overview"
+            caption: "Big Pig lets you load up on meat aplenty."
             width: 1280
             height: 960
         description:
