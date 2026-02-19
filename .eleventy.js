@@ -1,4 +1,6 @@
 const yaml = require("js-yaml");
+const CleanCSS = require("clean-css");
+const { minify } = require("terser");
 const fs = require("fs");
 const path = require("path");
 
@@ -132,6 +134,25 @@ module.exports = function (eleventyConfig) {
       });
     });
   });
+
+  // Minify CSS & JS in production builds
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.on("eleventy.after", async () => {
+      const outDir = "_site";
+
+      // Minify CSS
+      const cssFile = path.join(outDir, "css", "styles.css");
+      const cssInput = fs.readFileSync(cssFile, "utf8");
+      const cssOutput = new CleanCSS().minify(cssInput);
+      fs.writeFileSync(cssFile, cssOutput.styles);
+
+      // Minify JS
+      const jsFile = path.join(outDir, "js", "main.js");
+      const jsInput = fs.readFileSync(jsFile, "utf8");
+      const jsOutput = await minify(jsInput);
+      fs.writeFileSync(jsFile, jsOutput.code);
+    });
+  }
 
   return {
     pathPrefix: process.env.PATHPREFIX || "/",
