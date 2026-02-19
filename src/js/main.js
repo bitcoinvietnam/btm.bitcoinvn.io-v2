@@ -127,7 +127,7 @@ function initMap() {
       ? "0 0 4px rgba(74,222,128,0.6)"
       : "none";
     return L.divIcon({
-      className: "btm-marker",
+      className: isOpen ? "btm-marker is-open" : "btm-marker",
       html: `<div style="
         position: relative;
         width: 32px;

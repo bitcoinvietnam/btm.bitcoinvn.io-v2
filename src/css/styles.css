@@ -746,7 +746,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-secondary);
 }
 
@@ -1563,7 +1563,7 @@ button {
 }
 
 .leaflet-tile-pane {
-  filter: brightness(0.55) contrast(1.15) saturate(0.4) sepia(0.35) hue-rotate(180deg);
+  filter: brightness(0.45) contrast(1.9) saturate(0.5) sepia(0.5) hue-rotate(180deg);
 }
 
 .leaflet-popup-content-wrapper {
@@ -1621,6 +1621,55 @@ button {
 
 .leaflet-control-attribution a {
   color: var(--text-tertiary) !important;
+}
+
+/* Marker styles */
+.btm-marker {
+  overflow: visible !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* Radial spotlight glow — OPEN locations only */
+.btm-marker.is-open::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Ripple pulse — OPEN locations only */
+@keyframes btm-ripple {
+  0% {
+    transform: translate(-50%, 50%) scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, 50%) scale(3);
+    opacity: 0;
+  }
+}
+
+.btm-marker.is-open::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 226, 110, 0.3);
+  box-shadow: 0 0 8px rgba(255, 226, 110, 0.5);
+  pointer-events: none;
+  z-index: -1;
+  animation: btm-ripple 2s ease-out infinite;
 }
 
 /* ========================================
