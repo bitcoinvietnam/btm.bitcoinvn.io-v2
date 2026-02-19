@@ -145,34 +145,38 @@ eleventyComputed:
           <p>{{ paragraph }}</p>
           {% endfor %}
 
-          {% if machine.photos and machine.photos.length %}
-          <div class="location-inline-gallery">
-            <h3>Inside {{ machine.name }}</h3>
-            <div class="location-gallery-grid">
-              {% for photo in machine.photos %}
-              {% if photo.src %}
-              <figure class="location-gallery-card">
-                <img
-                  src="{{ photo.src | url }}"
-                  alt="{{ photo.alt or (machine.name + ' photo') }}"
-                  loading="lazy"
-                  decoding="async"
-                  width="{{ photo.width or 1600 }}"
-                  height="{{ photo.height or 1067 }}"
-                >
-                {% if photo.caption %}
-                <figcaption>{{ photo.caption }}</figcaption>
-                {% endif %}
-              </figure>
-              {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-          {% endif %}
         </div>
       </div>
     </div>
   </section>
+
+  {# ======== Gallery ======== #}
+  {% if machine.photos and machine.photos.length %}
+  <section class="location-gallery">
+    <div class="container">
+      <h2>Inside {{ machine.name }}</h2>
+      <div class="location-gallery-grid">
+        {% for photo in machine.photos %}
+        {% if photo.src %}
+        <figure class="location-gallery-card">
+          <img
+            src="{{ photo.src | url }}"
+            alt="{{ photo.alt or (machine.name + ' photo') }}"
+            loading="lazy"
+            decoding="async"
+            width="{{ photo.width or 1600 }}"
+            height="{{ photo.height or 1067 }}"
+          >
+          {% if photo.caption %}
+          <figcaption>{{ photo.caption }}</figcaption>
+          {% endif %}
+        </figure>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
 
   {# ======== CTA ======== #}
   <section class="location-cta">

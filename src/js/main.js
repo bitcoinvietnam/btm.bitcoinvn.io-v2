@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initWireframeTilt();
   initCurrencyFlow();
   initLocationStatus();
+  initGalleryLightbox();
 });
 
 /* ======== Navigation ======== */
@@ -521,4 +522,37 @@ function initLocationStatus() {
 
   updateStatuses();
   setInterval(updateStatuses, 60 * 1000);
+}
+
+/* ======== Gallery Lightbox ======== */
+function initGalleryLightbox() {
+  const cards = document.querySelectorAll(".location-gallery-card img");
+  if (!cards.length) return;
+
+  let overlay = null;
+
+  function open(src, alt) {
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.className = "gallery-lightbox";
+      overlay.addEventListener("click", close);
+      document.body.appendChild(overlay);
+    }
+    overlay.innerHTML = `<img src="${src}" alt="${alt || ""}">`;
+    // Force reflow so the opacity transition plays
+    overlay.offsetHeight;
+    overlay.classList.add("active");
+  }
+
+  function close() {
+    if (overlay) overlay.classList.remove("active");
+  }
+
+  cards.forEach((img) => {
+    img.addEventListener("click", () => open(img.src, img.alt));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
 }
