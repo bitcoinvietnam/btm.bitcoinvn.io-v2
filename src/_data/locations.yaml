@@ -64,6 +64,22 @@ regions:
         style: "Authentic Chicago Deep Dish pizza & street food"
         websiteName: "caponessaigon.com"
         websiteUrl: "https://caponessaigon.com"
+        photos:
+          - src: "/images/locations/capones-chicago-pizza/capones-chicago-pizza-1.jpg"
+            alt: "Capone's Chicago Pizza location photo in Thao Dien"
+            caption: "Capone's Chicago Pizza in Thao Dien"
+            width: 1280
+            height: 960
+          - src: "/images/locations/capones-chicago-pizza/capones-chicago-pizza-2.jpg"
+            alt: "Dining area at Capone's Chicago Pizza"
+            caption: "Inside Capone's Chicago Pizza"
+            width: 1280
+            height: 960
+          - src: "/images/locations/capones-chicago-pizza/capones-chicago-pizza-3.jpg"
+            alt: "Signature dish at Capone's Chicago Pizza"
+            caption: "Deep-dish specialty at Capone's"
+            width: 983
+            height: 551
         description:
           - "Capone's is the only place in Vietnam serving authentic Chicago-style deep dish pizza. Located in the heart of Thao Dien, District 2, the restaurant offers stunning views of Landmark 81 — the tallest building in Vietnam — from its rooftop terrace."
           - "In addition to deep dish pizza, Capone's serves a range of American street food favorites. The BitcoinVN BTM is conveniently located inside the restaurant, making it easy to buy or sell Bitcoin while enjoying a meal in one of Saigon's trendiest neighborhoods."
