@@ -10,6 +10,8 @@
     <li>
       {% if machine %}
         <a href="/{{ loc.pathPrefix }}locations/{{ machine.slug }}/" class="{{ 'active' if locale == loc.code }}">{{ loc.flag }} {{ loc.label }}</a>
+      {% elif hostPage %}
+        <a href="/{{ loc.pathPrefix }}host/" class="{{ 'active' if locale == loc.code }}">{{ loc.flag }} {{ loc.label }}</a>
       {% else %}
         <a href="/{{ loc.pathPrefix }}" class="{{ 'active' if locale == loc.code }}">{{ loc.flag }} {{ loc.label }}</a>
       {% endif %}

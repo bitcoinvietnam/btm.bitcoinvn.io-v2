@@ -35,7 +35,8 @@ ui:
   host:
     heading: "想在您的店铺放置 BTM？"
     body: "将比特币 ATM 引入您的经营场所。吸引加密货币用户，赚取托管费用。联系我们了解托管方案。"
-    cta: "咨询托管事宜"
+    cta: "了解更多"
+    nav_label: "托管"
   contact:
     section_tag: "联系我们"
     heading: "联系我们"
@@ -212,3 +213,72 @@ locations:
           photos:
             - caption: "Surf Hostel 的 BitcoinVN BTM"
             - caption: "Surf Hostel 的冲浪课氛围"
+
+host_page:
+  meta_description: "与 BitcoinVN 合作，在您的商铺设置 Bitcoin ATM。固定月租收入，设备零成本，全托管运营。"
+  hero:
+    heading: "与 BitcoinVN 合作托管 Bitcoin ATM"
+    intro: "BitcoinVN 正根据当地要求，在越南各地选择性地扩展 Bitcoin ATM（BTM）网络。我们与高客流零售场所、旅馆/酒店、咖啡馆、比萨店和西餐厅合作，安装和运营安全、全托管的 BTM。"
+    value_prop:
+      you_provide: "您提供场地。"
+      we_provide: "我们提供基础设施。"
+      you_receive: "您获得被动收入。"
+  benefits:
+    section_tag: "您的优势"
+    heading: "为什么托管 BitcoinVN ATM？"
+    items:
+      - title: "固定月租收入"
+        description: "每月获得可预期的固定租赁费用——与交易量无关。每月 28 日结算。"
+      - title: "增加国际客流"
+        description: "Bitcoin ATM 的用户通常是游客、外籍人士、数字游民和远程工作者。这些客户在访问您的场所时经常会进行额外消费，提升店铺知名度和到店率。"
+      - title: "设备零成本"
+        description: "BitcoinVN 承担与配送安装、检查、维护保养、维修更换、监控和系统管理以及必要时拆除相关的所有费用。"
+      - title: "全托管运营"
+        description: "我们管理现金物流、软件运营、合规程序、KYC 要求、设备监控和客户支持。您专注于核心业务，其余的交给我们。"
+  requirements:
+    section_tag: "开始合作"
+    heading: "托管要求"
+    intro: "托管 BitcoinVN BTM 非常简单。"
+    subheading: "您需要提供："
+    items:
+      - "80cm x 80cm 的室内空间"
+      - "畅通无阻的客户通道"
+      - "标准电源插座（110–220V）"
+      - "以太网路由器端口的物理接入，以确保稳定的有线网络连接"
+  ideal_locations:
+    section_tag: "最佳选择"
+    heading: "理想的托管地点"
+    intro: "我们目前优先考虑的场所："
+    items:
+      - "酒店和旅馆"
+      - "比萨店"
+      - "西餐厅"
+      - "咖啡馆"
+      - "共享办公空间"
+      - "游客密集的零售场所"
+    note: "如果您的商铺吸引外国人或具有国际视野的客户，BTM 将与您的受众自然契合。"
+  support:
+    section_tag: "全面支持"
+    heading: "客户支持体系"
+    intro: "BitcoinVN 提供越南语和英语的实时客户支持。"
+    channels_intro: "我们的支持渠道进行了冗余部署以确保可靠性，包括："
+    items:
+      - "设备端支持入口"
+      - "热线电话支持"
+      - "在线消息渠道"
+    note: "客户无需依赖托管方获取技术帮助。"
+  process:
+    section_tag: "简单流程"
+    heading: "合作流程"
+    steps:
+      - "我们评估您的场所"
+      - "签署简明的托管协议"
+      - "我们安装并激活设备"
+      - "您开始获得每月固定的租赁收入"
+    note: "无运营负担。无交易处理。无合规责任。"
+  cta:
+    heading: "立即成为 BitcoinVN 的合作伙伴"
+    body: "BitcoinVN BTM 网络是越南运营时间最长的 Bitcoin 服务提供商之一的一部分。"
+    closing: "我们建立的是长期基础设施合作——而非临时摆放。"
+    interested: "如果您有兴趣托管："
+    button: "联系我们咨询托管事宜"

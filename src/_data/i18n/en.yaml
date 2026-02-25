@@ -35,7 +35,8 @@ ui:
   host:
     heading: "Want to Host a BTM?"
     body: "Bring a Bitcoin ATM to your business location. Attract crypto-savvy customers and earn hosting fees. Contact us to learn about our hosting program."
-    cta: "Contact Us About Hosting"
+    cta: "Learn More"
+    nav_label: "Host"
   contact:
     section_tag: "Reach Out"
     heading: "Get In Touch"
@@ -212,3 +213,72 @@ locations:
           photos:
             - caption: "BitcoinVN BTM at Surf Hostel"
             - caption: "Surf class atmosphere at Surf Hostel"
+
+host_page:
+  meta_description: "Partner with BitcoinVN to host a Bitcoin ATM at your business. Fixed monthly lease income, zero equipment cost, fully managed operations."
+  hero:
+    heading: "Host a Bitcoin ATM with BitcoinVN"
+    intro: "BitcoinVN remains open to selectively expanding its Bitcoin ATM (BTM) footprint across Vietnam in line with local requirements. We partner with high-traffic retail locations, hostels/hotels, cafes, pizzerias and Western restaurants to install and operate secure, fully managed BTMs."
+    value_prop:
+      you_provide: "You provide space."
+      we_provide: "We provide infrastructure."
+      you_receive: "You earn passive income."
+  benefits:
+    section_tag: "Your Benefits"
+    heading: "Why Host a BitcoinVN ATM?"
+    items:
+      - title: "Fixed Monthly Lease Income"
+        description: "Receive a predictable, fixed leasing payment every month — independent of transaction volume. Payments are cleared on the 28th of each month."
+      - title: "Increased International Foot Traffic"
+        description: "Bitcoin ATM users are typically tourists, expats, digital nomads and remote workers. These customers frequently make additional purchases while visiting your location, increasing store visibility and walk-in activity."
+      - title: "Zero Equipment Cost"
+        description: "BitcoinVN covers all costs related to delivery and installation, inspection, maintenance and servicing, repairs and replacement, monitoring and system management, and removal if required."
+      - title: "Fully Managed Operations"
+        description: "We manage cash logistics, software operations, compliance procedures, KYC requirements, machine monitoring and customer assistance. You focus on your core business. We handle the rest."
+  requirements:
+    section_tag: "Getting Started"
+    heading: "Host Requirements"
+    intro: "Hosting a BitcoinVN BTM is straightforward."
+    subheading: "You provide:"
+    items:
+      - "Indoor space of 80cm x 80cm"
+      - "Clear, unobstructed customer access"
+      - "Standard electrical outlet (110–220V)"
+      - "Physical access to an ethernet router port for stable wired internet connection"
+  ideal_locations:
+    section_tag: "Best Fit"
+    heading: "Ideal Host Locations"
+    intro: "We are currently prioritizing:"
+    items:
+      - "Hotels & Hostels"
+      - "Pizzerias"
+      - "Western Restaurants"
+      - "Cafes"
+      - "Coworking Spaces"
+      - "Tourist-heavy retail locations"
+    note: "If your business attracts foreigners or internationally minded customers, a BTM aligns naturally with your audience."
+  support:
+    section_tag: "We've Got You Covered"
+    heading: "Customer Support Infrastructure"
+    intro: "BitcoinVN provides live customer support in both Vietnamese and English."
+    channels_intro: "Our support channels are redundantly placed to ensure reliability, including:"
+    items:
+      - "On-machine support access"
+      - "Hotline assistance"
+      - "Online messaging channels"
+    note: "Customers are never dependent on the host for technical assistance."
+  process:
+    section_tag: "Simple Process"
+    heading: "How the Partnership Works"
+    steps:
+      - "We evaluate your location"
+      - "We sign a straightforward host agreement"
+      - "We install and activate the machine"
+      - "You begin receiving fixed monthly lease payments"
+    note: "No operational burden. No transaction handling. No compliance responsibility."
+  cta:
+    heading: "Partner with BitcoinVN Today"
+    body: "BitcoinVN BTM Network operates as part of one of Vietnam's longest-running Bitcoin service providers."
+    closing: "We build long-term infrastructure partnerships — not temporary placements."
+    interested: "If you are interested in hosting:"
+    button: "Contact Us About Hosting"

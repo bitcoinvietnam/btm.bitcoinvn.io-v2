@@ -25,6 +25,8 @@ eleventyComputed:
       <a href="#locations">{{ t.ui.nav.locations }}</a>
       <a href="#how-it-works">{{ t.ui.nav.how_it_works }}</a>
       <a href="#faq">{{ t.ui.nav.faq }}</a>
+      {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
+      <a href="{{ (localePrefix + '/host/') | url }}">{{ t.ui.host.nav_label }}</a>
     </div>
     {% include "locale-switcher.njk" %}
     <button class="nav-toggle" id="navToggle" aria-label="{{ t.ui.nav.toggle_menu }}">
@@ -154,7 +156,7 @@ eleventyComputed:
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-value">{{ 2025 - site.since }}+</span>
+        <span class="stat-value">{{ 2026 - site.since }}+</span>
         <span class="stat-label">{{ t.ui.hero.stat_years }}</span>
       </div>
       <div class="stat-divider"></div>
@@ -322,7 +324,7 @@ eleventyComputed:
       <div class="host-content">
         <h2>{{ t.ui.host.heading }}</h2>
         <p>{{ t.ui.host.body }}</p>
-        <a href="mailto:{{ site.contact.email }}" class="btn btn-primary">
+        <a href="{{ (localePrefix + '/host/') | url }}" class="btn btn-primary">
           {{ t.ui.host.cta }}
         </a>
       </div>
@@ -372,47 +374,9 @@ eleventyComputed:
   </div>
 </section>
 
+{% set localeHome = "/" + pageLocale.pathPrefix %}
 {# ======== Footer ======== #}
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo">
-          <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
-          <span class="logo-btm">BTM</span>
-        </a>
-        <p class="footer-tagline">{{ t.site.tagline }}</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>{{ t.ui.footer.quick_links }}</h4>
-          <a href="#features">{{ t.ui.nav.why_us }}</a>
-          <a href="#locations">{{ t.ui.nav.locations }}</a>
-          <a href="#how-it-works">{{ t.ui.nav.how_it_works }}</a>
-          <a href="#faq">{{ t.ui.nav.faq }}</a>
-        </div>
-        <div class="footer-col">
-          <h4>{{ t.ui.footer.services }}</h4>
-          <a href="{{ site.exchangeUrl }}" target="_blank" rel="noopener">{{ t.ui.footer.buy_online }}</a>
-          <a href="#contact">{{ t.ui.footer.contact_support }}</a>
-          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">{{ t.ui.footer.status_updates }}</a>
-          <a href="https://bitcoinvn.io/shop" target="_blank" rel="noopener">{{ t.ui.footer.hardware_wallets }}</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; {{ 2025 }} {{ t.ui.footer.copyright }}</p>
-      <div class="footer-social">
-        <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" aria-label="Telegram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-        </a>
-        <a href="{{ site.contact.facebook.url }}" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+{% include "footer.njk" %}
 
 {# Pass location data and UI labels to JS #}
 <script>

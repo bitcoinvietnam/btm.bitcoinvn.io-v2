@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationStatus();
   initGalleryLightbox();
   initLocaleSwitcher();
+  initHostCarousel();
 });
 
 /* ======== Navigation ======== */
@@ -587,4 +588,34 @@ function initGalleryLightbox() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();
   });
+}
+
+/* ======== Host Page Carousel ======== */
+function initHostCarousel() {
+  const carousel = document.getElementById("hostCarousel");
+  if (!carousel) return;
+
+  // Respect prefers-reduced-motion
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const track = carousel.querySelector(".host-page-carousel-track");
+    if (track) track.style.animation = "none";
+  }
+
+  // Lazy-load duplicate slide images when carousel enters viewport
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          carousel.querySelectorAll("img[data-src]").forEach((img) => {
+            img.src = img.dataset.src;
+            img.removeAttribute("data-src");
+          });
+          observer.disconnect();
+        }
+      });
+    },
+    { rootMargin: "200px" }
+  );
+
+  observer.observe(carousel);
 }

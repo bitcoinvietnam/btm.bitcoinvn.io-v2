@@ -35,7 +35,8 @@ ui:
   host:
     heading: "BTM을 설치하고 싶으신가요?"
     body: "사업장에 Bitcoin ATM을 설치해 보세요. 암호화폐를 사용하는 고객을 유치하고 설치 수수료를 받으실 수 있습니다. 설치 프로그램에 대해 자세히 알아보려면 문의해 주세요."
-    cta: "설치 문의하기"
+    cta: "자세히 알아보기"
+    nav_label: "호스팅"
   contact:
     section_tag: "연락하기"
     heading: "문의하기"
@@ -212,3 +213,72 @@ locations:
           photos:
             - caption: "Surf Hostel의 BitcoinVN BTM"
             - caption: "Surf Hostel의 서핑 클래스 분위기"
+
+host_page:
+  meta_description: "BitcoinVN과 파트너십을 맺고 매장에 Bitcoin ATM을 설치하세요. 고정 월 임대 수입, 장비 비용 제로, 완전 관리형 운영."
+  hero:
+    heading: "BitcoinVN과 함께 Bitcoin ATM을 호스팅하세요"
+    intro: "BitcoinVN은 현지 요건에 맞춰 베트남 전역에서 Bitcoin ATM(BTM) 네트워크를 선별적으로 확장하고 있습니다. 유동 인구가 많은 소매점, 호스텔/호텔, 카페, 피자집 및 서양 레스토랑과 협력하여 안전하고 완전 관리되는 BTM을 설치 및 운영합니다."
+    value_prop:
+      you_provide: "공간을 제공하세요."
+      we_provide: "인프라를 제공합니다."
+      you_receive: "수동 소득을 얻으세요."
+  benefits:
+    section_tag: "혜택"
+    heading: "BitcoinVN ATM을 호스팅해야 하는 이유"
+    items:
+      - title: "고정 월 임대 수입"
+        description: "거래량에 관계없이 매달 예측 가능한 고정 임대료를 받으세요. 매월 28일에 정산됩니다."
+      - title: "국제 방문객 유입 증가"
+        description: "Bitcoin ATM 이용자는 주로 관광객, 주재원, 디지털 노마드 및 원격 근무자입니다. 이들은 매장 방문 시 추가 구매를 자주 하여 매장 인지도와 방문객이 증가합니다."
+      - title: "장비 비용 제로"
+        description: "BitcoinVN이 배송 및 설치, 점검, 유지보수 및 서비스, 수리 및 교체, 모니터링 및 시스템 관리, 필요 시 철거와 관련된 모든 비용을 부담합니다."
+      - title: "완전 관리형 운영"
+        description: "현금 물류, 소프트웨어 운영, 컴플라이언스 절차, KYC 요건, 기기 모니터링 및 고객 지원을 저희가 관리합니다. 귀하는 본업에 집중하세요. 나머지는 저희가 처리합니다."
+  requirements:
+    section_tag: "시작하기"
+    heading: "호스팅 요건"
+    intro: "BitcoinVN BTM 호스팅은 간단합니다."
+    subheading: "귀하가 제공할 것:"
+    items:
+      - "80cm x 80cm의 실내 공간"
+      - "고객이 자유롭게 접근 가능한 통로"
+      - "표준 전기 콘센트 (110–220V)"
+      - "안정적인 유선 인터넷 연결을 위한 이더넷 라우터 포트 물리적 접근"
+  ideal_locations:
+    section_tag: "최적 입지"
+    heading: "이상적인 호스팅 장소"
+    intro: "현재 우선적으로 고려하는 장소:"
+    items:
+      - "호텔 및 호스텔"
+      - "피자집"
+      - "서양 레스토랑"
+      - "카페"
+      - "코워킹 스페이스"
+      - "관광객 밀집 소매 장소"
+    note: "외국인이나 국제적 성향의 고객을 유치하는 비즈니스라면 BTM이 자연스럽게 어울립니다."
+  support:
+    section_tag: "완벽한 지원 체계"
+    heading: "고객 지원 인프라"
+    intro: "BitcoinVN은 베트남어와 영어로 실시간 고객 지원을 제공합니다."
+    channels_intro: "안정성을 보장하기 위해 다중 지원 채널을 운영합니다:"
+    items:
+      - "기기 내 지원 액세스"
+      - "핫라인 지원"
+      - "온라인 메시징 채널"
+    note: "고객은 기술 지원을 위해 호스트에 의존할 필요가 없습니다."
+  process:
+    section_tag: "간단한 절차"
+    heading: "파트너십 진행 방식"
+    steps:
+      - "귀하의 장소를 평가합니다"
+      - "간단한 호스팅 계약을 체결합니다"
+      - "기기를 설치하고 활성화합니다"
+      - "고정 월 임대료 수령을 시작합니다"
+    note: "운영 부담 없음. 거래 처리 없음. 컴플라이언스 책임 없음."
+  cta:
+    heading: "지금 BitcoinVN 파트너가 되세요"
+    body: "BitcoinVN BTM 네트워크는 베트남에서 가장 오래 운영되고 있는 Bitcoin 서비스 제공업체의 일원입니다."
+    closing: "우리는 장기적인 인프라 파트너십을 구축합니다 — 일시적인 배치가 아닙니다."
+    interested: "호스팅에 관심이 있으시다면:"
+    button: "호스팅 문의하기"

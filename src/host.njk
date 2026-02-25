@@ -1,0 +1,242 @@
+---
+layout: base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: pageLocale
+permalink: "/{{ pageLocale.pathPrefix }}host/index.html"
+hostPage: true
+eleventyComputed:
+  locale: "{{ pageLocale.code }}"
+  pageTitle: "{{ i18n[pageLocale.code].host_page.hero.heading }} — {{ site.name }}"
+  pageDescription: "{{ i18n[pageLocale.code].host_page.meta_description }}"
+  basePath: "host/"
+---
+{% set t = i18n[pageLocale.code] %}
+{% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
+{% set localeHome = localePrefix + "/" %}
+
+{# ======== Navigation ======== #}
+<nav class="nav scrolled" id="nav">
+  <div class="nav-container">
+    <a href="{{ localeHome }}" class="nav-logo">
+      <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
+      <span class="logo-btm">BTM</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="{{ localeHome }}#locations">{{ t.ui.nav.locations }}</a>
+      <a href="{{ localeHome }}#how-it-works">{{ t.ui.nav.how_it_works }}</a>
+      <a href="{{ localeHome }}#faq">{{ t.ui.nav.faq }}</a>
+      <a href="{{ (localePrefix + '/host/') | url }}" class="active">{{ t.ui.host.nav_label }}</a>
+    </div>
+    {% include "locale-switcher.njk" %}
+    <button class="nav-toggle" id="navToggle" aria-label="{{ t.ui.nav.toggle_menu }}">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+{# ======== Hero ======== #}
+<section class="host-page-hero">
+  <div class="host-page-hero-bg">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="container host-page-hero-content">
+    <h1 class="host-page-hero-title">{{ t.host_page.hero.heading | replace("BitcoinVN", '<span class="gradient-text">BitcoinVN</span>') | safe }}</h1>
+    <p class="host-page-hero-intro">{{ t.host_page.hero.intro }}</p>
+    <div class="host-page-value-flow">
+      <div class="host-page-value-step">
+        <div class="host-page-value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span class="host-page-value-label">{{ t.host_page.hero.value_prop.you_provide }}</span>
+      </div>
+      <svg class="host-page-value-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <div class="host-page-value-step">
+        <div class="host-page-value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span class="host-page-value-label">{{ t.host_page.hero.value_prop.we_provide }}</span>
+      </div>
+      <svg class="host-page-value-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <div class="host-page-value-step host-page-value-step--result">
+        <div class="host-page-value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <span class="host-page-value-label">{{ t.host_page.hero.value_prop.you_receive }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ======== Benefits ======== #}
+<section class="host-page-benefits">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{{ t.host_page.benefits.section_tag }}</span>
+      <h2 class="section-title">{{ t.host_page.benefits.heading | replace("BitcoinVN", '<span class="gradient-text">BitcoinVN</span>') | safe }}</h2>
+    </div>
+    <div class="features-grid host-page-benefits-grid">
+      {% for item in t.host_page.benefits.items %}
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">
+          {% if loop.index0 == 0 %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          {% elif loop.index0 == 1 %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          {% elif loop.index0 == 2 %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          {% else %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          {% endif %}
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ======== Requirements ======== #}
+<section class="host-page-requirements">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{{ t.host_page.requirements.section_tag }}</span>
+      <h2 class="section-title">{{ t.host_page.requirements.heading }}</h2>
+      <p class="section-desc">{{ t.host_page.requirements.intro }}</p>
+    </div>
+    <div class="host-page-req-card" data-animate>
+      <h3>{{ t.host_page.requirements.subheading }}</h3>
+      <ul class="host-page-req-list">
+        {% for item in t.host_page.requirements.items %}
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>{{ item }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ======== Ideal Locations ======== #}
+<section class="host-page-ideal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{{ t.host_page.ideal_locations.section_tag }}</span>
+      <h2 class="section-title">{{ t.host_page.ideal_locations.heading | replace("Locations", '<span class="gradient-text">Locations</span>') | safe }}</h2>
+      <p class="section-desc">{{ t.host_page.ideal_locations.intro }}</p>
+    </div>
+    <div class="host-page-locations-grid">
+      {% for item in t.host_page.ideal_locations.items %}
+      <div class="host-page-location-item" data-animate>
+        {% if loop.index0 == 0 %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"/><path d="M21 7H3l2-4h14l2 4z"/><path d="M7 11h0"/><path d="M11 11h0"/><rect x="7" y="15" width="4" height="5"/></svg>
+        {% elif loop.index0 == 1 %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2l3 3.5L3 9"/><path d="M6 5.5H2"/><path d="M21 2l-3 3.5L21 9"/><path d="M18 5.5h4"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M17 22H7l1-8h8l1 8z"/></svg>
+        {% elif loop.index0 == 2 %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        {% elif loop.index0 == 3 %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/></svg>
+        {% elif loop.index0 == 4 %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        {% else %}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        {% endif %}
+        <span>{{ item }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="host-page-carousel" id="hostCarousel">
+      <div class="host-page-carousel-track">
+        {# First pass — real images with native lazy loading #}
+        {% for region in locations.regions %}
+        {% for machine in region.machines %}
+        {% if machine.photos and machine.photos[0] %}
+        <a href="{{ ('/' + pageLocale.pathPrefix + 'locations/' + machine.slug + '/') | url }}" class="host-page-carousel-slide">
+          <img src="{{ machine.photos[0].src | url }}" alt="{{ machine.photos[0].alt }}" loading="lazy" decoding="async" width="320" height="220">
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {# Second pass — duplicates deferred via data-src #}
+        {% for region in locations.regions %}
+        {% for machine in region.machines %}
+        {% if machine.photos and machine.photos[0] %}
+        <a href="{{ ('/' + pageLocale.pathPrefix + 'locations/' + machine.slug + '/') | url }}" class="host-page-carousel-slide" aria-hidden="true" tabindex="-1">
+          <img data-src="{{ machine.photos[0].src | url }}" alt="" width="320" height="220">
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    <p class="host-page-note" data-animate>{{ t.host_page.ideal_locations.note }}</p>
+  </div>
+</section>
+
+{# ======== Support ======== #}
+<section class="host-page-support">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{{ t.host_page.support.section_tag }}</span>
+      <h2 class="section-title">{{ t.host_page.support.heading | replace("Infrastructure", '<span class="gradient-text">Infrastructure</span>') | safe }}</h2>
+      <p class="section-desc">{{ t.host_page.support.intro }}</p>
+    </div>
+    <div class="host-page-support-card" data-animate>
+      <p class="host-page-support-intro">{{ t.host_page.support.channels_intro }}</p>
+      <ul class="host-page-req-list">
+        {% for item in t.host_page.support.items %}
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>{{ item }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="host-page-support-note">{{ t.host_page.support.note }}</p>
+    </div>
+  </div>
+</section>
+
+{# ======== Process ======== #}
+<section class="host-page-process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{{ t.host_page.process.section_tag }}</span>
+      <h2 class="section-title">{{ t.host_page.process.heading | replace("Works", '<span class="gradient-text">Works</span>') | safe }}</h2>
+    </div>
+    <div class="steps">
+      {% for step in t.host_page.process.steps %}
+      <div class="step" data-animate>
+        <div class="step-number">{{ loop.index | pad }}</div>
+        <div class="step-content">
+          <h3>{{ step }}</h3>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="host-page-note" data-animate>{{ t.host_page.process.note }}</p>
+  </div>
+</section>
+
+{# ======== CTA ======== #}
+<section class="host-page-cta-section">
+  <div class="container">
+    <div class="host-page-cta-card" data-animate>
+      <h2>{{ t.host_page.cta.heading }}</h2>
+      <p>{{ t.host_page.cta.body }}</p>
+      <p>{{ t.host_page.cta.closing }}</p>
+      <p class="host-page-cta-interested">{{ t.host_page.cta.interested }}</p>
+      <a href="mailto:{{ site.contact.email }}" class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        {{ t.host_page.cta.button }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ======== Footer ======== #}
+{% include "footer.njk" %}
