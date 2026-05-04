@@ -150,6 +150,8 @@ faq:
       answer: "최근 국내 통신사 변경으로 인해 OTP 코드 SMS 전송이 영향을 받을 수 있습니다. <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> 또는 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a>을 통해 저희 지원팀에 연락해 주시면 거래를 완료하실 수 있도록 도와드리겠습니다."
     - question: "온라인으로도 Bitcoin을 구매할 수 있나요?"
       answer: "네! 온라인으로 Bitcoin을 구매하시려면 <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a>를 방문하여 저희 온라인 거래소 서비스를 이용해 주세요. 은행 송금 및 기타 결제 수단을 사용하실 수 있습니다."
+    - question: "Bitcoin ATM에서 스테이블코인도 사용할 수 있나요?"
+      answer: "네. 2026년 5월 기준으로 저희 기기는 Ethereum 네트워크의 USDT(Tether) 및 USDC(Circle) 거래를 지원합니다. 향후 사용자 수요와 <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN 스왑 엔진 API</a>의 개발 진행 상황에 따라 추가 블록체인 연동이 도입될 수 있습니다."
 
 locations:
   regions:

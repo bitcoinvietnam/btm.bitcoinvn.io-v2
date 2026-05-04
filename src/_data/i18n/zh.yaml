@@ -150,6 +150,8 @@ faq:
       answer: "由于近期国内电信变动，OTP 验证码短信的发送可能受到影响。请通过 <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> 或 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> 联系我们的客服团队，我们将帮助您完成交易。"
     - question: "我可以在线购买比特币吗？"
       answer: "可以！如果您更倾向于在线购买比特币，请访问 <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> 使用我们的在线交易服务。支持银行转账及其他支付方式。"
+    - question: "你们的比特币 ATM 支持稳定币吗？"
+      answer: "支持。截至 2026 年 5 月，我们的机器支持使用 Ethereum 网络上的 USDT（Tether）和 USDC（Circle）进行交易。未来可能会根据用户需求和 <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN 兑换引擎 API</a> 的开发进展，逐步引入对其他区块链的支持。"
 
 locations:
   regions:

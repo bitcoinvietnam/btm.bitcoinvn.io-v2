@@ -150,6 +150,8 @@ faq:
       answer: "Due to recent domestic telecom changes, SMS delivery for OTP codes may be affected. Please contact our support team via <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> or <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> and we'll help you complete your transaction."
     - question: "Can I buy Bitcoin online instead?"
       answer: "Yes! If you prefer to buy Bitcoin online, visit <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> to use our online exchange service. Bank transfers and other payment methods are available."
+    - question: "Does your Bitcoin ATM accept stablecoins?"
+      answer: "Yes. As of May 2026, our machines support transactions using USDT (Tether) and USDC (Circle) on the Ethereum network. Additional blockchain integrations may be introduced over time, depending on user demand and ongoing development of the <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN swap engine API</a>."
 
 locations:
   regions:

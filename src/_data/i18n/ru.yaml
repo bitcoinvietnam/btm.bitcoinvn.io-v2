@@ -150,6 +150,8 @@ faq:
       answer: "Из-за недавних изменений в работе местных операторов связи доставка SMS с OTP-кодами может быть нарушена. Пожалуйста, обратитесь в нашу службу поддержки через <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> или <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> — мы поможем вам завершить транзакцию."
     - question: "Можно ли купить Bitcoin онлайн?"
       answer: "Да! Если вы предпочитаете покупать Bitcoin онлайн, посетите <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> и воспользуйтесь нашим онлайн-обменником. Доступны банковские переводы и другие способы оплаты."
+    - question: "Принимает ли ваш Bitcoin-банкомат стейблкоины?"
+      answer: "Да. С мая 2026 года наши терминалы поддерживают операции с USDT (Tether) и USDC (Circle) в сети Ethereum. Со временем могут добавляться интеграции с другими блокчейнами — в зависимости от спроса пользователей и развития <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>API обменного движка BitcoinVN</a>."
 
 locations:
   regions:
