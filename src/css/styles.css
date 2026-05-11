@@ -178,7 +178,6 @@ button {
 .logo-img {
   height: 30px;
   width: auto;
-  image-rendering: pixelated;
 }
 
 .logo-btm {
