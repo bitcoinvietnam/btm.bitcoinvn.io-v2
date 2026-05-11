@@ -58,9 +58,12 @@ ui:
     breadcrumb_locations: "机器位置"
     opening_hours: "营业时间"
     cryptocurrencies: "支持的加密货币"
-    crypto_value: "比特币 (BTC) — 买 & 卖"
-    interface_langs: "界面语言"
-    interface_value: "越南语、英语"
+    directions: "导航路线"
+    directions_google: "Google 地图"
+    directions_apple: "Apple 地图"
+    directions_osm: "OpenStreetMap"
+    action_buy: "买"
+    action_sell: "卖"
     about: "关于此位置"
     address: "地址"
     phone: "电话"
@@ -69,9 +72,6 @@ ui:
     website: "网站"
     gallery_heading: "内部实景"
     cta_sub: "用现金买卖比特币——快速现场交易。"
-    cta_maps: "在 Google 地图中打开"
-    cta_all_locations: "查看所有位置"
-    questions: "有疑问？"
   js:
     open: "营业中"
     closed: "已打烊"
@@ -151,8 +151,8 @@ faq:
       answer: "由于近期国内电信变动，OTP 验证码短信的发送可能受到影响。请通过 <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> 或 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> 联系我们的客服团队，我们将帮助您完成交易。"
     - question: "我可以在线购买比特币吗？"
       answer: "可以！如果您更倾向于在线购买比特币，请访问 <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> 使用我们的在线交易服务。支持银行转账及其他支付方式。"
-    - question: "你们的比特币 ATM 支持稳定币吗？"
-      answer: "支持。截至 2026 年 5 月，我们的机器支持使用 Ethereum 网络上的 USDT（Tether）和 USDC（Circle）进行交易。未来可能会根据用户需求和 <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN 兑换引擎 API</a> 的开发进展，逐步引入对其他区块链的支持。"
+    - question: "你们的 BTM 还支持哪些其他加密货币？"
+      answer: "BTC 是我们的主要资产，但截至 2026 年 5 月，我们的机器也支持 Ethereum 网络上的 USDT（Tether）和 USDC（Circle），以及 ZEC（Zcash）和 XMR（Monero）。未来可能会根据用户需求和 <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN 兑换引擎 API</a> 的开发进展，逐步引入对其他区块链的支持。"
 
 locations:
   regions:

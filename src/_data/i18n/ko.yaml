@@ -58,9 +58,12 @@ ui:
     breadcrumb_locations: "위치"
     opening_hours: "영업 시간"
     cryptocurrencies: "취급 암호화폐"
-    crypto_value: "Bitcoin (BTC) — 구매 및 판매"
-    interface_langs: "인터페이스 언어"
-    interface_value: "베트남어, 영어"
+    directions: "길찾기"
+    directions_google: "Google 지도"
+    directions_apple: "Apple 지도"
+    directions_osm: "OpenStreetMap"
+    action_buy: "구매"
+    action_sell: "판매"
     about: "이 위치에 대하여"
     address: "주소"
     phone: "전화"
@@ -69,9 +72,6 @@ ui:
     website: "웹사이트"
     gallery_heading: "내부 모습"
     cta_sub: "현금으로 Bitcoin 구매 및 판매 — 빠른 현장 거래."
-    cta_maps: "Google Maps에서 열기"
-    cta_all_locations: "전체 위치 보기"
-    questions: "궁금한 점이 있으신가요?"
   js:
     open: "영업 중"
     closed: "영업 종료"
@@ -151,8 +151,8 @@ faq:
       answer: "최근 국내 통신사 변경으로 인해 OTP 코드 SMS 전송이 영향을 받을 수 있습니다. <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> 또는 <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a>을 통해 저희 지원팀에 연락해 주시면 거래를 완료하실 수 있도록 도와드리겠습니다."
     - question: "온라인으로도 Bitcoin을 구매할 수 있나요?"
       answer: "네! 온라인으로 Bitcoin을 구매하시려면 <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a>를 방문하여 저희 온라인 거래소 서비스를 이용해 주세요. 은행 송금 및 기타 결제 수단을 사용하실 수 있습니다."
-    - question: "Bitcoin ATM에서 스테이블코인도 사용할 수 있나요?"
-      answer: "네. 2026년 5월 기준으로 저희 기기는 Ethereum 네트워크의 USDT(Tether) 및 USDC(Circle) 거래를 지원합니다. 향후 사용자 수요와 <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN 스왑 엔진 API</a>의 개발 진행 상황에 따라 추가 블록체인 연동이 도입될 수 있습니다."
+    - question: "BTM에서 어떤 다른 암호화폐를 지원하나요?"
+      answer: "BTC가 저희의 주요 자산이지만, 2026년 5월 기준으로 저희 기기는 Ethereum 네트워크의 USDT(Tether) 및 USDC(Circle)와 함께 ZEC(Zcash) 및 XMR(Monero)도 지원합니다. 향후 사용자 수요와 <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN 스왑 엔진 API</a>의 개발 진행 상황에 따라 추가 블록체인 연동이 도입될 수 있습니다."
 
 locations:
   regions:

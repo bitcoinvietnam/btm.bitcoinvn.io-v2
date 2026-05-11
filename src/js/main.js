@@ -16,7 +16,75 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocaleSwitcher();
   initHostCarousel();
   initFunctionKeys();
+  initCoinRotator();
 });
+
+/* ======== Hero coin name rotator (pixelate transition) ======== */
+function initCoinRotator() {
+  const el = document.querySelector(".coin-rotator");
+  if (!el) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const svgMarkup =
+    '<svg width="0" height="0" aria-hidden="true" style="position:absolute;left:0;top:0;pointer-events:none">' +
+    '<defs>' +
+    [2, 4, 7]
+      .map(
+        (n) =>
+          `<filter id="pix-${n}" x="0" y="0" width="100%" height="100%">` +
+          `<feFlood x="${n}" y="${n}" width="${n}" height="${n}"/>` +
+          `<feComposite width="${n * 2}" height="${n * 2}"/>` +
+          `<feTile result="a"/>` +
+          `<feComposite in="SourceGraphic" in2="a" operator="in"/>` +
+          `<feMorphology operator="dilate" radius="${n}"/>` +
+          `</filter>`,
+      )
+      .join("") +
+    "</defs></svg>";
+  document.body.insertAdjacentHTML("afterbegin", svgMarkup);
+
+  const primary = el.textContent;
+  const cycle = [primary, "USDT", "USDC"];
+
+  const measure = document.createElement("span");
+  measure.style.cssText =
+    "position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none";
+  measure.className = el.className.replace("coin-rotator", "").trim();
+  el.parentElement.appendChild(measure);
+  let maxWidth = 0;
+  for (const c of cycle) {
+    measure.textContent = c;
+    maxWidth = Math.max(maxWidth, measure.getBoundingClientRect().width);
+  }
+  measure.remove();
+  el.style.minWidth = `${Math.ceil(maxWidth)}px`;
+
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  let i = 0;
+
+  async function cycleOnce() {
+    el.classList.add("pix-2");
+    await wait(70);
+    el.classList.replace("pix-2", "pix-4");
+    await wait(70);
+    el.classList.replace("pix-4", "pix-7");
+    await wait(110);
+    i = (i + 1) % cycle.length;
+    el.textContent = cycle[i];
+    await wait(130);
+    el.classList.replace("pix-7", "pix-4");
+    await wait(70);
+    el.classList.replace("pix-4", "pix-2");
+    await wait(70);
+    el.classList.remove("pix-2");
+  }
+
+  let timer = setInterval(cycleOnce, 3200);
+  document.addEventListener("visibilitychange", () => {
+    clearInterval(timer);
+    if (!document.hidden) timer = setInterval(cycleOnce, 3200);
+  });
+}
 
 /* ======== F-key shortcuts ======== */
 function initFunctionKeys() {
@@ -137,40 +205,43 @@ function initProcessTabs() {
 }
 
 /* ======== Leaflet Map ======== */
+function makeBtmMarkerIcon(isOpen) {
+  return L.divIcon({
+    className: isOpen ? "btm-marker is-open" : "btm-marker is-closed",
+    html: `<div class="btm-marker-inner"><span class="btm-marker-glyph">₿</span></div>`,
+    iconSize: [24, 30],
+    iconAnchor: [12, 28],
+    popupAnchor: [0, -28],
+  });
+}
+
 function initMap() {
   if (typeof L === "undefined" || !window.BTM_LOCATIONS) return;
 
   const data = window.BTM_LOCATIONS;
 
-  // Build a marker icon — square yellow LED pin with center dot
-  function makeMarkerIcon(isOpen) {
-    return L.divIcon({
-      className: isOpen ? "btm-marker is-open" : "btm-marker is-closed",
-      html: `<div class="btm-marker-inner"><span class="btm-marker-glyph">₿</span></div>`,
-      iconSize: [24, 30],
-      iconAnchor: [12, 28],
-      popupAnchor: [0, -28],
-    });
-  }
+  const mapEl = document.getElementById("btm-map-all");
+  if (!mapEl) return;
 
   const allMarkerRefs = [];
   const markerBySlug = new Map();
+  const cardBySlug = new Map();
+  document.querySelectorAll(".location-card[data-slug]").forEach((card) => {
+    cardBySlug.set(card.dataset.slug, card);
+  });
 
-  data.regions.forEach((region, regionIndex) => {
-    const mapEl = document.getElementById(`btm-map-${regionIndex}`);
-    if (!mapEl) return;
+  const map = L.map(mapEl, {
+    zoomControl: true,
+    scrollWheelZoom: false,
+  });
 
-    const map = L.map(mapEl, {
-      zoomControl: true,
-      scrollWheelZoom: false,
-    });
+  L.tileLayer(data.map.tileStyle, {
+    attribution: data.map.attribution,
+    maxZoom: 18,
+  }).addTo(map);
 
-    L.tileLayer(data.map.tileStyle, {
-      attribution: data.map.attribution,
-      maxZoom: 18,
-    }).addTo(map);
-
-    const markers = [];
+  const allMarkers = [];
+  data.regions.forEach((region) => {
     region.machines.forEach((machine) => {
       const h = machine.hours;
       const daysStr = h.days.join(",");
@@ -180,50 +251,92 @@ function initMap() {
       const statusLabel = isOpen ? openLabel : closedLabel;
 
       const marker = L.marker([machine.lat, machine.lng], {
-        icon: makeMarkerIcon(isOpen),
+        icon: makeBtmMarkerIcon(isOpen),
       })
         .addTo(map)
         .bindPopup(
           `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small><br><small>${statusLabel} · ${window.BTM_HOURS_I18N?.[machine.slug] ?? h.display}</small>`
         );
-      markers.push(marker);
-      allMarkerRefs.push({ marker, hours: h, daysStr });
+
+      marker.on("click", () => {
+        const card = cardBySlug.get(machine.slug);
+        if (!card) return;
+        document.querySelectorAll(".location-card.active").forEach((c) => c.classList.remove("active"));
+        card.classList.add("active");
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => card.classList.remove("active"), 2400);
+      });
+
+      allMarkers.push(marker);
+      allMarkerRefs.push({ marker, hours: h, daysStr, lastOpen: isOpen });
       markerBySlug.set(machine.slug, marker);
     });
-
-    if (markers.length === 1) {
-      map.setView([region.machines[0].lat, region.machines[0].lng], 14);
-    } else if (markers.length > 0) {
-      map.fitBounds(L.featureGroup(markers).getBounds().pad(0.15));
-    }
-
-    map.on("click", () => {
-      map.scrollWheelZoom.enable();
-    });
   });
 
-  document.querySelectorAll(".location-card[data-slug]").forEach((card) => {
-    const marker = markerBySlug.get(card.dataset.slug);
+  let homeBounds = null;
+  if (allMarkers.length > 0) {
+    homeBounds = L.featureGroup(allMarkers).getBounds().pad(0.15);
+    if (allMarkers.length === 1) {
+      map.setView(allMarkers[0].getLatLng(), 14);
+    } else {
+      map.fitBounds(homeBounds);
+    }
+  }
+
+  map.on("click", () => {
+    map.scrollWheelZoom.enable();
+  });
+
+  let hoverTimer = null;
+  let leaveTimer = null;
+  const flyToMarker = (marker) => {
+    map.flyTo(marker.getLatLng(), 13, { duration: 0.8, easeLinearity: 0.25 });
+  };
+  const flyHome = () => {
+    if (homeBounds) map.flyToBounds(homeBounds, { duration: 0.8, easeLinearity: 0.25 });
+  };
+
+  cardBySlug.forEach((card, slug) => {
+    const marker = markerBySlug.get(slug);
     if (!marker) return;
     card.addEventListener("mouseenter", () => {
+      clearTimeout(leaveTimer);
+      clearTimeout(hoverTimer);
       const el = marker.getElement();
-      if (!el) return;
-      el.classList.add("is-highlighted");
-      marker.setZIndexOffset(1000);
+      if (el) {
+        el.classList.add("is-highlighted");
+        marker.setZIndexOffset(1000);
+      }
+      hoverTimer = setTimeout(() => flyToMarker(marker), 140);
     });
     card.addEventListener("mouseleave", () => {
+      clearTimeout(hoverTimer);
       const el = marker.getElement();
-      if (!el) return;
-      el.classList.remove("is-highlighted");
-      marker.setZIndexOffset(0);
+      if (el) {
+        el.classList.remove("is-highlighted");
+        marker.setZIndexOffset(0);
+      }
     });
   });
 
-  // Re-check marker status every minute (all maps)
+  const listEl = document.querySelector(".locations-list");
+  if (listEl) {
+    listEl.addEventListener("mouseleave", () => {
+      clearTimeout(hoverTimer);
+      leaveTimer = setTimeout(flyHome, 240);
+    });
+    listEl.addEventListener("mouseenter", () => {
+      clearTimeout(leaveTimer);
+    });
+  }
+
   setInterval(() => {
-    allMarkerRefs.forEach(({ marker, hours: h, daysStr }) => {
+    allMarkerRefs.forEach((ref) => {
+      const { marker, hours: h, daysStr } = ref;
       const isOpen = checkIfOpen(daysStr, h.open, h.close, h.timezone);
-      marker.setIcon(makeMarkerIcon(isOpen));
+      if (isOpen === ref.lastOpen) return;
+      ref.lastOpen = isOpen;
+      marker.setIcon(makeBtmMarkerIcon(isOpen));
     });
   }, 60 * 1000);
 }
@@ -252,15 +365,7 @@ function initLocationDetailMap() {
     maxZoom: 18,
   }).addTo(map);
 
-  const markerIcon = L.divIcon({
-    className: "btm-marker is-open",
-    html: `<div class="btm-marker-inner"><span class="btm-marker-glyph">₿</span></div>`,
-    iconSize: [24, 30],
-    iconAnchor: [12, 28],
-    popupAnchor: [0, -28],
-  });
-
-  L.marker([lat, lng], { icon: markerIcon })
+  L.marker([lat, lng], { icon: makeBtmMarkerIcon(true) })
     .addTo(map)
     .bindPopup(`<strong>${name}</strong><br><small>${district}</small>`)
     .openPopup();

@@ -58,9 +58,12 @@ ui:
     breadcrumb_locations: "Локации"
     opening_hours: "Часы работы"
     cryptocurrencies: "Криптовалюты"
-    crypto_value: "Bitcoin (BTC) — Купить и Продать"
-    interface_langs: "Языки интерфейса"
-    interface_value: "Вьетнамский, Английский"
+    directions: "Маршрут"
+    directions_google: "Google Maps"
+    directions_apple: "Apple Maps"
+    directions_osm: "OpenStreetMap"
+    action_buy: "Купить"
+    action_sell: "Продать"
     about: "О локации"
     address: "Адрес"
     phone: "Телефон"
@@ -69,9 +72,6 @@ ui:
     website: "Сайт"
     gallery_heading: "Внутри"
     cta_sub: "Купите или продайте Bitcoin за наличные — быстрые транзакции на месте."
-    cta_maps: "Открыть в Google Maps"
-    cta_all_locations: "Все локации"
-    questions: "Есть вопросы?"
   js:
     open: "Открыто"
     closed: "Закрыто"
@@ -151,8 +151,8 @@ faq:
       answer: "Из-за недавних изменений в работе местных операторов связи доставка SMS с OTP-кодами может быть нарушена. Пожалуйста, обратитесь в нашу службу поддержки через <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> или <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> — мы поможем вам завершить транзакцию."
     - question: "Можно ли купить Bitcoin онлайн?"
       answer: "Да! Если вы предпочитаете покупать Bitcoin онлайн, посетите <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> и воспользуйтесь нашим онлайн-обменником. Доступны банковские переводы и другие способы оплаты."
-    - question: "Принимает ли ваш Bitcoin-банкомат стейблкоины?"
-      answer: "Да. С мая 2026 года наши терминалы поддерживают операции с USDT (Tether) и USDC (Circle) в сети Ethereum. Со временем могут добавляться интеграции с другими блокчейнами — в зависимости от спроса пользователей и развития <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>API обменного движка BitcoinVN</a>."
+    - question: "Какие ещё криптовалюты поддерживают ваши банкоматы?"
+      answer: "BTC остаётся нашим основным активом, но с мая 2026 года наши терминалы также поддерживают USDT (Tether) и USDC (Circle) в сети Ethereum, а также ZEC (Zcash) и XMR (Monero). Со временем могут добавляться интеграции с другими блокчейнами — в зависимости от спроса пользователей и развития <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>API обменного движка BitcoinVN</a>."
 
 locations:
   regions:

@@ -58,9 +58,12 @@ ui:
     breadcrumb_locations: "Locations"
     opening_hours: "Opening Hours"
     cryptocurrencies: "Cryptocurrencies"
-    crypto_value: "Bitcoin (BTC) — Buy & Sell"
-    interface_langs: "Interface Languages"
-    interface_value: "Vietnamese, English"
+    directions: "Directions"
+    directions_google: "Google Maps"
+    directions_apple: "Apple Maps"
+    directions_osm: "OpenStreetMap"
+    action_buy: "Buy"
+    action_sell: "Sell"
     about: "About This Location"
     address: "Address"
     phone: "Phone"
@@ -69,9 +72,6 @@ ui:
     website: "Website"
     gallery_heading: "Inside"
     cta_sub: "Buy or sell Bitcoin for cash — fast walk-in transactions."
-    cta_maps: "Open in Google Maps"
-    cta_all_locations: "View All Locations"
-    questions: "Questions?"
   js:
     open: "Open now"
     closed: "Closed"
@@ -151,8 +151,8 @@ faq:
       answer: "Due to recent domestic telecom changes, SMS delivery for OTP codes may be affected. Please contact our support team via <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> or <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> and we'll help you complete your transaction."
     - question: "Can I buy Bitcoin online instead?"
       answer: "Yes! If you prefer to buy Bitcoin online, visit <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> to use our online exchange service. Bank transfers and other payment methods are available."
-    - question: "Does your Bitcoin ATM accept stablecoins?"
-      answer: "Yes. As of May 2026, our machines support transactions using USDT (Tether) and USDC (Circle) on the Ethereum network. Additional blockchain integrations may be introduced over time, depending on user demand and ongoing development of the <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN swap engine API</a>."
+    - question: "What other cryptocurrencies do your BTMs support?"
+      answer: "BTC is our primary asset, but as of May 2026 our machines also support USDT (Tether) and USDC (Circle) on the Ethereum network, plus ZEC (Zcash) and XMR (Monero). Additional blockchain integrations may be introduced over time, depending on user demand and ongoing development of the <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVN swap engine API</a>."
 
 locations:
   regions:

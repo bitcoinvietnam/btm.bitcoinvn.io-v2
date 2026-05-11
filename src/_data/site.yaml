@@ -15,3 +15,14 @@ contact:
 
 notice:
   enabled: true
+
+supported_assets:
+  - ticker: "BTC"
+    buy: true
+    sell: true
+  - ticker: "USDT"
+    buy: true
+    sell: true
+  - ticker: "USDC"
+    buy: true
+    sell: true

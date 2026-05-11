@@ -135,7 +135,7 @@ eleventyComputed:
   </div>
   <div class="hero-content">
     <span class="hero-tag">{{ t.ui.hero.tag }}</span>
-    <h1 class="hero-title">{{ t.ui.hero.headline | replace("Bitcoin", '<span class="gradient-text">Bitcoin</span>') | replace("比特币", '<span class="gradient-text">比特币</span>') | safe }}</h1>
+    <h1 class="hero-title">{{ t.ui.hero.headline | replace("Bitcoin", '<span class="gradient-text coin-rotator">Bitcoin</span><br>') | replace("比特币", '<span class="gradient-text coin-rotator">比特币</span><br>') | safe }}</h1>
     <p class="hero-subtitle">{{ t.site.tagline }}</p>
     <div class="hero-actions">
       <a href="#locations" class="btn btn-primary" data-key="F1">
@@ -219,40 +219,46 @@ eleventyComputed:
       <p class="section-desc">{{ t.ui.locations_section.subtitle }}</p>
     </div>
 
-    <div class="locations-grid">
-      {% for region in locations.regions %}
-      {% set tRegion = t.locations.regions[loop.index0] %}
-      <div class="location-region">
-        <div class="region-header">
-          <h3>{{ tRegion.name if tRegion else region.name }}</h3>
-          <span class="location-count">{{ region.machines.length }} {{ t.ui.locations_section.machine_plural if region.machines.length > 1 else t.ui.locations_section.machine_singular }}</span>
-          {% set regionDesc = tRegion.description if tRegion else region.description %}
-          {% if regionDesc %}<p class="region-description">{{ regionDesc }}</p>{% endif %}
-        </div>
+    <div class="locations-layout">
+      <div class="locations-list">
+        {% for region in locations.regions %}
+        {% set tRegion = t.locations.regions[loop.index0] %}
+        <div class="location-region">
+          <div class="region-header">
+            <h3>{{ tRegion.name if tRegion else region.name }}</h3>
+            <span class="location-count">{{ region.machines.length }} {{ t.ui.locations_section.machine_plural if region.machines.length > 1 else t.ui.locations_section.machine_singular }}</span>
+            {% set regionDesc = tRegion.description if tRegion else region.description %}
+            {% if regionDesc %}<p class="region-description">{{ regionDesc }}</p>{% endif %}
+          </div>
 
-        {# Per-region map #}
-        <div class="map-wrapper region-map" id="btm-map-{{ loop.index0 }}"></div>
-
-        <div class="location-cards">
-          {% for machine in region.machines %}
-          {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
-          <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-slug="{{ machine.slug }}" data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
-            <div class="location-card-head">
-              <span class="location-status-dot"></span>
-              <span class="location-status-text"></span>
-              <span class="sig-bars" aria-hidden="true"><i></i><i></i><i></i></span>
-            </div>
-            <div class="location-info">
-              <h4>{{ machine.name }}</h4>
-              <span class="location-district">{{ machine.district }}</span>
-              {% set tMachine = tRegion.machines[machine.slug] if tRegion and tRegion.machines else none %}
-              <span class="location-hours-range">{{ tMachine.hours_display if tMachine and tMachine.hours_display else machine.hours.display }}</span>
-            </div>
-          </a>
-          {% endfor %}
+          <div class="location-cards">
+            {% for machine in region.machines %}
+            {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
+            {% set heroPhoto = machine.photos[0].src if machine.photos and machine.photos.length else "" %}
+            <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card{% if heroPhoto %} location-card--photo{% endif %}" data-animate data-slug="{{ machine.slug }}" data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
+              {% if heroPhoto %}
+              <img class="location-card__photo" src="{{ heroPhoto | url }}" alt="" loading="lazy" decoding="async" aria-hidden="true">
+              {% endif %}
+              <div class="location-card__head">
+                <span class="location-status-dot"></span>
+                <span class="location-status-text"></span>
+              </div>
+              <div class="location-card__info">
+                <h4>{{ machine.name }}</h4>
+                <span class="location-district">{{ machine.district }}</span>
+                {% set tMachine = tRegion.machines[machine.slug] if tRegion and tRegion.machines else none %}
+                <span class="location-hours-range">{{ tMachine.hours_display if tMachine and tMachine.hours_display else machine.hours.display }}</span>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+
+      <aside class="locations-map-sticky">
+        <div class="map-wrapper" id="btm-map-all"></div>
+      </aside>
     </div>
   </div>
 </section>

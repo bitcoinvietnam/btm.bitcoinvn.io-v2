@@ -58,9 +58,12 @@ ui:
     breadcrumb_locations: "設置場所"
     opening_hours: "営業時間"
     cryptocurrencies: "対応暗号通貨"
-    crypto_value: "Bitcoin (BTC) — 売買対応"
-    interface_langs: "対応言語"
-    interface_value: "ベトナム語、英語"
+    directions: "経路案内"
+    directions_google: "Google マップ"
+    directions_apple: "Apple マップ"
+    directions_osm: "OpenStreetMap"
+    action_buy: "購入"
+    action_sell: "売却"
     about: "この設置場所について"
     address: "住所"
     phone: "電話番号"
@@ -69,9 +72,6 @@ ui:
     website: "ウェブサイト"
     gallery_heading: "店内の様子"
     cta_sub: "現金でBitcoinを売買 — 迅速な対面取引。"
-    cta_maps: "Google Mapsで開く"
-    cta_all_locations: "全設置場所を見る"
-    questions: "ご質問は？"
   js:
     open: "営業中"
     closed: "営業時間外"
@@ -151,8 +151,8 @@ faq:
       answer: "国内通信事業者の最近の変更により、OTPコードのSMS配信に影響が出る場合があります。<a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a>または<a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a>からサポートチームにご連絡ください。お取引の完了をお手伝いいたします。"
     - question: "Bitcoinをオンラインで購入できますか？"
       answer: "はい！オンラインでのBitcoin購入をご希望の場合は、<a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a>でオンライン取引サービスをご利用ください。銀行振込やその他の支払い方法に対応しています。"
-    - question: "Bitcoin ATMはステーブルコインに対応していますか？"
-      answer: "はい。2026年5月時点で、当社のマシンはEthereumネットワーク上のUSDT（Tether）およびUSDC（Circle）を使った取引に対応しています。今後、ユーザーの需要や<a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVNスワップエンジンAPI</a>の開発状況に応じて、他のブロックチェーンとの連携が追加される可能性があります。"
+    - question: "他にはどのような暗号通貨に対応していますか？"
+      answer: "BTCが当社の主要資産ですが、2026年5月時点で当社のマシンはEthereumネットワーク上のUSDT（Tether）およびUSDC（Circle）に加えて、ZEC（Zcash）およびXMR（Monero）にも対応しています。今後、ユーザーの需要や<a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>BitcoinVNスワップエンジンAPI</a>の開発状況に応じて、他のブロックチェーンとの連携が追加される可能性があります。"
 
 locations:
   regions:

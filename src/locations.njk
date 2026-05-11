@@ -59,43 +59,55 @@ eleventyComputed:
     </div>
   </section>
 
-  {# ======== Info Cards ======== #}
-  <section class="location-info-section">
-    <div class="container">
-      <div class="location-info-grid">
-        <div class="location-info-card" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
-          <div class="location-info-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3>{{ t.ui.location_page.opening_hours }}</h3>
-          <span class="location-hours location-hours-centered">
-            <span class="location-status-dot"></span>
-            <span class="location-status-text"></span>
-          </span>
-          <p>{{ machine.hours.display }}</p>
-        </div>
-        <div class="location-info-card">
-          <div class="location-info-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <h3>{{ t.ui.location_page.cryptocurrencies }}</h3>
-          <p>{{ t.ui.location_page.crypto_value }}</p>
-        </div>
-        <div class="location-info-card">
-          <div class="location-info-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3>{{ t.ui.location_page.interface_langs }}</h3>
-          <p>{{ t.ui.location_page.interface_value }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {# ======== Map ======== #}
+  {# ======== Map + Info Card ======== #}
   <section class="location-map-section">
     <div class="container">
-      <div class="location-map-single" id="location-detail-map" data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-name="{{ machine.name }}" data-district="{{ machine.district }}">
+      <div class="location-map-card">
+        <aside class="location-map-card__info">
+          <div class="info-block" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
+            <h3>{{ t.ui.location_page.opening_hours }}</h3>
+            <div class="info-list">
+              <span class="info-line">
+                <span class="location-status-dot"></span>
+                <span class="location-status-text"></span>
+              </span>
+              <span class="info-line">{{ machine.hours.open }} &mdash; {{ machine.hours.close }}</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>{{ t.ui.location_page.cryptocurrencies }}</h3>
+            <div class="info-list info-list--pills">
+              {% for asset in site.supported_assets %}
+              <span class="info-pill{% if not asset.buy and not asset.sell %} info-pill--disabled{% endif %}">
+                <span>{{ asset.ticker }}</span>
+                <span class="info-pill__ops">
+                  {% if asset.buy %}<span aria-label="{{ t.ui.location_page.action_buy }}">&#x2191;</span>{% endif %}
+                  {% if asset.sell %}<span aria-label="{{ t.ui.location_page.action_sell }}">&#x2193;</span>{% endif %}
+                </span>
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>{{ t.ui.location_page.directions }}</h3>
+            <div class="directions-list">
+              <a class="directions-btn" href="{{ machine.mapsUrl }}" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>{{ t.ui.location_page.directions_google }}</span>
+              </a>
+              <a class="directions-btn" href="https://maps.apple.com/?daddr={{ machine.lat }},{{ machine.lng }}&amp;dirflg=d" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                <span>{{ t.ui.location_page.directions_apple }}</span>
+              </a>
+              <a class="directions-btn" href="https://www.openstreetmap.org/directions?to={{ machine.lat }}%2C{{ machine.lng }}" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                <span>{{ t.ui.location_page.directions_osm }}</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="location-map-card__map" id="location-detail-map" data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-name="{{ machine.name }}" data-district="{{ machine.district }}">
+        </div>
       </div>
     </div>
   </section>
@@ -103,9 +115,9 @@ eleventyComputed:
   {# ======== About ======== #}
   <section class="location-about">
     <div class="container">
+      <h2 class="location-about-heading">{{ t.ui.location_page.about }}</h2>
       <div class="location-about-grid">
         <div class="location-about-details">
-          <h2>{{ t.ui.location_page.about }}</h2>
           <div class="location-detail-list">
             <div class="location-detail-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -187,30 +199,6 @@ eleventyComputed:
   </section>
   {% endif %}
 
-  {# ======== CTA ======== #}
-  <section class="location-cta">
-    <div class="container">
-      <div class="location-cta-card">
-        <h2>{{ machine.name }}</h2>
-        <p>{{ t.ui.location_page.cta_sub }}</p>
-        <div class="location-cta-actions">
-          <a href="{{ machine.mapsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            {{ t.ui.location_page.cta_maps }}
-          </a>
-          <a href="{{ localeHome }}#locations" class="btn btn-secondary">
-            {{ t.ui.location_page.cta_all_locations }}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-        <div class="location-cta-contact">
-          <span>{{ t.ui.location_page.questions }}</span>
-          <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener">{{ t.ui.contact.telegram }}</a>
-          <a href="mailto:{{ site.contact.email }}">{{ t.ui.contact.email }}</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
 
 {# ======== Footer ======== #}
