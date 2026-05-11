@@ -216,6 +216,19 @@ locations:
           photos:
             - caption: "Surf Hostel 的 BitcoinVN BTM"
             - caption: "Surf Hostel 的冲浪课氛围"
+    - name: "岘港"
+      description: "越南中部海岸枢纽——海滩生活、国际化餐旅体验，以及在这个快速发展的城市中便捷使用比特币。"
+      machines:
+        westwood-da-nang:
+          hours_display: "每天 12:00 – 23:00"
+          description:
+            - "Westwood Da Nang 是一家位于 An Thuong 的现代餐饮目的地，地处 My Khe Beach 与 Han River 之间，在岘港最活跃的餐旅街区之一提供更高品质的晚间用餐体验。"
+            - "菜单以柴火烹饪、优质肉类、海鲜、时令食材和精心制作的西式菜品为核心，并搭配丰富的葡萄酒和鸡尾酒选择。Westwood 氛围精致而亲切，是您到访岘港市中心时买卖比特币的便利地点。"
+          photos:
+            - caption: "Westwood Da Nang 内部的 BitcoinVN BTM"
+            - caption: "An Thuong 的 Westwood Da Nang"
+            - caption: "BTM 位于餐厅内部，靠近 Westwood 的室内艺术品。"
+            - caption: "Westwood Da Nang 的用餐空间细节与比特币服务"
 
 host_page:
   meta_description: "与 BitcoinVN 合作，在您的商铺设置 Bitcoin ATM。固定月租收入，设备零成本，全托管运营。"

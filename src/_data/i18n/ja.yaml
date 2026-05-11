@@ -216,6 +216,19 @@ locations:
           photos:
             - caption: "Surf HostelのBitcoinVN BTM"
             - caption: "Surf Hostelのサーフスクールの雰囲気"
+    - name: "Da Nang"
+      description: "ベトナム中部沿岸の拠点。ビーチライフ、国際的なホスピタリティ、そして国内で急成長する都市の一つでのBitcoinアクセスがそろっています。"
+      machines:
+        westwood-da-nang:
+          hours_display: "毎日 12:00 – 23:00"
+          description:
+            - "Westwood Da Nangは、My Khe BeachとHan Riverの間にあるAn Thuongのモダンなダイニングスポットです。Da Nangで特に活気あるホスピタリティ地区の一つで、上質な夜の食事体験を提供しています。"
+            - "メニューは薪火調理、上質な肉料理、シーフード、季節の食材、丁寧に仕上げた西洋風料理を中心に、充実したワインとカクテルもそろえています。洗練されながらも親しみやすい雰囲気のWestwoodは、Da Nang中心部を訪れる際にBitcoinを売買するのにも便利な場所です。"
+          photos:
+            - caption: "Westwood Da Nang店内のBitcoinVN BTM"
+            - caption: "An ThuongのWestwood Da Nang"
+            - caption: "BTMはWestwoodのインテリアアート近く、レストラン内に設置されています。"
+            - caption: "Westwood Da Nangのダイニング空間とBitcoinアクセス"
 
 host_page:
   meta_description: "BitcoinVNと提携して、あなたのビジネスにBitcoin ATMを設置しませんか。毎月固定のリース収入、設備費用ゼロ、完全管理型の運営。"

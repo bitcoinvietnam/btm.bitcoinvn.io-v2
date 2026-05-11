@@ -216,6 +216,19 @@ locations:
           photos:
             - caption: "BTM BitcoinVN en Surf Hostel"
             - caption: "Ambiente de escuela de surf en Surf Hostel"
+    - name: "Da Nang"
+      description: "El centro costero del Vietnam central — vida de playa, hospitalidad internacional y acceso a Bitcoin en una de las ciudades de más rápido crecimiento del país."
+      machines:
+        westwood-da-nang:
+          hours_display: "Todos los días 12:00 – 23:00"
+          description:
+            - "Westwood Da Nang es un destino gastronómico moderno situado en An Thuong, entre My Khe Beach y el Han River, que ofrece una experiencia de cena elevada en uno de los distritos de hospitalidad más activos de Da Nang."
+            - "La carta se centra en cocina al fuego de leña, carnes premium, mariscos, ingredientes de temporada y cocina de inspiración occidental cuidadosamente preparada, junto con una sólida selección de vinos y cócteles. Con su ambiente refinado pero cercano, Westwood es un lugar práctico para comprar o vender Bitcoin durante una visita al centro de Da Nang."
+          photos:
+            - caption: "BTM BitcoinVN dentro de Westwood Da Nang"
+            - caption: "Westwood Da Nang en An Thuong"
+            - caption: "El BTM está dentro del restaurante, cerca del arte interior de Westwood."
+            - caption: "Detalles del comedor y acceso a Bitcoin en Westwood Da Nang"
 
 host_page:
   meta_description: "Asóciate con BitcoinVN para alojar un cajero Bitcoin en tu negocio. Ingresos por alquiler mensuales fijos, sin coste de equipo, operaciones totalmente gestionadas."
