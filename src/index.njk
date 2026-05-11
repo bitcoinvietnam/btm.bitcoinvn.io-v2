@@ -37,10 +37,17 @@ eleventyComputed:
 
 {# ======== Hero ======== #}
 <section class="hero" id="hero">
-  <div class="hero-bg">
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-bg" aria-hidden="true">
     <div class="hero-grid"></div>
+    <div class="hero-sweep"></div>
+    <div class="hero-glyph">&#8383;</div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-visual">
+    <span class="hv-corner hv-corner--tl" aria-hidden="true"></span>
+    <span class="hv-corner hv-corner--tr" aria-hidden="true"></span>
+    <span class="hv-corner hv-corner--bl" aria-hidden="true"></span>
+    <span class="hv-corner hv-corner--br" aria-hidden="true"></span>
     <div class="wireframe-scene">
       <div class="wireframe-btm">
         {# Canopy/Visor #}
@@ -126,21 +133,16 @@ eleventyComputed:
       </div>
     </div>
   </div>
-  <div class="container hero-content">
-    <div class="hero-badge">
-      <span class="pulse-dot"></span>
-      {{ t.ui.hero.operating_since }} {{ site.since }}
-    </div>
-    <h1 class="hero-title">
-      {{ t.ui.hero.headline | replace("Bitcoin", '<span class="gradient-text">Bitcoin</span><br>') | safe }}
-    </h1>
+  <div class="hero-content">
+    <span class="hero-tag">{{ t.ui.hero.tag }}</span>
+    <h1 class="hero-title">{{ t.ui.hero.headline | replace("Bitcoin", '<span class="gradient-text">Bitcoin</span>') | replace("比特币", '<span class="gradient-text">比特币</span>') | safe }}</h1>
     <p class="hero-subtitle">{{ t.site.tagline }}</p>
     <div class="hero-actions">
-      <a href="#locations" class="btn btn-primary">
+      <a href="#locations" class="btn btn-primary" data-key="F1">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         {{ t.ui.hero.cta_find }}
       </a>
-      <a href="#how-it-works" class="btn btn-secondary">
+      <a href="#how-it-works" class="btn btn-secondary" data-key="F2">
         {{ t.ui.hero.cta_learn }}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -154,18 +156,19 @@ eleventyComputed:
         <span class="stat-value">{{ totalMachines }}</span>
         <span class="stat-label">{{ t.ui.hero.stat_locations }}</span>
       </div>
-      <div class="stat-divider"></div>
+      <span class="stat-divider" aria-hidden="true">&#9474;</span>
       <div class="stat">
         <span class="stat-value">{{ 2026 - site.since }}+</span>
         <span class="stat-label">{{ t.ui.hero.stat_years }}</span>
       </div>
-      <div class="stat-divider"></div>
+      <span class="stat-divider" aria-hidden="true">&#9474;</span>
       <div class="stat">
         <span class="stat-value">0</span>
         <span class="stat-label">{{ t.ui.hero.stat_friction }}</span>
       </div>
     </div>
-  </div>
+  </div>{# /.hero-content #}
+  </div>{# /.hero-inner #}
   <div class="hero-scroll-indicator">
     <span>{{ t.ui.hero.scroll }}</span>
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
@@ -177,8 +180,8 @@ eleventyComputed:
 <section class="notice-banner">
   <div class="container">
     <div class="notice-content">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <p><strong>{{ t.ui.notice_label }}</strong> {{ t.site.notice.message }}</p>
+      <strong class="notice-label">{{ t.ui.notice_label }}</strong>
+      <span class="notice-message">{{ t.site.notice.message }}</span>
     </div>
   </div>
 </section>
@@ -233,31 +236,23 @@ eleventyComputed:
         <div class="location-cards">
           {% for machine in region.machines %}
           {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
-          <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
-            <div class="location-pin">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card" data-animate data-slug="{{ machine.slug }}" data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
+            <div class="location-card-head">
+              <span class="location-status-dot"></span>
+              <span class="location-status-text"></span>
+              <span class="sig-bars" aria-hidden="true"><i></i><i></i><i></i></span>
             </div>
             <div class="location-info">
               <h4>{{ machine.name }}</h4>
               <span class="location-district">{{ machine.district }}</span>
-              <span class="location-hours">
-                <span class="location-status-dot"></span>
-                <span class="location-status-text"></span>
-                {% set tMachine = tRegion.machines[machine.slug] if tRegion and tRegion.machines else none %}
-                <span class="location-hours-range">{{ tMachine.hours_display if tMachine and tMachine.hours_display else machine.hours.display }}</span>
-              </span>
+              {% set tMachine = tRegion.machines[machine.slug] if tRegion and tRegion.machines else none %}
+              <span class="location-hours-range">{{ tMachine.hours_display if tMachine and tMachine.hours_display else machine.hours.display }}</span>
             </div>
           </a>
           {% endfor %}
         </div>
       </div>
       {% endfor %}
-    </div>
-    <div class="locations-cta">
-      <a href="{{ site.mapsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        {{ t.ui.locations_section.view_maps }}
-      </a>
     </div>
   </div>
 </section>
@@ -305,8 +300,9 @@ eleventyComputed:
       {% for item in t.faq.items %}
       <div class="faq-item" data-animate>
         <button class="faq-question">
-          <span>{{ item.question }}</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <span class="faq-q-prefix" aria-hidden="true">Q.</span>
+          <span class="faq-q-text">{{ item.question }}</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
         </button>
         <div class="faq-answer">
           <p>{{ item.answer | safe }}</p>
@@ -322,6 +318,7 @@ eleventyComputed:
   <div class="container">
     <div class="host-card" data-animate>
       <div class="host-content">
+        <span class="host-eyebrow">{{ t.ui.host.nav_label }}</span>
         <h2>{{ t.ui.host.heading }}</h2>
         <p>{{ t.ui.host.body }}</p>
         <a href="{{ (localePrefix + '/host/') | url }}" class="btn btn-primary">
@@ -349,21 +346,21 @@ eleventyComputed:
       <p class="section-desc">{{ t.ui.contact.subtitle }}</p>
     </div>
     <div class="contact-grid">
-      <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" class="contact-card" data-animate>
+      <a href="{{ site.contact.telegram.url }}" target="_blank" rel="noopener" class="contact-card" data-animate data-key="F7">
         <div class="contact-icon telegram-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         </div>
         <h3>{{ t.ui.contact.telegram }}</h3>
         <p>{{ site.contact.telegram.handle }}</p>
       </a>
-      <a href="{{ site.contact.facebook.url }}" target="_blank" rel="noopener" class="contact-card" data-animate>
+      <a href="{{ site.contact.facebook.url }}" target="_blank" rel="noopener" class="contact-card" data-animate data-key="F8">
         <div class="contact-icon facebook-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </div>
         <h3>{{ t.ui.contact.facebook }}</h3>
         <p>{{ site.contact.facebook.handle }}</p>
       </a>
-      <a href="mailto:{{ site.contact.email }}" class="contact-card" data-animate>
+      <a href="mailto:{{ site.contact.email }}" class="contact-card" data-animate data-key="F9">
         <div class="contact-icon email-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>

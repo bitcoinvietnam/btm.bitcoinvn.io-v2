@@ -43,10 +43,10 @@ eleventyComputed:
   <div class="container">
     <nav class="breadcrumb">
       <a href="{{ localeHome }}">{{ t.ui.location_page.breadcrumb_home }}</a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
       <a href="{{ localeHome }}#locations">{{ t.ui.location_page.breadcrumb_locations }}</a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>{{ machine.name }}</span>
+      <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
+      <span class="bc-current">{{ machine.name }}</span>
     </nav>
   </div>
 

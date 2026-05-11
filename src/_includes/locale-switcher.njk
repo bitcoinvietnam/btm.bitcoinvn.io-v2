@@ -1,6 +1,6 @@
 <div class="locale-switcher" id="localeSwitcher">
   <button class="locale-switcher-btn" aria-haspopup="listbox" aria-expanded="false">
-    {% for loc in locales %}{% if loc.code == locale %}{{ loc.flag }} {{ loc.code | upper }}{% endif %}{% endfor %}
+    <span class="locale-code">{% for loc in locales %}{% if loc.code == locale %}{{ loc.flag }} {{ loc.code | upper }}{% endif %}{% endfor %}</span>
     <svg class="locale-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
       <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>

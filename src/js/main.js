@@ -15,7 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryLightbox();
   initLocaleSwitcher();
   initHostCarousel();
+  initFunctionKeys();
 });
+
+/* ======== F-key shortcuts ======== */
+function initFunctionKeys() {
+  const map = {};
+  document.querySelectorAll("[data-key]").forEach((el) => {
+    const key = el.dataset.key;
+    if (key && !map[key]) map[key] = el;
+  });
+  if (!Object.keys(map).length) return;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const target = map[e.key];
+    if (!target) return;
+    e.preventDefault();
+    target.classList.add("key-flash");
+    setTimeout(() => target.classList.remove("key-flash"), 180);
+    target.click();
+  });
+}
 
 /* ======== Navigation ======== */
 function initNav() {
@@ -121,53 +142,19 @@ function initMap() {
 
   const data = window.BTM_LOCATIONS;
 
-  // Build a marker icon with an open/closed status dot
+  // Build a marker icon — square yellow LED pin with center dot
   function makeMarkerIcon(isOpen) {
-    const dotColor = isOpen ? "#4ade80" : "#f87171";
-    const dotShadow = isOpen
-      ? "0 0 4px rgba(74,222,128,0.6)"
-      : "none";
     return L.divIcon({
-      className: isOpen ? "btm-marker is-open" : "btm-marker",
-      html: `<div style="
-        position: relative;
-        width: 32px;
-        height: 32px;
-        background: #FFE26E;
-        border-radius: 50% 50% 50% 0;
-        transform: rotate(-45deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(255, 226, 110, 0.4);
-        border: 2px solid rgba(255,255,255,0.3);
-      ">
-        <span style="
-          transform: rotate(45deg);
-          font-size: 14px;
-          font-weight: bold;
-          color: #0f2234;
-        ">&#8383;</span>
-        <span style="
-          position: absolute;
-          top: -2px;
-          right: -2px;
-          width: 10px;
-          height: 10px;
-          background: ${dotColor};
-          border-radius: 50%;
-          border: 2px solid #0f2234;
-          transform: rotate(45deg);
-          box-shadow: ${dotShadow};
-        "></span>
-      </div>`,
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -34],
+      className: isOpen ? "btm-marker is-open" : "btm-marker is-closed",
+      html: `<div class="btm-marker-inner"><span class="btm-marker-glyph">₿</span></div>`,
+      iconSize: [24, 30],
+      iconAnchor: [12, 28],
+      popupAnchor: [0, -28],
     });
   }
 
   const allMarkerRefs = [];
+  const markerBySlug = new Map();
 
   data.regions.forEach((region, regionIndex) => {
     const mapEl = document.getElementById(`btm-map-${regionIndex}`);
@@ -183,7 +170,6 @@ function initMap() {
       maxZoom: 18,
     }).addTo(map);
 
-    // Add markers for this region only
     const markers = [];
     region.machines.forEach((machine) => {
       const h = machine.hours;
@@ -202,18 +188,34 @@ function initMap() {
         );
       markers.push(marker);
       allMarkerRefs.push({ marker, hours: h, daysStr });
+      markerBySlug.set(machine.slug, marker);
     });
 
-    // Fit bounds or center on single marker
     if (markers.length === 1) {
       map.setView([region.machines[0].lat, region.machines[0].lng], 14);
     } else if (markers.length > 0) {
       map.fitBounds(L.featureGroup(markers).getBounds().pad(0.15));
     }
 
-    // Enable scroll zoom after first click
     map.on("click", () => {
       map.scrollWheelZoom.enable();
+    });
+  });
+
+  document.querySelectorAll(".location-card[data-slug]").forEach((card) => {
+    const marker = markerBySlug.get(card.dataset.slug);
+    if (!marker) return;
+    card.addEventListener("mouseenter", () => {
+      const el = marker.getElement();
+      if (!el) return;
+      el.classList.add("is-highlighted");
+      marker.setZIndexOffset(1000);
+    });
+    card.addEventListener("mouseleave", () => {
+      const el = marker.getElement();
+      if (!el) return;
+      el.classList.remove("is-highlighted");
+      marker.setZIndexOffset(0);
     });
   });
 
@@ -251,29 +253,11 @@ function initLocationDetailMap() {
   }).addTo(map);
 
   const markerIcon = L.divIcon({
-    className: "btm-marker",
-    html: `<div style="
-      width: 32px;
-      height: 32px;
-      background: #FFE26E;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(255, 226, 110, 0.4);
-      border: 2px solid rgba(255,255,255,0.3);
-    ">
-      <span style="
-        transform: rotate(45deg);
-        font-size: 14px;
-        font-weight: bold;
-        color: #0f2234;
-      ">&#8383;</span>
-    </div>`,
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -34],
+    className: "btm-marker is-open",
+    html: `<div class="btm-marker-inner"><span class="btm-marker-glyph">₿</span></div>`,
+    iconSize: [24, 30],
+    iconAnchor: [12, 28],
+    popupAnchor: [0, -28],
   });
 
   L.marker([lat, lng], { icon: markerIcon })
@@ -287,6 +271,17 @@ function initLocationDetailMap() {
 }
 
 /* ======== Wireframe Tilt ======== */
+let _btmRect = null;
+function getBtmRect() {
+  if (_btmRect) return _btmRect;
+  const btm = document.querySelector(".wireframe-btm");
+  if (!btm) return null;
+  _btmRect = btm.getBoundingClientRect();
+  return _btmRect;
+}
+window.addEventListener("resize", () => { _btmRect = null; }, { passive: true });
+window.addEventListener("scroll", () => { _btmRect = null; }, { passive: true });
+
 function initWireframeTilt() {
   const btm = document.querySelector(".wireframe-btm");
   if (!btm || window.innerWidth < 768) return;
@@ -296,14 +291,15 @@ function initWireframeTilt() {
   let currentX = 0;
   let currentY = 0;
 
-  // Subtle random drift
   let driftX = 0;
   let driftY = 0;
   let driftTargetX = 0;
   let driftTargetY = 0;
   let driftTimer = 0;
 
-  const MAX_TILT = 12;
+  const MAX_TILT = 14;
+  const BASE_TILT_X = 0;
+  const BASE_TILT_Y = 0;
   const EASE = 0.06;
   const DRIFT_RANGE = 3;
   const DRIFT_EASE = 0.01;
@@ -317,8 +313,13 @@ function initWireframeTilt() {
   pickNewDrift();
 
   document.addEventListener("mousemove", (e) => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    const rect = getBtmRect();
+    if (!rect) return;
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const range = Math.max(rect.width, 320);
+    mouseX = Math.max(-1, Math.min(1, (e.clientX - cx) / range));
+    mouseY = Math.max(-1, Math.min(1, (e.clientY - cy) / range));
   });
 
   function update(timestamp) {
@@ -330,14 +331,14 @@ function initWireframeTilt() {
     driftX += (driftTargetX - driftX) * DRIFT_EASE;
     driftY += (driftTargetY - driftY) * DRIFT_EASE;
 
-    const targetX = -mouseY * MAX_TILT + driftY;
-    const targetY = mouseX * MAX_TILT + driftX;
+    const targetX = BASE_TILT_X + (-mouseY * MAX_TILT) + driftY;
+    const targetY = BASE_TILT_Y + (mouseX * MAX_TILT) + driftX;
 
     currentX += (targetX - currentX) * EASE;
     currentY += (targetY - currentY) * EASE;
 
     btm.style.transform =
-      `rotateX(${currentX}deg) rotateY(${currentY}deg) scale(1.53)`;
+      `rotateX(${currentX}deg) rotateY(${currentY}deg) scale(1.05)`;
 
     requestAnimationFrame(update);
   }
@@ -380,11 +381,13 @@ function initCurrencyFlow() {
   const btcState = makeState(btcEls);
   const cashState = makeState(cashEls);
 
-  // Mouse tracking with dead zone
   document.addEventListener("mousemove", (e) => {
-    const ratio = e.clientX / window.innerWidth;
-    if (ratio > 0.55) targetDir = -1;
-    else if (ratio < 0.45) targetDir = 1;
+    const rect = getBtmRect();
+    if (!rect) return;
+    const centerX = rect.left + rect.width / 2;
+    const dead = rect.width * 0.1;
+    if (e.clientX > centerX + dead) targetDir = -1;
+    else if (e.clientX < centerX - dead) targetDir = 1;
   });
 
   // BTC envelope: t=0 is far left (screen edge), t=1 is near machine
@@ -520,6 +523,8 @@ function initLocationStatus() {
       const isOpen = checkIfOpen(days, open, close, tz);
       dot.classList.toggle("open", isOpen);
       dot.classList.toggle("closed", !isOpen);
+      text.classList.toggle("is-open", isOpen);
+      text.classList.toggle("is-closed", !isOpen);
       const openLabel = window.BTM_UI?.open ?? "Open now";
       const closedLabel = window.BTM_UI?.closed ?? "Closed";
       text.textContent = isOpen ? openLabel : closedLabel;
