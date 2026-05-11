@@ -1,0 +1,287 @@
+ui:
+  notice_label: "Aviso:"
+  nav:
+    why_us: "Por qué nosotros"
+    locations: "Ubicaciones"
+    how_it_works: "Cómo funciona"
+    faq: "Preguntas frecuentes"
+    toggle_menu: "Alternar menú"
+    all_locations: "Todas las ubicaciones"
+  hero:
+    operating_since: "En funcionamiento desde"
+    tag: "Sin cuenta · Autoservicio · Intercambio en efectivo"
+    headline: "Compra y vende Bitcoin por efectivo en Vietnam"
+    cta_find: "Buscar un BTM"
+    cta_learn: "Descubre cómo funciona"
+    stat_locations: "Ubicaciones BTM"
+    stat_years: "Años de actividad"
+    stat_friction: "Fricción"
+    scroll: "Desplázate para explorar"
+  features:
+    section_tag: "Por qué elegirnos"
+  locations_section:
+    section_tag: "Nuestros cajeros"
+    subtitle: "Encuentra un BTM de BitcoinVN cerca de ti en Ho Chi Minh City y Vung Tau."
+    machine_singular: "cajero"
+    machine_plural: "cajeros"
+    view_maps: "Ver todos en Google Maps"
+  how_it_works:
+    section_tag: "Proceso sencillo"
+    subtitle: "Comprar o vender Bitcoin en nuestros BTM es simple y directo."
+    tab_buy: "Comprar Bitcoin"
+    tab_sell: "Vender Bitcoin"
+  faq:
+    section_tag: "¿Dudas?"
+    heading: "Preguntas frecuentes"
+  host:
+    heading: "¿Quieres alojar un BTM?"
+    body: "Instala un cajero Bitcoin en tu negocio. Atrae a clientes interesados en cripto y obtén ingresos por alojamiento. Contáctanos para conocer nuestro programa de alojamiento."
+    cta: "Más información"
+    nav_label: "Alojar"
+  contact:
+    section_tag: "Contacta"
+    heading: "Ponte en contacto"
+    subtitle: "¿Tienes preguntas? Nuestro equipo está disponible para ayudarte a través de múltiples canales."
+    telegram: "Telegram"
+    facebook: "Facebook"
+    email: "Correo electrónico"
+  footer:
+    quick_links: "Enlaces rápidos"
+    services: "Servicios"
+    buy_online: "Compra Bitcoin en línea"
+    contact_support: "Contactar al soporte"
+    status_updates: "Estado de los BTM"
+    hardware_wallets: "Hardware Wallets"
+    copyright: "BitcoinVN. Todos los derechos reservados."
+  location_page:
+    breadcrumb_home: "Inicio"
+    breadcrumb_locations: "Ubicaciones"
+    opening_hours: "Horario de apertura"
+    cryptocurrencies: "Criptomonedas"
+    directions: "Cómo llegar"
+    directions_google: "Google Maps"
+    directions_apple: "Apple Maps"
+    directions_osm: "OpenStreetMap"
+    action_buy: "Comprar"
+    action_sell: "Vender"
+    about: "Sobre esta ubicación"
+    address: "Dirección"
+    phone: "Teléfono"
+    hours: "Horario"
+    style: "Estilo"
+    website: "Sitio web"
+    gallery_heading: "Interior"
+    cta_sub: "Compra o vende Bitcoin por efectivo — transacciones rápidas en el lugar."
+  js:
+    open: "Abierto ahora"
+    closed: "Cerrado"
+
+site:
+  tagline: "La forma más rápida y privada de comprar y vender Bitcoin por efectivo en Vietnam"
+  description: "Cajeros Bitcoin de autoservicio en Ho Chi Minh City y Vung Tau. Sin cuenta bancaria, sin transferencias. Entra, cambia efectivo por Bitcoin y márchate."
+  notice:
+    message: "La entrega de SMS para códigos OTP está actualmente afectada por cambios en las telecomunicaciones nacionales. Nuestro equipo de soporte está disponible para ayudarte con tu transacción a través de Telegram o Facebook."
+
+features:
+  heading: "9 razones para usar un BTM de BitcoinVN"
+  subheading: "Nuestro servicio está diseñado para proteger tu privacidad financiera al comprar o vender BTC por efectivo en Vietnam."
+  items:
+    - title: "Sin necesidad de cuenta bancaria"
+      description: "Compra o vende Bitcoin solo con efectivo. Sin cuenta bancaria, sin transferencias, sin intermediarios financieros."
+    - title: "Rápido y cómodo"
+      description: "Casi tan fácil como comprar una Coca-Cola en una máquina expendedora. Te acercas, operas y listo."
+    - title: "Enfoque de datos mínimos"
+      description: "Donde se permite, las transacciones pueden completarse con información personal limitada, ayudando a proteger tu privacidad financiera."
+    - title: "Precios transparentes"
+      description: "El precio que ves es el precio que pagas. Las tarifas se fijan en el momento de la transacción — sin comisiones ocultas ni sorpresas."
+    - title: "Confirmación en tiempo real"
+      description: "Las transacciones se transmiten a la blockchain al instante. Sigue tu operación en tiempo real con los enlaces de seguimiento que te proporcionamos."
+    - title: "Soporte bilingüe"
+      description: "Soporte completo en inglés y vietnamita. Nuestro equipo está listo para atenderte en el idioma que prefieras."
+    - title: "Intercambio inmediato en el sitio"
+      description: "Completa tu transacción directamente en el lugar, sin depender de contrapartes desconocidas ni de transferencias previas."
+    - title: "Fiables y monitorizados"
+      description: "Todos los BTM están monitorizados de forma continua, con actualizaciones de estado en tiempo real. La disponibilidad se publica en nuestros canales de Telegram y Facebook."
+    - title: "Establecidos y de confianza"
+      description: "Operados por BitcoinVN — la empresa Bitcoin más veterana de Vietnam. Años de fiabilidad probada al servicio de miles de clientes."
+
+how_it_works:
+  buy:
+    - title: "Acércate a un BTM"
+      description: "Encuentra la ubicación de BTM BitcoinVN más cercana y acércate a la máquina. No necesitas cita."
+    - title: 'Selecciona «Comprar Bitcoin»'
+      description: "Toca la opción Comprar en la pantalla. Verás el precio actual de Bitcoin en VND."
+    - title: "Escanea tu wallet u obtén una paper wallet"
+      description: "Escanea el código QR de tu wallet de Bitcoin existente, o deja que la máquina genere una paper wallet para ti."
+    - title: "Inserta efectivo"
+      description: "Introduce tus billetes de VND en la máquina. La pantalla mostrará el importe correspondiente en Bitcoin en tiempo real."
+    - title: "Confirma y recibe Bitcoin"
+      description: "Confirma la transacción y tu Bitcoin se enviará al instante a tu wallet con un enlace de seguimiento en tiempo real."
+  sell:
+    - title: "Acércate a un BTM"
+      description: "Visita cualquier ubicación de BTM BitcoinVN. Todas las máquinas permiten tanto comprar como vender Bitcoin."
+    - title: 'Selecciona «Vender Bitcoin»'
+      description: "Toca la opción Vender en la pantalla. La máquina mostrará la tasa de venta actual en VND."
+    - title: "Introduce el importe y envía Bitcoin"
+      description: "Indica cuántos VND quieres recibir. La máquina mostrará un código QR — envía tu Bitcoin a esa dirección."
+    - title: "Espera la confirmación"
+      description: "La máquina esperará la confirmación en la blockchain. Puedes usar la opción pre-sell para acelerar el proceso."
+    - title: "Recoge tu efectivo"
+      description: "Una vez confirmada, la máquina dispensa tus VND en efectivo. Así de simple."
+
+faq:
+  items:
+    - question: "¿Qué es un cajero Bitcoin?"
+      answer: "Un cajero Bitcoin (o BTM) es un kiosco de autoservicio de criptomonedas que te permite comprar y vender Bitcoin usando efectivo. Funciona de manera similar a un cajero automático tradicional, pero en lugar de retirar efectivo de tu cuenta bancaria, te permite intercambiar efectivo por Bitcoin y viceversa."
+    - question: "¿Por qué usar un BTM de BitcoinVN?"
+      answer: "Los BTM de BitcoinVN ofrecen la forma más rápida y privada de comprar y vender Bitcoin en Vietnam. No se requiere cuenta bancaria y las transacciones se completan en minutos. Operamos desde 2014, lo que nos convierte en el servicio Bitcoin más consolidado de Vietnam."
+    - question: "¿Necesito presentar identificación o verificar mi identidad (KYC)?"
+      answer: "Los BTM de BitcoinVN están diseñados para transacciones de Bitcoin sencillas y en persona. Para el uso típico cotidiano, las transacciones pueden completarse rápidamente en la máquina sin un largo proceso de incorporación — siguiendo un enfoque de datos mínimos que ayuda a limitar la exposición innecesaria de información personal."
+    - question: "¿Hay límites de transacción?"
+      answer: "Actualmente no hay límites de transacción en nuestros BTM. Puedes comprar o vender la cantidad de Bitcoin que necesites en una sola operación."
+    - question: "¿Cuáles son las comisiones?"
+      answer: "Nuestra estructura de comisiones es competitiva y transparente. El precio que se muestra en la pantalla del BTM incluye todas las comisiones — lo que ves es lo que obtienes. Sin cargos ocultos ni descuentos sorpresa."
+    - question: "¿Es legal Bitcoin en Vietnam?"
+      answer: "Aunque Bitcoin no se reconoce como moneda de curso legal en Vietnam, poseer y operar con Bitcoin no es ilegal."
+    - question: "¿Cómo puedo saber si un BTM está en línea?"
+      answer: "Publicamos el estado en tiempo real de los BTM en nuestro <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>canal de Telegram</a> y en nuestra <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>página de Facebook</a>. Síguenos para la información de disponibilidad más reciente."
+    - question: "¿Y si no tengo un wallet de Bitcoin?"
+      answer: "¡No hay problema! Nuestros BTM pueden generar una paper wallet para ti durante la compra. Recibirás un papel impreso con tu dirección de Bitcoin y la clave privada. Recomendamos transferir tus fondos a un wallet seguro después — para almacenamiento a largo plazo, un hardware wallet es la opción más segura. Puedes adquirir uno en la <a href='https://bitcoinvn.io/shop' target='_blank' rel='noopener'>tienda BitcoinVN</a>, proveedor oficial de dispositivos de marcas líderes como Trezor y Ledger."
+    - question: "Tengo problemas con la verificación por SMS. ¿Qué hago?"
+      answer: "Debido a cambios recientes en las telecomunicaciones nacionales, la entrega de SMS para códigos OTP puede verse afectada. Por favor contacta a nuestro equipo de soporte a través de <a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegram</a> o <a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebook</a> y te ayudaremos a completar tu transacción."
+    - question: "¿Puedo comprar Bitcoin en línea?"
+      answer: "¡Sí! Si prefieres comprar Bitcoin en línea, visita <a href='https://bitcoinvn.io' target='_blank' rel='noopener'>bitcoinvn.io</a> para usar nuestro servicio de exchange online. Hay transferencias bancarias y otros métodos de pago disponibles."
+    - question: "¿Qué otras criptomonedas admiten sus BTM?"
+      answer: "BTC es nuestro activo principal, pero desde mayo de 2026 nuestras máquinas también admiten USDT (Tether) y USDC (Circle) en la red Ethereum, además de ZEC (Zcash) y XMR (Monero). Pueden incorporarse integraciones blockchain adicionales con el tiempo, en función de la demanda y del desarrollo continuo de la <a href='https://bitcoinvn.io/api/doc' target='_blank' rel='noopener'>API del motor de intercambio de BitcoinVN</a>."
+
+locations:
+  regions:
+    - name: "Ho Chi Minh City"
+      description: "La ciudad más grande de Vietnam y su centro económico — hogar de una próspera comunidad expatriada y de una creciente adopción del Bitcoin."
+      machines:
+        big-pig-bbq:
+          hours_display: "Todos los días 10:30 – 23:30"
+          description:
+            - "¡Bitcoin y carne — vaya combinación! Big Pig BBQ trae a Saigón un auténtico BBQ al estilo americano, con brisket, costillas, pulled pork y mucho más. Ubicado justo al lado del aeropuerto, en Truong Son Street, es uno de los lugares más cómodos para comprar o vender Bitcoin en toda Ho Chi Minh City."
+            - "Ya estés llegando o saliendo de Saigón, pásate por Big Pig para disfrutar de un BBQ de primer nivel y usar nuestro cajero Bitcoin. El BTM está dentro del restaurante y disponible durante todo el horario de apertura."
+          photos:
+            - caption: "Big Pig en 2023: aún con su fachada en estilo rojo y entonces albergando uno de los modelos más antiguos de nuestra gama."
+            - caption: "En Big Pig podrás darte un festín de carne."
+            - caption: "Serie Gustav BTM en el interior — fruto de la ingeniería sueco-vietnamita"
+        capones-chicago-pizza:
+          hours_display: "Todos los días 11:00 – 23:00"
+          description:
+            - "Capone's es el único lugar de Vietnam que sirve auténtica pizza deep dish estilo Chicago. En el corazón de Thao Dien, distrito 2, el restaurante ofrece desde su terraza en la azotea vistas impresionantes del Landmark 81 — el edificio más alto de Vietnam."
+            - "Además de la pizza deep dish, Capone's sirve una variedad de clásicos del street food americano. El BTM de BitcoinVN se encuentra cómodamente dentro del restaurante, lo que facilita comprar o vender Bitcoin mientras disfrutas una comida en uno de los barrios más de moda de Saigón."
+          photos:
+            - caption: "Capone's — un pedazo de Chicago en Thao Dien"
+            - caption: "Gustav BTM — junto a la escalera en el interior de Capone's"
+            - caption: "Especialidad deep dish de Capone's"
+        green-box:
+          hours_display: "Todos los días 8:00 – 24:00"
+          description:
+            - "Green Box, en Thao Dien, es un destino popular para comer sano. Sirve poke bowls creativos, platos de fusión vietnamita y batidos frescos en un ambiente comunitario relajado en SOMA, sobre Le Van Mien Street. Como socio histórico de BitcoinVN BTM, ofrece un lugar cómodo para comprar o vender Bitcoin por efectivo en el distrito 2."
+            - "Situado en uno de los barrios más vibrantes para expatriados y nómadas digitales de Ho Chi Minh City, el local cuenta con un entorno peatonal, personal amable y horario diario de 8:00 a medianoche — el acceso al BTM de BitcoinVN es sencillo, ya vengas a comer rápido o a una sesión de teletrabajo."
+          photos:
+            - caption: "Green Box en Thao Dien — sigue el cartel naranja"
+            - caption: "Comida fresca y ambiente relajado en Green Box"
+            - caption: "Interior de Green Box en SOMA"
+        italianis-ben-thanh:
+          hours_display: "Todos los días 11:00 – 23:30"
+          description:
+            - "Italiani's Pizza, en Nguyen Thai Binh Street, está en el bullicioso corazón del distrito 1, a pocos pasos del Ben Thanh Market — uno de los lugares más emblemáticos de Ho Chi Minh City."
+            - "Tanto si te apetece una clásica Margherita como algo más atrevido, Italiani's ofrece comida italiana de calidad en un ambiente vibrante."
+            - "El distrito 1 es el corazón comercial y turístico de Ho Chi Minh City, lo que convierte a este local en una de las ubicaciones BTM más accesibles tanto para visitantes como para residentes. La zona cuenta con buen transporte público y está a poca distancia a pie de numerosos hoteles, tiendas y atracciones."
+            - "Pásate por Italiani's a por un pedazo de Italia en Vietnam — y aprovecha para apilar unos sats en el BTM."
+          photos:
+            - caption: "La famosa pizza Burrata — un imprescindible habitual de la carta de Italiani's"
+            - caption: "Italiani's Ben Thanh luce nuestra variante más colorida «Fiat Eater» de la serie Gustav BTM"
+        italianis-han-thuyen:
+          hours_display: "Todos los días 11:00 – 21:45"
+          description:
+            - "La ubicación de Italiani's en Han Thuyen Street se encuentra justo al lado de un bonito parque en el barrio de Ben Nghe, en el distrito 1. Un sitio tranquilo para disfrutar de una pizza y hacer una transacción de Bitcoin, lejos del bullicio de las calles principales."
+            - "La ubicación de Han Thuyen combina el encanto de un restaurante italiano de barrio con la comodidad del acceso a Bitcoin. Tanto si eres veterano de Bitcoin como si haces tu primera compra, el personal amable te guiará por todo el proceso."
+          photos:
+            - caption: "Pizza & Bitcoin: la combinación de ensueño popularizada por Laszlo Hanyecz"
+            - caption: "Sigue el ₿ naranja: la entrada de Italiani's Han Thuyen"
+            - caption: "Nuestro BTM Gustav está en la planta superior — tu privacidad, respetada."
+    - name: "Vung Tau"
+      description: "Una popular escapada costera a solo dos horas de Saigón — surf, sol y Bitcoin junto al mar."
+      machines:
+        surf-hostel:
+          hours_display: "Todos los días 8:00 – 22:00"
+          description:
+            - "Surf Hostel en Vung Tau es una escuela de surf y albergue para mochileros a pocos minutos de la playa. Ofrece clases de surf, alquiler de tablas y un ambiente comunal relajado, muy popular entre viajeros, mochileros y nómadas digitales. Como socio de BitcoinVN BTM, brinda un lugar cómodo para comprar o vender Bitcoin disfrutando del entorno costero."
+            - "Situado en una de las escapadas de fin de semana favoritas del sur de Vietnam desde Ho Chi Minh City, el albergue combina un ambiente playero relajado con un acceso sencillo a los servicios de Bitcoin durante su horario de apertura, de 8:00 a 22:00. Ya sea para recargar el wallet entre sesiones de surf o cambiar efectivo para gastos locales, los visitantes pueden usar el BTM de BitcoinVN rápida y cómodamente."
+          photos:
+            - caption: "BTM BitcoinVN en Surf Hostel"
+            - caption: "Ambiente de escuela de surf en Surf Hostel"
+
+host_page:
+  meta_description: "Asóciate con BitcoinVN para alojar un cajero Bitcoin en tu negocio. Ingresos por alquiler mensuales fijos, sin coste de equipo, operaciones totalmente gestionadas."
+  hero:
+    heading: "Aloja un cajero Bitcoin con BitcoinVN"
+    intro: "BitcoinVN sigue abierta a expandir selectivamente su red de cajeros Bitcoin (BTM) por Vietnam, conforme a los requisitos locales. Nos asociamos con locales comerciales de alto tránsito, hostels/hoteles, cafeterías, pizzerías y restaurantes occidentales para instalar y operar BTM seguros y totalmente gestionados."
+    value_prop:
+      you_provide: "Tú aportas el espacio."
+      we_provide: "Nosotros aportamos la infraestructura."
+      you_receive: "Tú obtienes ingresos pasivos."
+  benefits:
+    section_tag: "Tus beneficios"
+    heading: "¿Por qué alojar un cajero BitcoinVN?"
+    items:
+      - title: "Ingresos por alquiler mensuales fijos"
+        description: "Recibe un pago de alquiler predecible y fijo cada mes — independiente del volumen de transacciones. Los pagos se liquidan el día 28 de cada mes."
+      - title: "Mayor tráfico internacional"
+        description: "Los usuarios de cajeros Bitcoin suelen ser turistas, expatriados, nómadas digitales y trabajadores remotos. Estos clientes con frecuencia realizan compras adicionales durante su visita, lo que aumenta la visibilidad del local y la afluencia."
+      - title: "Coste cero del equipo"
+        description: "BitcoinVN cubre todos los costes relacionados con la entrega e instalación, inspección, mantenimiento y servicio, reparaciones y sustitución, monitorización y gestión del sistema, y la retirada si fuera necesario."
+      - title: "Operaciones totalmente gestionadas"
+        description: "Gestionamos la logística del efectivo, la operación del software, los procedimientos de cumplimiento, los requisitos KYC, la monitorización de la máquina y la atención al cliente. Tú te centras en tu negocio principal. Nosotros nos ocupamos del resto."
+  requirements:
+    section_tag: "Cómo empezar"
+    heading: "Requisitos del alojamiento"
+    intro: "Alojar un BTM de BitcoinVN es sencillo."
+    subheading: "Tú proporcionas:"
+    items:
+      - "Espacio interior de 80 cm × 80 cm"
+      - "Acceso del cliente despejado y sin obstáculos"
+      - "Toma eléctrica estándar (110–220 V)"
+      - "Acceso físico a un puerto de router Ethernet para una conexión a internet por cable estable"
+  ideal_locations:
+    section_tag: "Mejor encaje"
+    heading: "Ubicaciones ideales para alojamiento"
+    intro: "Actualmente priorizamos:"
+    items:
+      - "Hoteles y hostels"
+      - "Pizzerías"
+      - "Restaurantes occidentales"
+      - "Cafeterías"
+      - "Espacios de coworking"
+      - "Locales comerciales con afluencia turística"
+    note: "Si tu negocio atrae a extranjeros o a una clientela con mentalidad internacional, un BTM encaja de forma natural con tu público."
+  support:
+    section_tag: "Te respaldamos"
+    heading: "Infraestructura de atención al cliente"
+    intro: "BitcoinVN ofrece atención al cliente en directo, tanto en vietnamita como en inglés."
+    channels_intro: "Nuestros canales de soporte están dispuestos de forma redundante para garantizar la fiabilidad, incluyendo:"
+    items:
+      - "Acceso al soporte desde la propia máquina"
+      - "Atención telefónica"
+      - "Canales de mensajería en línea"
+    note: "Los clientes nunca dependen del anfitrión para recibir asistencia técnica."
+  process:
+    section_tag: "Proceso sencillo"
+    heading: "Cómo funciona la colaboración"
+    steps:
+      - "Evaluamos tu ubicación"
+      - "Firmamos un acuerdo de alojamiento sencillo"
+      - "Instalamos y activamos la máquina"
+      - "Comienzas a recibir pagos mensuales fijos por alquiler"
+    note: "Sin carga operativa. Sin gestión de transacciones. Sin responsabilidad de cumplimiento."
+  cta:
+    heading: "Asóciate con BitcoinVN hoy mismo"
+    body: "La red BTM de BitcoinVN forma parte de uno de los proveedores de servicios Bitcoin más veteranos de Vietnam."
+    closing: "Construimos asociaciones de infraestructura a largo plazo — no instalaciones temporales."
+    interested: "Si te interesa el alojamiento:"
+    button: "Contáctanos sobre alojamiento"

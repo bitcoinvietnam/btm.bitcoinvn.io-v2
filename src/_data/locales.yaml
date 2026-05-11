@@ -18,3 +18,19 @@
   pathPrefix: "zh/"
   flag: "\U0001F1E8\U0001F1F3"
   label: "中文"
+- code: de
+  pathPrefix: "de/"
+  flag: "\U0001F1E9\U0001F1EA"
+  label: "Deutsch"
+- code: fr
+  pathPrefix: "fr/"
+  flag: "\U0001F1EB\U0001F1F7"
+  label: "Français"
+- code: es
+  pathPrefix: "es/"
+  flag: "\U0001F1EA\U0001F1F8"
+  label: "Español"
+- code: pt-br
+  pathPrefix: "pt-br/"
+  flag: "\U0001F1E7\U0001F1F7"
+  label: "Português (Brasil)"
