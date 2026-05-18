@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ locale | default('en') }}">
 <head>
+  {% set metaTitle = (pageTitle | safe) if pageTitle else (site.name + " — Buy & Sell Bitcoin for Cash in Vietnam") %}
+  {% set metaDescription = (pageDescription | safe) if pageDescription else site.description %}
+  {% set canonicalUrl = (canonicalPath if canonicalPath is defined else "") | absoluteUrl(site.url) %}
+  {% set shareImage = (pageImage if pageImage is defined else "/images/bitcoinvn-logo-dark.png") | absoluteUrl(site.url) %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ (pageTitle | safe) if pageTitle else (site.name + " — Buy & Sell Bitcoin for Cash in Vietnam") }}</title>
-  <meta name="description" content="{{ (pageDescription | safe) if pageDescription else site.description }}">
+  <title>{{ metaTitle }}</title>
+  <meta name="description" content="{{ metaDescription }}">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ metaTitle }}">
+  <meta property="og:description" content="{{ metaDescription }}">
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  <meta property="og:image" content="{{ shareImage }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ metaTitle }}">
+  <meta name="twitter:description" content="{{ metaDescription }}">
+  <meta name="twitter:image" content="{{ shareImage }}">
   <link rel="icon" type="image/png" href="{{ '/images/bitcoinvn-icon.png' | url }}">
   {% for loc in locales %}
-  <link rel="alternate" hreflang="{{ loc.code }}" href="{{ site.url }}/{{ loc.pathPrefix }}{{ basePath }}">
+  <link rel="alternate" hreflang="{{ loc.code }}" href="{{ (loc.pathPrefix + basePath) | absoluteUrl(site.url) }}">
   {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ basePath | absoluteUrl(site.url) }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -25,5 +41,6 @@
   {{ content | safe }}
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="{{ '/js/main.js' | url }}"></script>
+  <script src="{{ '/js/plausible-events.js' | url }}"></script>
 </body>
 </html>

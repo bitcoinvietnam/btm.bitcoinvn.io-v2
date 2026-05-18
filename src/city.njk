@@ -1,0 +1,115 @@
+---
+layout: base.njk
+pagination:
+  data: collections.btmRegionsAll
+  size: 1
+  alias: item
+permalink: "{{ item.localePrefix }}{{ item.region.slug }}/index.html"
+regionPage: true
+eleventyComputed:
+  locale: "{{ item.locale }}"
+  pageTitle: "{{ item.region.name }} BTM {{ i18n[item.locale].ui.nav.locations }} — {{ site.name }}"
+  pageDescription: "{{ item.region.description }} {{ i18n[item.locale].ui.location_page.cta_sub }}"
+  canonicalPath: "{{ item.localePrefix }}{{ item.region.slug }}/"
+  basePath: "{{ item.region.slug }}/"
+  pageImage: "{{ item.region.machines[0].photos[0].src if item.region.machines and item.region.machines[0].photos and item.region.machines[0].photos.length else '/images/bitcoinvn-logo-dark.png' }}"
+---
+{% set t = i18n[item.locale] %}
+{% set region = item.region %}
+{% set regionSlug = region.slug %}
+{% set localeHome = "/" + item.localePrefix %}
+{% set localePrefix = "" if item.locale == "en" else ("/" + item.locale) %}
+
+<nav class="nav scrolled" id="nav">
+  <div class="nav-container">
+    <a href="{{ localeHome }}" class="nav-logo">
+      <img src="{{ '/images/bitcoinvn-logo-dark.png' | url }}" alt="BitcoinVN" class="logo-img">
+      <span class="logo-btm">BTM</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="{{ localeHome }}#locations">{{ t.ui.nav.all_locations }}</a>
+      <a href="{{ localeHome }}#how-it-works">{{ t.ui.nav.how_it_works }}</a>
+      <a href="{{ localeHome }}#faq">{{ t.ui.nav.faq }}</a>
+      <a href="{{ (localePrefix + '/host/') | url }}">{{ t.ui.host.nav_label }}</a>
+    </div>
+    {% include "locale-switcher.njk" %}
+    <button class="nav-toggle" id="navToggle" aria-label="{{ t.ui.nav.toggle_menu }}">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main class="location-detail">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="{{ localeHome }}">{{ t.ui.location_page.breadcrumb_home }}</a>
+      <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
+      <a href="{{ localeHome }}#locations">{{ t.ui.location_page.breadcrumb_locations }}</a>
+      <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
+      <span class="bc-current">{{ region.name }}</span>
+    </nav>
+  </div>
+
+  <section class="location-hero">
+    <div class="container">
+      <span class="location-region-badge">{{ region.machines.length }} {{ t.ui.locations_section.machine_plural if region.machines.length > 1 else t.ui.locations_section.machine_singular }}</span>
+      <h1>{{ region.name }} BTM {{ t.ui.nav.locations }}</h1>
+      <p class="location-hero-district">{{ region.description }}</p>
+    </div>
+  </section>
+
+  <section class="locations">
+    <div class="container">
+      <div class="location-cards">
+        {% for machine in region.machines %}
+        {% set heroPhoto = machine.photos[0].src if machine.photos and machine.photos.length else "" %}
+        <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card{% if heroPhoto %} location-card--photo{% endif %}" data-animate data-slug="{{ machine.slug }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
+          {% if heroPhoto %}
+          <img class="location-card__photo" src="{{ heroPhoto | url }}" alt="" loading="lazy" decoding="async" aria-hidden="true">
+          {% endif %}
+          <div class="location-card__head">
+            <span class="location-status-dot"></span>
+            <span class="location-status-text"></span>
+          </div>
+          <div class="location-card__info">
+            <h4>{{ machine.name }}</h4>
+            <span class="location-district">{{ machine.district }}</span>
+            <span class="location-hours-range">{{ machine.hours.display }}</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+
+{# ======== Footer ======== #}
+{% include "footer.njk" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ (item.localePrefix + region.slug + "/#collection") | absoluteUrl(site.url) | jsonify | safe }},
+  "name": {{ pageTitle | jsonify | safe }},
+  "description": {{ pageDescription | jsonify | safe }},
+  "url": {{ (item.localePrefix + region.slug + "/") | absoluteUrl(site.url) | jsonify | safe }},
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {% for machine in region.machines %}
+      {
+        "@type": "ListItem",
+        "position": {{ loop.index }},
+        "url": {{ (item.localePrefix + "locations/" + machine.slug + "/") | absoluteUrl(site.url) | jsonify | safe }},
+        "name": {{ machine.name | jsonify | safe }}
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
+
+<script>
+  window.BTM_UI = { open: "{{ t.ui.js.open }}", closed: "{{ t.ui.js.closed }}" };
+</script>

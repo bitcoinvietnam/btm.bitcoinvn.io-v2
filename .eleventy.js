@@ -64,6 +64,14 @@ module.exports = function (eleventyConfig) {
     return s;
   });
 
+  eleventyConfig.addFilter("absoluteUrl", (urlPath = "", siteUrl = "") => {
+    const base = String(siteUrl || "").replace(/\/+$/, "");
+    const pathPart = String(urlPath || "").replace(/^\/+/, "");
+    return pathPart ? `${base}/${pathPart}` : `${base}/`;
+  });
+
+  eleventyConfig.addFilter("jsonify", (value) => JSON.stringify(value));
+
   // Build validator: warn about missing translation keys
   eleventyConfig.on("eleventy.before", async () => {
     const i18nDir = path.resolve(__dirname, "src/_data/i18n");
@@ -123,46 +131,80 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  // Collection: all BTM location × locale combinations, with translated text merged in
-  eleventyConfig.addCollection("btmLocationsAll", (collectionApi) => {
+  function getContentData(collectionApi) {
     const allItems = collectionApi.getAll();
+    return {
+      baseLocations: allItems.find((i) => i.data.locations)?.data.locations,
+      i18nData: allItems.find((i) => i.data.i18n)?.data.i18n || {},
+      locales: allItems.find((i) => i.data.locales)?.data.locales || ["en"],
+    };
+  }
 
-    const baseLocations = allItems.find((i) => i.data.locations)?.data.locations;
+  function getLocaleContext(localeObj, i18nData) {
+    const locale = localeObj.code || localeObj;
+    return {
+      locale,
+      localePrefix: localeObj.pathPrefix || "",
+      locText: i18nData[locale]?.locations ?? {},
+    };
+  }
+
+  function mergeMachine(region, tRegion, machine) {
+    const tMachine = tRegion.machines?.[machine.slug] ?? {};
+    return {
+      ...machine,
+      regionName: tRegion.name ?? region.name,
+      regionSlug: region.slug,
+      description: tMachine.description ?? machine.description,
+      photos: machine.photos?.map((p, pi) => ({
+        ...p,
+        caption: tMachine.photos?.[pi]?.caption ?? p.caption,
+      })),
+      hours: {
+        ...machine.hours,
+        display: tMachine.hours_display ?? machine.hours.display,
+      },
+    };
+  }
+
+  function mergeRegion(region, ri, locText) {
+    const tRegion = locText.regions?.[ri] ?? {};
+    return {
+      ...region,
+      name: tRegion.name ?? region.name,
+      description: tRegion.description ?? region.description,
+      machines: region.machines.map((machine) => mergeMachine(region, tRegion, machine)),
+    };
+  }
+
+  // Collections: all BTM location/region × locale combinations, with translated text merged in
+  eleventyConfig.addCollection("btmLocationsAll", (collectionApi) => {
+    const { baseLocations, i18nData, locales } = getContentData(collectionApi);
     if (!baseLocations) return [];
 
-    const i18nData = allItems.find((i) => i.data.i18n)?.data.i18n || {};
-    const locales = allItems.find((i) => i.data.locales)?.data.locales || ["en"];
+    return locales.flatMap((localeObj) => {
+      const { locale, localePrefix, locText } = getLocaleContext(localeObj, i18nData);
+      return baseLocations.regions.flatMap((region, ri) =>
+        mergeRegion(region, ri, locText).machines.map((machine) => ({
+          locale,
+          localePrefix,
+          machine,
+        }))
+      );
+    });
+  });
+
+  eleventyConfig.addCollection("btmRegionsAll", (collectionApi) => {
+    const { baseLocations, i18nData, locales } = getContentData(collectionApi);
+    if (!baseLocations) return [];
 
     return locales.flatMap((localeObj) => {
-      const locale = localeObj.code || localeObj;
-      const localePrefix = localeObj.pathPrefix || "";
-      const locText = i18nData[locale]?.locations ?? {};
-
-      return baseLocations.regions.flatMap((region, ri) => {
-        const tRegion = locText.regions?.[ri] ?? {};
-
-        return region.machines.map((machine) => {
-          const tMachine = tRegion.machines?.[machine.slug] ?? {};
-
-          return {
-            locale,
-            localePrefix,
-            machine: {
-              ...machine,
-              regionName: tRegion.name ?? region.name,
-              description: tMachine.description ?? machine.description,
-              photos: machine.photos?.map((p, pi) => ({
-                ...p,
-                caption: tMachine.photos?.[pi]?.caption ?? p.caption,
-              })),
-              hours: {
-                ...machine.hours,
-                display: tMachine.hours_display ?? machine.hours.display,
-              },
-            },
-          };
-        });
-      });
+      const { locale, localePrefix, locText } = getLocaleContext(localeObj, i18nData);
+      return baseLocations.regions.map((region, ri) => ({
+        locale,
+        localePrefix,
+        region: mergeRegion(region, ri, locText),
+      }));
     });
   });
 

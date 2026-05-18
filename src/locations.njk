@@ -7,9 +7,11 @@ pagination:
 permalink: "{{ item.localePrefix }}locations/{{ item.machine.slug }}/index.html"
 eleventyComputed:
   locale: "{{ item.locale }}"
-  pageTitle: "{{ item.machine.name }} BTM — {{ site.name }}"
-  pageDescription: "{{ i18n[item.locale].ui.location_page.cta_sub }}"
+  pageTitle: "{{ item.machine.name }} BTM — {{ item.machine.district }} — {{ site.name }}"
+  pageDescription: "{{ i18n[item.locale].ui.location_page.cta_sub }} {{ item.machine.name }} — {{ item.machine.district }}. {{ item.machine.hours.display }}"
+  canonicalPath: "{{ item.localePrefix }}locations/{{ item.machine.slug }}/"
   basePath: "locations/{{ item.machine.slug }}/"
+  pageImage: "{{ item.machine.photos[0].src if item.machine.photos and item.machine.photos.length else '/images/bitcoinvn-logo-dark.png' }}"
 ---
 {% set machine = item.machine %}
 {% set t = i18n[item.locale] %}
@@ -45,6 +47,8 @@ eleventyComputed:
       <a href="{{ localeHome }}">{{ t.ui.location_page.breadcrumb_home }}</a>
       <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
       <a href="{{ localeHome }}#locations">{{ t.ui.location_page.breadcrumb_locations }}</a>
+      <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
+      <a href="{{ (localeHome + machine.regionSlug + '/') | url }}">{{ machine.regionName }}</a>
       <span class="bc-sep" aria-hidden="true">&rsaquo;</span>
       <span class="bc-current">{{ machine.name }}</span>
     </nav>
@@ -203,6 +207,48 @@ eleventyComputed:
 
 {# ======== Footer ======== #}
 {% include "footer.njk" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "FinancialService"],
+  "@id": {{ (item.localePrefix + "locations/" + machine.slug + "/#btm") | absoluteUrl(site.url) | jsonify | safe }},
+  "name": {{ (machine.name + " BitcoinVN BTM") | jsonify | safe }},
+  "description": {{ pageDescription | jsonify | safe }},
+  "url": {{ (item.localePrefix + "locations/" + machine.slug + "/") | absoluteUrl(site.url) | jsonify | safe }},
+  "telephone": {{ machine.phone | jsonify | safe }},
+  "priceRange": "VND",
+  "currenciesAccepted": "VND, BTC, USDT, USDC",
+  "paymentAccepted": "Cash",
+  "image": [
+    {% for photo in machine.photos %}
+    {{ photo.src | absoluteUrl(site.url) | jsonify | safe }}{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ machine.address | jsonify | safe }},
+    "addressLocality": {{ machine.regionName | jsonify | safe }},
+    "addressCountry": "VN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ machine.lat }},
+    "longitude": {{ machine.lng }}
+  },
+  "hasMap": {{ machine.mapsUrl | jsonify | safe }},
+  "openingHours": {{ ("Mo-Su " + machine.hours.open + "-" + machine.hours.close) | jsonify | safe }},
+  "areaServed": {
+    "@type": "City",
+    "name": {{ machine.regionName | jsonify | safe }}
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "BitcoinVN",
+    "url": {{ site.exchangeUrl | jsonify | safe }}
+  }
+}
+</script>
 
 {# Pass UI labels to JS #}
 <script>

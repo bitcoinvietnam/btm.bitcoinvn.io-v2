@@ -1,5 +1,6 @@
 regions:
   - name: "Ho Chi Minh City"
+    slug: "ho-chi-minh-city"
     description: "Vietnam's largest city and economic hub — home to a thriving expat community and growing Bitcoin adoption."
     machines:
       # Optional photos section per machine for the location subpage gallery.
@@ -198,6 +199,7 @@ regions:
           - "The Han Thuyen location combines the charm of a neighborhood Italian restaurant with the convenience of Bitcoin access. Whether you're a Bitcoin veteran or making your first purchase, the friendly staff can help guide you through the process."
 
   - name: "Vung Tau"
+    slug: "vung-tau"
     description: "A popular coastal getaway just two hours from Saigon — surf, sun, and Bitcoin by the beach."
     machines:
       - name: "Surf Hostel"
@@ -233,6 +235,7 @@ regions:
           - "Situated in one of southern Vietnam's favorite weekend getaways from Ho Chi Minh City, the hostel combines a laid-back beach vibe with easy access to Bitcoin services during operating hours from 8 AM to 10 PM. Whether topping up a wallet between surf sessions or cashing out for local spending, visitors can use the BitcoinVN BTM quickly and conveniently."
 
   - name: "Da Nang"
+    slug: "da-nang"
     description: "Vietnam's central coastal hub — beach life, international hospitality, and Bitcoin access in one of the country's fastest-growing cities."
     machines:
       - name: "Westwood Da Nang"

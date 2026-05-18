@@ -10,6 +10,7 @@ eleventyComputed:
   locale: "{{ pageLocale.code }}"
   pageTitle: "{{ i18n[pageLocale.code].host_page.hero.heading }} — {{ site.name }}"
   pageDescription: "{{ i18n[pageLocale.code].host_page.meta_description }}"
+  canonicalPath: "{{ pageLocale.pathPrefix }}host/"
   basePath: "host/"
 ---
 {% set t = i18n[pageLocale.code] %}

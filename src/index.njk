@@ -9,6 +9,7 @@ eleventyComputed:
   locale: "{{ pageLocale.code }}"
   pageTitle: "{{ site.name }} — {{ i18n[pageLocale.code].site.tagline }}"
   pageDescription: "{{ i18n[pageLocale.code].site.description }}"
+  canonicalPath: "{{ pageLocale.pathPrefix }}"
   basePath: ""
 ---
 {% set t = i18n[pageLocale.code] %}
@@ -223,9 +224,10 @@ eleventyComputed:
       <div class="locations-list">
         {% for region in locations.regions %}
         {% set tRegion = t.locations.regions[loop.index0] %}
+        {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
         <div class="location-region">
           <div class="region-header">
-            <h3>{{ tRegion.name if tRegion else region.name }}</h3>
+            <h3><a href="{{ (localePrefix + '/' + region.slug + '/') | url }}">{{ tRegion.name if tRegion else region.name }}</a></h3>
             <span class="location-count">{{ region.machines.length }} {{ t.ui.locations_section.machine_plural if region.machines.length > 1 else t.ui.locations_section.machine_singular }}</span>
             {% set regionDesc = tRegion.description if tRegion else region.description %}
             {% if regionDesc %}<p class="region-description">{{ regionDesc }}</p>{% endif %}
@@ -233,7 +235,6 @@ eleventyComputed:
 
           <div class="location-cards">
             {% for machine in region.machines %}
-            {% set localePrefix = "" if pageLocale.code == "en" else ("/" + pageLocale.code) %}
             {% set heroPhoto = machine.photos[0].src if machine.photos and machine.photos.length else "" %}
             <a href="{{ (localePrefix + '/locations/' + machine.slug + '/') | url }}" class="location-card{% if heroPhoto %} location-card--photo{% endif %}" data-animate data-slug="{{ machine.slug }}" data-lat="{{ machine.lat }}" data-lng="{{ machine.lng }}" data-hours-days="{{ machine.hours.days | join(',') }}" data-hours-open="{{ machine.hours.open }}" data-hours-close="{{ machine.hours.close }}" data-hours-tz="{{ machine.hours.timezone }}">
               {% if heroPhoto %}
@@ -380,6 +381,40 @@ eleventyComputed:
 {% set localeHome = "/" + pageLocale.pathPrefix %}
 {# ======== Footer ======== #}
 {% include "footer.njk" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in t.faq.items %}
+    {
+      "@type": "Question",
+      "name": {{ item.question | jsonify | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.answer | striptags | jsonify | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ (pageLocale.pathPrefix + "#website") | absoluteUrl(site.url) | jsonify | safe }},
+  "name": {{ site.name | jsonify | safe }},
+  "url": {{ pageLocale.pathPrefix | absoluteUrl(site.url) | jsonify | safe }},
+  "description": {{ pageDescription | jsonify | safe }},
+  "publisher": {
+    "@type": "Organization",
+    "name": "BitcoinVN",
+    "url": {{ site.exchangeUrl | jsonify | safe }}
+  }
+}
+</script>
 
 {# Pass location data and UI labels to JS #}
 <script>

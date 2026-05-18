@@ -1,0 +1,35 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% macro urlEntry(path, basePath) %}
+  <url>
+    <loc>{{ path | absoluteUrl(site.url) }}</loc>
+    {% for alt in locales %}
+    <xhtml:link rel="alternate" hreflang="{{ alt.code }}" href="{{ (alt.pathPrefix + basePath) | absoluteUrl(site.url) }}" />
+    {% endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ basePath | absoluteUrl(site.url) }}" />
+  </url>
+{% endmacro %}
+{% for loc in locales %}
+{{ urlEntry(loc.pathPrefix, "") }}
+{% endfor %}
+{% for loc in locales %}
+{{ urlEntry(loc.pathPrefix + "host/", "host/") }}
+{% endfor %}
+{% for region in locations.regions %}
+{% for loc in locales %}
+{{ urlEntry(loc.pathPrefix + region.slug + "/", region.slug + "/") }}
+{% endfor %}
+{% endfor %}
+{% for region in locations.regions %}
+{% for machine in region.machines %}
+{% for loc in locales %}
+{{ urlEntry(loc.pathPrefix + "locations/" + machine.slug + "/", "locations/" + machine.slug + "/") }}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+</urlset>
