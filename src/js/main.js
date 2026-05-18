@@ -209,9 +209,20 @@ function makeBtmMarkerIcon(isOpen) {
   return L.divIcon({
     className: isOpen ? "btm-marker is-open" : "btm-marker is-closed",
     html: `<div class="btm-marker-inner"><span class="btm-marker-glyph">₿</span></div>`,
-    iconSize: [24, 30],
-    iconAnchor: [12, 28],
-    popupAnchor: [0, -28],
+    iconSize: [30, 34],
+    iconAnchor: [15, 32],
+    popupAnchor: [0, -32],
+  });
+}
+
+function makeBtmClusterIcon(cluster) {
+  const count = cluster.getChildCount();
+
+  return L.divIcon({
+    className: "btm-cluster",
+    html: `<div class="btm-cluster-inner"><span>${count}</span></div>`,
+    iconSize: [42, 42],
+    iconAnchor: [21, 21],
   });
 }
 
@@ -240,6 +251,18 @@ function initMap() {
     maxZoom: 18,
   }).addTo(map);
 
+  const clusterLayer = typeof L.markerClusterGroup === "function"
+    ? L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        animate: false,
+        animateAddingMarkers: false,
+        disableClusteringAtZoom: 14,
+        maxClusterRadius: 48,
+        iconCreateFunction: makeBtmClusterIcon,
+      }).addTo(map)
+    : null;
+
   const allMarkers = [];
   data.regions.forEach((region) => {
     region.machines.forEach((machine) => {
@@ -252,11 +275,17 @@ function initMap() {
 
       const marker = L.marker([machine.lat, machine.lng], {
         icon: makeBtmMarkerIcon(isOpen),
+        btmSlug: machine.slug,
       })
-        .addTo(map)
         .bindPopup(
           `<strong>${machine.name}</strong><br><small>${machine.district}, ${region.name}</small><br><small>${statusLabel} · ${window.BTM_HOURS_I18N?.[machine.slug] ?? h.display}</small>`
         );
+
+      if (clusterLayer) {
+        clusterLayer.addLayer(marker);
+      } else {
+        marker.addTo(map);
+      }
 
       marker.on("click", () => {
         const card = cardBySlug.get(machine.slug);
@@ -289,11 +318,77 @@ function initMap() {
 
   let hoverTimer = null;
   let leaveTimer = null;
-  const flyToMarker = (marker) => {
-    map.flyTo(marker.getLatLng(), 13, { duration: 0.8, easeLinearity: 0.25 });
+  let highlightedLayer = null;
+  let focusedMarker = null;
+  let hoverPreviewMarker = null;
+  let focusToken = 0;
+  const hoverFocusZoom = 15;
+  const getVisibleMarkerLayer = (marker) => {
+    if (!clusterLayer) return marker;
+    return clusterLayer.getVisibleParent(marker) || marker;
+  };
+  const highlightLayer = (layer) => {
+    if (highlightedLayer && highlightedLayer !== layer) {
+      unhighlightLayer(highlightedLayer);
+    }
+    const el = layer.getElement();
+    if (!el) return;
+    el.classList.add("is-highlighted");
+    if (typeof layer.setZIndexOffset === "function") {
+      layer.setZIndexOffset(1000);
+    }
+    highlightedLayer = layer;
+  };
+  const unhighlightLayer = (layer) => {
+    const el = layer?.getElement?.();
+    if (el) el.classList.remove("is-highlighted");
+    if (typeof layer?.setZIndexOffset === "function") {
+      layer.setZIndexOffset(0);
+    }
+    if (highlightedLayer === layer) highlightedLayer = null;
+  };
+  const clearHoverPreview = () => {
+    if (!hoverPreviewMarker) return;
+    if (highlightedLayer === hoverPreviewMarker) highlightedLayer = null;
+    map.removeLayer(hoverPreviewMarker);
+    hoverPreviewMarker = null;
+  };
+  const showHoverPreview = (marker) => {
+    if (!clusterLayer) return;
+    clearHoverPreview();
+    hoverPreviewMarker = L.marker(marker.getLatLng(), {
+      icon: marker.options.icon,
+      interactive: false,
+      keyboard: false,
+      zIndexOffset: 2000,
+    }).addTo(map);
+    highlightLayer(hoverPreviewMarker);
+  };
+  const focusMarker = (marker) => {
+    const token = ++focusToken;
+    focusedMarker = marker;
+    map.stop();
+    unhighlightLayer(highlightedLayer);
+    const highlightFocusedLayer = () => {
+      if (token !== focusToken || focusedMarker !== marker) return;
+      clearHoverPreview();
+      highlightLayer(getVisibleMarkerLayer(marker));
+    };
+
+    if (clusterLayer) {
+      showHoverPreview(marker);
+    } else {
+      highlightFocusedLayer();
+    }
+    map.once("moveend", highlightFocusedLayer);
+    setTimeout(highlightFocusedLayer, 900);
+    setTimeout(highlightFocusedLayer, 1400);
+    map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), hoverFocusZoom), { duration: 0.8, easeLinearity: 0.25 });
   };
   const flyHome = () => {
-    if (homeBounds) map.flyToBounds(homeBounds, { duration: 0.8, easeLinearity: 0.25 });
+    if (!homeBounds) return;
+    map.stop();
+    map.flyToBounds(homeBounds, { duration: 0.8, easeLinearity: 0.25 });
   };
 
   cardBySlug.forEach((card, slug) => {
@@ -302,20 +397,14 @@ function initMap() {
     card.addEventListener("mouseenter", () => {
       clearTimeout(leaveTimer);
       clearTimeout(hoverTimer);
-      const el = marker.getElement();
-      if (el) {
-        el.classList.add("is-highlighted");
-        marker.setZIndexOffset(1000);
-      }
-      hoverTimer = setTimeout(() => flyToMarker(marker), 140);
+      hoverTimer = setTimeout(() => focusMarker(marker), 140);
     });
     card.addEventListener("mouseleave", () => {
       clearTimeout(hoverTimer);
-      const el = marker.getElement();
-      if (el) {
-        el.classList.remove("is-highlighted");
-        marker.setZIndexOffset(0);
-      }
+      focusToken += 1;
+      if (focusedMarker === marker) focusedMarker = null;
+      clearHoverPreview();
+      unhighlightLayer(highlightedLayer);
     });
   });
 
@@ -323,6 +412,10 @@ function initMap() {
   if (listEl) {
     listEl.addEventListener("mouseleave", () => {
       clearTimeout(hoverTimer);
+      focusToken += 1;
+      focusedMarker = null;
+      clearHoverPreview();
+      unhighlightLayer(highlightedLayer);
       leaveTimer = setTimeout(flyHome, 240);
     });
     listEl.addEventListener("mouseenter", () => {

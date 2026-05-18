@@ -32,6 +32,7 @@
   {% if locale == 'ja' %}<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">{% endif %}
   {% if locale == 'zh' %}<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">{% endif %}
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
   {% if isProduction %}
   <script defer data-domain="bitcoinvn.io/btm" src="https://plausible.bitcoinvn.io/js/script.js"></script>
@@ -40,6 +41,7 @@
 <body>
   {{ content | safe }}
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="{{ '/js/main.js' | url }}"></script>
   <script src="{{ '/js/plausible-events.js' | url }}"></script>
 </body>
