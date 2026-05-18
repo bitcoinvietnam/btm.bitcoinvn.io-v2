@@ -8,9 +8,6 @@
   --accent: #FFE26E;
   --accent-light: #fff0a0;
   --accent-dark: #e6c84e;
-  --accent-glow: rgba(255, 226, 110, 0.12);
-  --brand-primary: #374758;
-  --brand-link: #FFE26E;
   --bg-primary: #081521;
   --bg-secondary: #0c1d2c;
   --bg-tertiary: #142c42;
@@ -32,8 +29,6 @@
 
   /* CRT screen + ATM bezel */
   --screen-bg: #1c3a58;
-  --bezel-yellow: #FFE26E;
-  --bezel-yellow-dark: #c9a939;
   --bezel-edge: #806820;
 
   /* Period-appropriate status colors */
@@ -41,19 +36,13 @@
   --status-online-glow: rgba(111, 174, 92, 0.5);
   --status-offline: #C24A3E;
   --status-offline-glow: rgba(194, 74, 62, 0.5);
-  --status-warning: #E6A23C;
   --status-idle: #6b7a8a;
 
   /* Inactive screen tones */
   --screen-gray-1: #2b3a4a;
-  --screen-gray-2: #3d4e60;
 
   /* Hairline radii (sunset rounded look) */
-  --radius-sm: 2px;
   --radius-md: 4px;
-  --radius-lg: 4px;
-  --radius-xl: 4px;
-  --radius-screen: 4px;
   --radius-bezel: 2px;
   --radius-pill: 999px;
 
@@ -62,19 +51,10 @@
   --font-body: "Noto Sans", "Noto Sans KR", "Noto Sans JP", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  --fs-xs: 0.75rem;
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
   --fs-md: 1.125rem;
-  --fs-lg: 1.5rem;
-  --fs-xl: 2rem;
-  --fs-2xl: 2.75rem;
-  --fs-3xl: clamp(2.75rem, 6vw, 4.5rem);
 
   --lh-tight: 1.1;
-  --lh-snug: 1.35;
   --lh-body: 1.6;
-  --tracking-display: 0;
   --tracking-mono: 0.05em;
   --tracking-caps: 0.18em;
 
@@ -106,11 +86,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-display);
+  letter-spacing: 0;
   line-height: var(--lh-tight);
 }
 
@@ -768,27 +748,6 @@ button {
   min-width: 0;
   z-index: 5;
 }
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 14px;
-  background: transparent;
-  border: 1px solid var(--phosphor-amber-dim);
-  border-radius: var(--radius-bezel);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-caps);
-  color: var(--accent);
-  margin-bottom: 28px;
-  animation: fadeInUp 0.8s ease both;
-}
-
-.hero-badge::before { content: "["; opacity: 0.6; }
-.hero-badge::after { content: "]"; opacity: 0.6; }
 
 @keyframes led-pulse {
   0%, 100% { box-shadow: 0 0 6px var(--status-online-glow); }
@@ -1458,33 +1417,10 @@ button {
   opacity: 0.7;
 }
 
-.location-hours-centered {
-  justify-content: center;
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-
 .location-hours-inline {
   display: inline-flex;
   margin-top: 0;
   margin-left: 6px;
-}
-
-.location-map-link {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-sm);
-  color: var(--text-tertiary);
-  transition: var(--transition);
-}
-
-.location-map-link:hover {
-  color: var(--accent);
-  background: var(--accent-glow);
 }
 
 /* ========================================
@@ -2001,8 +1937,7 @@ button {
 
 .telegram-icon,
 .facebook-icon,
-.email-icon,
-.whatsapp-icon {
+.email-icon {
   background: transparent;
   color: var(--accent);
   filter: drop-shadow(0 0 4px rgba(255, 226, 110, 0.3));
@@ -3536,11 +3471,7 @@ button {
   }
 
   .location-status-dot.open,
-  .pulse-dot,
-  .btm-marker.is-open::before,
-  .btm-marker.is-open::after,
-  .wf-btc,
-  .fs-led { animation: none !important; }
+  .wf-btc { animation: none !important; }
 
   .hero-scroll-indicator { animation: none; }
   .wireframe-btm { transition: none; }
@@ -3557,11 +3488,9 @@ button {
   .hero-grid,
   .wireframe-scene,
   .feature-card::after,
-  .host-card::before,
   .host-page-hero::before,
   .host-page-hero::after,
   .host-page-cta-card::before,
-  .map-wrapper::after,
   .nav,
   .hero-scroll-indicator {
     display: none !important;

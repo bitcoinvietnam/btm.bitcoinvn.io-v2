@@ -33,7 +33,12 @@ module.exports = function (eleventyConfig) {
       if (!inputPath.includes("/css/")) return;
       return async () => {
         if (!isProduction) return inputContent;
-        const result = new CleanCSS({}).minify(inputContent);
+        const result = new CleanCSS({
+          level: {
+            1: { all: true },
+            2: { all: true },
+          },
+        }).minify(inputContent);
         if (result.errors?.length) {
           console.error(`[css] CleanCSS errors:`, result.errors);
           return inputContent;
@@ -51,7 +56,11 @@ module.exports = function (eleventyConfig) {
       if (!inputPath.includes("/js/")) return;
       return async () => {
         if (!isProduction) return inputContent;
-        const result = await minify(inputContent);
+        const result = await minify(inputContent, {
+          compress: { passes: 3 },
+          mangle: true,
+          format: { comments: false },
+        });
         return result.code;
       };
     },
