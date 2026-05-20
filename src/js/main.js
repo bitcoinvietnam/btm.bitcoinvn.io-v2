@@ -19,64 +19,81 @@ document.addEventListener("DOMContentLoaded", () => {
   initCoinRotator();
 });
 
-/* ======== Hero coin name rotator (pixelate transition) ======== */
+/* ======== Hero coin name rotator (LED panel swipe) ======== */
 function initCoinRotator() {
   const el = document.querySelector(".coin-rotator");
   if (!el) return;
+  const panel = el.closest(".coin-led-panel");
+
+  const primary = el.textContent.trim();
+  const cycle = [
+    { key: "btc", label: primary },
+    { key: "usdt", label: "USDT" },
+    { key: "usdc", label: "USDC" },
+  ];
+
+  function renderAsset(target, asset) {
+    const icon = document.createElement("span");
+    const label = document.createElement("span");
+    target.dataset.asset = asset.key;
+    if (panel && target === el) panel.dataset.asset = asset.key;
+    icon.className = `coin-asset-icon coin-asset-icon--${asset.key}`;
+    icon.setAttribute("aria-hidden", "true");
+    label.className = "coin-asset-label";
+    label.textContent = asset.label;
+    target.replaceChildren(icon, label);
+    target.setAttribute("aria-label", asset.label);
+  }
+
+  renderAsset(el, cycle[0]);
+
+  function setPanelWidth() {
+    const measure = document.createElement("span");
+    measure.style.cssText =
+      "position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none";
+    measure.className = el.className;
+    el.parentElement.appendChild(measure);
+
+    let maxWidth = 0;
+    for (const asset of cycle) {
+      renderAsset(measure, asset);
+      maxWidth = Math.max(maxWidth, measure.getBoundingClientRect().width);
+    }
+    measure.remove();
+
+    if (panel) {
+      const style = window.getComputedStyle(panel);
+      const horizontalPadding =
+        parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+      panel.style.setProperty(
+        "--coin-panel-width",
+        `${Math.ceil(maxWidth + horizontalPadding)}px`,
+      );
+    } else {
+      el.style.minWidth = `${Math.ceil(maxWidth)}px`;
+    }
+  }
+
+  setPanelWidth();
+  if (document.fonts) document.fonts.ready.then(setPanelWidth);
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const svgMarkup =
-    '<svg width="0" height="0" aria-hidden="true" style="position:absolute;left:0;top:0;pointer-events:none">' +
-    '<defs>' +
-    [2, 4, 7]
-      .map(
-        (n) =>
-          `<filter id="pix-${n}" x="0" y="0" width="100%" height="100%">` +
-          `<feFlood x="${n}" y="${n}" width="${n}" height="${n}"/>` +
-          `<feComposite width="${n * 2}" height="${n * 2}"/>` +
-          `<feTile result="a"/>` +
-          `<feComposite in="SourceGraphic" in2="a" operator="in"/>` +
-          `<feMorphology operator="dilate" radius="${n}"/>` +
-          `</filter>`,
-      )
-      .join("") +
-    "</defs></svg>";
-  document.body.insertAdjacentHTML("afterbegin", svgMarkup);
-
-  const primary = el.textContent;
-  const cycle = [primary, "USDT", "USDC"];
-
-  const measure = document.createElement("span");
-  measure.style.cssText =
-    "position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none";
-  measure.className = el.className.replace("coin-rotator", "").trim();
-  el.parentElement.appendChild(measure);
-  let maxWidth = 0;
-  for (const c of cycle) {
-    measure.textContent = c;
-    maxWidth = Math.max(maxWidth, measure.getBoundingClientRect().width);
-  }
-  measure.remove();
-  el.style.minWidth = `${Math.ceil(maxWidth)}px`;
-
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const nextFrame = () =>
+    new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
   let i = 0;
 
   async function cycleOnce() {
-    el.classList.add("pix-2");
-    await wait(70);
-    el.classList.replace("pix-2", "pix-4");
-    await wait(70);
-    el.classList.replace("pix-4", "pix-7");
-    await wait(110);
+    el.classList.add("is-swiping-out");
+    await wait(360);
     i = (i + 1) % cycle.length;
-    el.textContent = cycle[i];
-    await wait(130);
-    el.classList.replace("pix-7", "pix-4");
-    await wait(70);
-    el.classList.replace("pix-4", "pix-2");
-    await wait(70);
-    el.classList.remove("pix-2");
+    renderAsset(el, cycle[i]);
+    el.classList.remove("is-swiping-out");
+    el.classList.add("is-swiping-in");
+    await nextFrame();
+    el.classList.remove("is-swiping-in");
+    await wait(380);
   }
 
   let timer = setInterval(cycleOnce, 3200);

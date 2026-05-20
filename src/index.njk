@@ -136,7 +136,7 @@ eleventyComputed:
   </div>
   <div class="hero-content">
     <span class="hero-tag">{{ t.ui.hero.tag }}</span>
-    <h1 class="hero-title">{{ t.ui.hero.headline | replace("Bitcoin", '<span class="gradient-text coin-rotator">Bitcoin</span><br>') | replace("比特币", '<span class="gradient-text coin-rotator">比特币</span><br>') | safe }}</h1>
+    <h1 class="hero-title">{{ t.ui.hero.headline | replace("Bitcoin", '<br><span class="coin-led-panel"><span class="coin-rotator">Bitcoin</span></span><br>') | replace("比特币", '<br><span class="coin-led-panel"><span class="coin-rotator">比特币</span></span><br>') | safe }}</h1>
     <p class="hero-subtitle">{{ t.site.tagline }}</p>
     <div class="hero-actions">
       <a href="#locations" class="btn btn-primary" data-key="F1">
