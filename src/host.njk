@@ -166,7 +166,7 @@ eleventyComputed:
         {% for machine in region.machines %}
         {% if machine.photos and machine.photos[0] %}
         <a href="{{ ('/' + pageLocale.pathPrefix + 'locations/' + machine.slug + '/') | url }}" class="host-page-carousel-slide" aria-hidden="true" tabindex="-1">
-          <img data-src="{{ machine.photos[0].src | url }}" alt="" width="320" height="220">
+          <img data-src="{{ machine.photos[0].src | url }}" alt="{{ machine.photos[0].alt }}" width="320" height="220">
         </a>
         {% endif %}
         {% endfor %}
