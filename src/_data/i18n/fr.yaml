@@ -10,7 +10,7 @@ ui:
   hero:
     operating_since: "En activité depuis"
     tag: "Sans compte · Libre-service · Échange en espèces"
-    headline: "Acheter et vendre du Bitcoin en espèces au Vietnam"
+    headline: "Acheter et vendre du Bitcoin en espèces"
     cta_find: "Trouver un BTM"
     cta_learn: "Découvrir le fonctionnement"
     stat_locations: "Emplacements BTM"
@@ -77,7 +77,7 @@ ui:
     closed: "Fermé"
 
 site:
-  tagline: "La manière la plus rapide et la plus privée d'acheter et de vendre du Bitcoin en espèces au Vietnam"
+  tagline: "La manière la plus rapide et la plus privée d'acheter et de vendre du Bitcoin en espèces"
   description: "Distributeurs Bitcoin en libre-service à Ho Chi Minh City et Vung Tau. Pas de compte bancaire, pas de virements. Entrez, échangez votre argent contre du Bitcoin, repartez."
   notice:
     message: "La distribution des SMS pour les codes OTP est actuellement perturbée par des changements dans les télécoms domestiques. Notre équipe support reste disponible pour vous aider à finaliser votre transaction via Telegram ou Facebook."

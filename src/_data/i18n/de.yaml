@@ -10,7 +10,7 @@ ui:
   hero:
     operating_since: "Aktiv seit"
     tag: "Kein Konto · Selbstbedienung · Bargeldtausch"
-    headline: "Bitcoin in Vietnam gegen Bargeld kaufen und verkaufen"
+    headline: "Bitcoin gegen Bargeld kaufen und verkaufen"
     cta_find: "BTM finden"
     cta_learn: "Funktionsweise entdecken"
     stat_locations: "BTM-Standorte"
@@ -77,7 +77,7 @@ ui:
     closed: "Geschlossen"
 
 site:
-  tagline: "Der schnellste und privateste Weg, Bitcoin in Vietnam gegen Bargeld zu kaufen und zu verkaufen"
+  tagline: "Der schnellste und privateste Weg, Bitcoin gegen Bargeld zu kaufen und zu verkaufen"
   description: "Selbstbedienungs-Bitcoin-Automaten in Ho Chi Minh City und Vung Tau. Kein Bankkonto, keine Überweisungen. Reinkommen, Bargeld gegen Bitcoin tauschen, rausgehen."
   notice:
     message: "Die SMS-Zustellung für OTP-Codes ist aktuell durch inländische Telekommunikationsänderungen beeinträchtigt. Unser Support-Team steht Ihnen über Telegram oder Facebook bei der Abwicklung Ihrer Transaktion zur Verfügung."

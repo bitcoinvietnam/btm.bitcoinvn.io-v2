@@ -10,7 +10,7 @@ ui:
   hero:
     operating_since: "Operating since"
     tag: "No account · Walk-in · Cash exchange"
-    headline: "Buy & Sell Bitcoin for Cash in Vietnam"
+    headline: "Buy & Sell Bitcoin for Cash"
     cta_find: "Find a BTM"
     cta_learn: "Learn How It Works"
     stat_locations: "BTM Locations"
@@ -77,7 +77,7 @@ ui:
     closed: "Closed"
 
 site:
-  tagline: "The fastest & most private way to buy & sell Bitcoin for cash in Vietnam"
+  tagline: "The fastest & most private way to buy & sell Bitcoin for cash"
   description: "Self-service Bitcoin ATMs across Ho Chi Minh City and Vung Tau. No bank account, no wire transfers. Walk in, exchange cash for Bitcoin, walk away."
   notice:
     message: "SMS delivery for OTP codes is currently affected by domestic telecom changes. Our support team is available to assist with your transaction via Telegram or Facebook."

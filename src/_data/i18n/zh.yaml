@@ -10,7 +10,7 @@ ui:
   hero:
     operating_since: "运营始于"
     tag: "无需账户 · 现场办理 · 现金兑换"
-    headline: "在越南用现金买卖比特币"
+    headline: "用现金买卖比特币"
     cta_find: "查找 BTM"
     cta_learn: "了解使用流程"
     stat_locations: "BTM 位置"
@@ -77,7 +77,7 @@ ui:
     closed: "已打烊"
 
 site:
-  tagline: "在越南用现金买卖比特币最快速、最私密的方式"
+  tagline: "用现金买卖比特币最快速、最私密的方式"
   description: "自助比特币 ATM，遍布胡志明市和头顿。无需银行账户，无需电汇。走进来，完成交易，离开。"
   notice:
     message: "由于国内电信变动，OTP 短信验证码的发送目前受到影响。我们的客服团队可通过 Telegram 或 Facebook 协助您完成交易。"

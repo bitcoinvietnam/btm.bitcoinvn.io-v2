@@ -10,7 +10,7 @@ ui:
   hero:
     operating_since: "Em operação desde"
     tag: "Sem conta · Autoatendimento · Troca em dinheiro"
-    headline: "Compre e venda Bitcoin em dinheiro no Vietnã"
+    headline: "Compre e venda Bitcoin em dinheiro"
     cta_find: "Encontrar um BTM"
     cta_learn: "Saiba como funciona"
     stat_locations: "Locais com BTM"
@@ -77,7 +77,7 @@ ui:
     closed: "Fechado"
 
 site:
-  tagline: "A forma mais rápida e privada de comprar e vender Bitcoin em dinheiro no Vietnã"
+  tagline: "A forma mais rápida e privada de comprar e vender Bitcoin em dinheiro"
   description: "Caixas eletrônicos de Bitcoin em autoatendimento em Ho Chi Minh City e Vung Tau. Sem conta bancária, sem transferências. Entre, troque dinheiro por Bitcoin e siga seu caminho."
   notice:
     message: "A entrega de SMS para códigos OTP está atualmente afetada por mudanças nas operadoras locais. Nossa equipe de suporte está à disposição para auxiliar você na sua transação pelo Telegram ou pelo Facebook."

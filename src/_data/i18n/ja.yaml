@@ -10,7 +10,7 @@ ui:
   hero:
     operating_since: "運営開始"
     tag: "口座不要 · 対面取引 · 現金交換"
-    headline: "ベトナムで現金によるBitcoinの売買"
+    headline: "現金によるBitcoinの売買"
     cta_find: "BTMを探す"
     cta_learn: "ご利用方法を見る"
     stat_locations: "BTM設置場所"
@@ -77,7 +77,7 @@ ui:
     closed: "営業時間外"
 
 site:
-  tagline: "ベトナムで現金によるBitcoin売買の最速・最もプライベートな方法"
+  tagline: "現金によるBitcoin売買の最速・最もプライベートな方法"
   description: "Ho Chi Minh CityとVung Tau各所にセルフサービスBitcoin ATMを設置。銀行口座不要、銀行送金不要。来て、取引して、帰るだけ。"
   notice:
     message: "国内通信事業者の変更により、OTPコードのSMS配信に影響が出ています。TelegramまたはFacebookからサポートチームがお取引をお手伝いいたします。"
