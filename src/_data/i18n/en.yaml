@@ -84,7 +84,7 @@ site:
 
 features:
   heading: "9 Reasons to Use BitcoinVN BTM"
-  subheading: "Our service is designed to protect your financial privacy when buying or selling BTC for cash in Vietnam."
+  subheading: "Our service is designed to protect your financial privacy when buying or selling BTC for cash."
   items:
     - title: "No Bank Account Needed"
       description: "Buy or sell Bitcoin with just cash. No bank account, no wire transfers, no financial intermediaries required."
@@ -97,13 +97,13 @@ features:
     - title: "Real-Time Confirmation"
       description: "Transactions are broadcast to the blockchain instantly. Track your transaction in real-time with provided tracking links."
     - title: "Bilingual Support"
-      description: "Full support in both English and Vietnamese. Our team is ready to help you in your preferred language."
+      description: "Our team is ready to help you in your preferred language."
     - title: "Instant On-Site Exchange"
       description: "Complete your transaction directly at the location, without relying on unknown counterparties or advance transfers."
     - title: "Reliable & Monitored"
       description: "All BTMs are continuously monitored with real-time status updates. Availability posted on our Telegram and Facebook channels."
     - title: "Trusted & Established"
-      description: "Operated by BitcoinVN — Vietnam's longest-running Bitcoin company. Years of proven reliability serving thousands of customers."
+      description: "Operated by BitcoinVN - one of Asia's longest-running Bitcoin companies. Years of proven reliability serving thousands of customers."
 
 how_it_works:
   buy:

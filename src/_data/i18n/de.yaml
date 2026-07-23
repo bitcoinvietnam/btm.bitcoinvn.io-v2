@@ -84,7 +84,7 @@ site:
 
 features:
   heading: "9 Gründe für den BitcoinVN BTM"
-  subheading: "Unser Service wurde entwickelt, um Ihre finanzielle Privatsphäre beim Kauf oder Verkauf von BTC gegen Bargeld in Vietnam zu schützen."
+  subheading: "Unser Service wurde entwickelt, um Ihre finanzielle Privatsphäre beim Kauf oder Verkauf von BTC gegen Bargeld zu schützen."
   items:
     - title: "Kein Bankkonto erforderlich"
       description: "Kaufen oder verkaufen Sie Bitcoin nur mit Bargeld. Kein Bankkonto, keine Überweisungen, keine Finanzvermittler nötig."
@@ -97,13 +97,13 @@ features:
     - title: "Echtzeit-Bestätigung"
       description: "Transaktionen werden sofort an die Blockchain übertragen. Verfolgen Sie Ihre Transaktion in Echtzeit über die bereitgestellten Tracking-Links."
     - title: "Zweisprachiger Support"
-      description: "Vollständiger Support auf Englisch und Vietnamesisch. Unser Team unterstützt Sie in Ihrer bevorzugten Sprache."
+      description: "Unser Team unterstützt Sie in Ihrer bevorzugten Sprache."
     - title: "Sofortiger Tausch vor Ort"
       description: "Schließen Sie Ihre Transaktion direkt am Standort ab — ohne unbekannte Gegenparteien oder Vorab-Überweisungen."
     - title: "Zuverlässig und überwacht"
       description: "Alle BTMs werden durchgehend überwacht, mit Echtzeit-Statusmeldungen. Verfügbarkeit wird über unsere Telegram- und Facebook-Kanäle gemeldet."
     - title: "Etabliert und vertrauenswürdig"
-      description: "Betrieben von BitcoinVN — Vietnams ältestem Bitcoin-Unternehmen. Jahrelange bewährte Zuverlässigkeit für tausende Kunden."
+      description: "Betrieben von BitcoinVN - einem der ältesten Bitcoin-Unternehmen Asiens. Jahrelange bewährte Zuverlässigkeit für tausende Kunden."
 
 how_it_works:
   buy:

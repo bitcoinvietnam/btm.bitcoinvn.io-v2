@@ -84,7 +84,7 @@ site:
 
 features:
   heading: "9 razones para usar un BTM de BitcoinVN"
-  subheading: "Nuestro servicio está diseñado para proteger tu privacidad financiera al comprar o vender BTC por efectivo en Vietnam."
+  subheading: "Nuestro servicio está diseñado para proteger tu privacidad financiera al comprar o vender BTC por efectivo."
   items:
     - title: "Sin necesidad de cuenta bancaria"
       description: "Compra o vende Bitcoin solo con efectivo. Sin cuenta bancaria, sin transferencias, sin intermediarios financieros."
@@ -97,13 +97,13 @@ features:
     - title: "Confirmación en tiempo real"
       description: "Las transacciones se transmiten a la blockchain al instante. Sigue tu operación en tiempo real con los enlaces de seguimiento que te proporcionamos."
     - title: "Soporte bilingüe"
-      description: "Soporte completo en inglés y vietnamita. Nuestro equipo está listo para atenderte en el idioma que prefieras."
+      description: "Nuestro equipo está listo para atenderte en el idioma que prefieras."
     - title: "Intercambio inmediato en el sitio"
       description: "Completa tu transacción directamente en el lugar, sin depender de contrapartes desconocidas ni de transferencias previas."
     - title: "Fiables y monitorizados"
       description: "Todos los BTM están monitorizados de forma continua, con actualizaciones de estado en tiempo real. La disponibilidad se publica en nuestros canales de Telegram y Facebook."
     - title: "Establecidos y de confianza"
-      description: "Operados por BitcoinVN — la empresa Bitcoin más veterana de Vietnam. Años de fiabilidad probada al servicio de miles de clientes."
+      description: "Operados por BitcoinVN - una de las empresas Bitcoin más veteranas de Asia. Años de fiabilidad probada al servicio de miles de clientes."
 
 how_it_works:
   buy:

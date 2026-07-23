@@ -84,7 +84,7 @@ site:
 
 features:
   heading: "选择 BitcoinVN BTM 的 9 大理由"
-  subheading: "我们的服务旨在保护您在越南用现金买卖 BTC 时的财务隐私。"
+  subheading: "我们的服务旨在保护您用现金买卖 BTC 时的财务隐私。"
   items:
     - title: "无需银行账户"
       description: "仅用现金即可买卖比特币。无需银行账户，无需电汇，无需金融中介。"
@@ -97,13 +97,13 @@ features:
     - title: "实时确认"
       description: "交易即时广播到区块链。通过提供的追踪链接实时跟踪您的交易。"
     - title: "双语支持"
-      description: "提供英语和越南语全面支持。我们的团队随时以您偏好的语言为您提供帮助。"
+      description: "我们的团队随时以您偏好的语言为您提供帮助。"
     - title: "现场即时兑换"
       description: "直接在现场完成交易，无需依赖未知的交易对手或提前转账。"
     - title: "可靠且受监控"
       description: "所有 BTM 均受持续监控，并提供实时状态更新。可用性信息发布在我们的 Telegram 和 Facebook 频道。"
     - title: "值得信赖，历史悠久"
-      description: "由 BitcoinVN 运营——越南运营时间最长的比特币公司。多年来可靠服务数千客户。"
+      description: "由 BitcoinVN 运营——亚洲运营时间最长的比特币公司之一。多年来可靠服务数千客户。"
 
 how_it_works:
   buy:
