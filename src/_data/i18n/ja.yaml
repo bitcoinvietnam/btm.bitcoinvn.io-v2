@@ -142,7 +142,7 @@ faq:
     - question: "手数料はいくらですか？"
       answer: "手数料体系は競争力があり透明です。BTM画面に表示される価格にはすべての手数料が含まれています。表示価格がそのまま取引価格です。隠れた料金や予期しない控除はありません。"
     - question: "ベトナムでBitcoinは合法ですか？"
-      answer: "Bitcoinはベトナムで法定通貨としては認められていませんが、Bitcoinの所有や取引は違法ではありません。"
+      answer: "Bitcoinはベトナムで法定通貨としては認められていませんが、Bitcoinの保有は禁止されていません。ただし、ベトナムはより規制された暗号資産市場へと移行しつつあり、詳細な規則や要件が段階的に導入されています。そのため、新しい制度の整備に伴い、サービスの提供状況が変わる可能性があります。詳しくは政令第284/2026/NĐ-CP号をご覧ください。"
     - question: "BTMが現在稼働しているか確認するにはどうすればいいですか？"
       answer: "BTMのリアルタイム稼働状況を<a href='https://t.me/BitcoinATMHCMC' target='_blank' rel='noopener'>Telegramチャネル</a>および<a href='https://www.facebook.com/BitcoinATMHCMC' target='_blank' rel='noopener'>Facebookページ</a>で公開しています。最新の稼働情報はフォローしてご確認ください。"
     - question: "Bitcoinウォレットを持っていない場合はどうすればいいですか？"
