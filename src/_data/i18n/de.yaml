@@ -80,7 +80,10 @@ site:
   tagline: "Der schnellste und privateste Weg, Bitcoin gegen Bargeld zu kaufen und zu verkaufen"
   description: "Selbstbedienungs-Bitcoin-Automaten in Ho Chi Minh City und Vung Tau. Kein Bankkonto, keine Überweisungen. Reinkommen, Bargeld gegen Bitcoin tauschen, rausgehen."
   notice:
-    message: "Die SMS-Zustellung für OTP-Codes ist aktuell durch inländische Telekommunikationsänderungen beeinträchtigt. Unser Support-Team steht Ihnen über Telegram oder Facebook bei der Abwicklung Ihrer Transaktion zur Verfügung."
+    message:
+      - "Nach mehr als einem Jahrzehnt des Betriebs von Bitcoin-Automaten (BTMs) in Vietnam wird sich das Team von BitcoinVN in den kommenden Wochen schrittweise aus dem direkten BTM-Betrieb auf dem vietnamesischen Markt zurückziehen."
+      - "Wir arbeiten eng mit den relevanten Partnern und Beteiligten zusammen, um einen geordneten Übergang sicherzustellen."
+      - "Weitere Updates folgen, sobald die Details feststehen."
 
 features:
   heading: "9 Gründe für den BitcoinVN BTM"

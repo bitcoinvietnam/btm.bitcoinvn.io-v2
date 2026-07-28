@@ -36,6 +36,22 @@ eleventyComputed:
   </div>
 </nav>
 
+{# ======== Notice Banner ======== #}
+{% if site.notice.enabled %}
+<section class="notice-banner notice-banner--top">
+  <div class="container">
+    <div class="notice-content">
+      <strong class="notice-label">{{ t.ui.notice_label }}</strong>
+      <div class="notice-message">
+        {% for para in t.site.notice.message %}
+        <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {# ======== Hero ======== #}
 <section class="hero" id="hero">
   <div class="hero-bg" aria-hidden="true">
@@ -175,18 +191,6 @@ eleventyComputed:
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
   </div>
 </section>
-
-{# ======== Notice Banner ======== #}
-{% if site.notice.enabled %}
-<section class="notice-banner">
-  <div class="container">
-    <div class="notice-content">
-      <strong class="notice-label">{{ t.ui.notice_label }}</strong>
-      <span class="notice-message">{{ t.site.notice.message }}</span>
-    </div>
-  </div>
-</section>
-{% endif %}
 
 {# ======== Features ======== #}
 <section class="features" id="features">

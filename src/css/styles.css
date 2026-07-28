@@ -1255,6 +1255,15 @@ button {
   letter-spacing: var(--tracking-mono);
 }
 
+.notice-message p + p {
+  margin-top: 10px;
+}
+
+.notice-banner--top {
+  margin-top: 58px;
+  padding: 20px 0;
+}
+
 /* ========================================
    Section Styles
    ======================================== */

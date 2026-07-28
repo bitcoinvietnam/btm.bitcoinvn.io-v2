@@ -80,7 +80,10 @@ site:
   tagline: "現金によるBitcoin売買の最速・最もプライベートな方法"
   description: "Ho Chi Minh CityとVung Tau各所にセルフサービスBitcoin ATMを設置。銀行口座不要、銀行送金不要。来て、取引して、帰るだけ。"
   notice:
-    message: "国内通信事業者の変更により、OTPコードのSMS配信に影響が出ています。TelegramまたはFacebookからサポートチームがお取引をお手伝いいたします。"
+    message:
+      - "ベトナムで10年以上にわたりビットコインATM（BTM）を運営してきたBitcoinVNチームは、今後数週間かけてベトナム市場でのBTM直接運営から段階的に撤退いたします。"
+      - "円滑な移行を確保するため、関係パートナーおよびステークホルダーと緊密に連携しています。"
+      - "詳細が確定し次第、続報をお知らせいたします。"
 
 features:
   heading: "BitcoinVN BTMを使う9つの理由"

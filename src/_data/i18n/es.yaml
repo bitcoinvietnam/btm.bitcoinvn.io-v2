@@ -80,7 +80,10 @@ site:
   tagline: "La forma más rápida y privada de comprar y vender Bitcoin por efectivo"
   description: "Cajeros Bitcoin de autoservicio en Ho Chi Minh City y Vung Tau. Sin cuenta bancaria, sin transferencias. Entra, cambia efectivo por Bitcoin y márchate."
   notice:
-    message: "La entrega de SMS para códigos OTP está actualmente afectada por cambios en las telecomunicaciones nacionales. Nuestro equipo de soporte está disponible para ayudarte con tu transacción a través de Telegram o Facebook."
+    message:
+      - "Tras más de una década operando cajeros de Bitcoin (BTM) en Vietnam, el equipo de BitcoinVN se retirará gradualmente de la operación directa de BTM en el mercado vietnamita durante las próximas semanas."
+      - "Estamos trabajando estrechamente con los socios y partes interesadas pertinentes para garantizar una transición ordenada."
+      - "Publicaremos más novedades a medida que se concreten los detalles."
 
 features:
   heading: "9 razones para usar un BTM de BitcoinVN"

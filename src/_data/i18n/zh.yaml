@@ -80,7 +80,10 @@ site:
   tagline: "用现金买卖比特币最快速、最私密的方式"
   description: "自助比特币 ATM，遍布胡志明市和头顿。无需银行账户，无需电汇。走进来，完成交易，离开。"
   notice:
-    message: "由于国内电信变动，OTP 短信验证码的发送目前受到影响。我们的客服团队可通过 Telegram 或 Facebook 协助您完成交易。"
+    message:
+      - "在越南运营比特币柜员机（BTM）十余年之后，BitcoinVN 团队将在未来数周内逐步退出越南市场的 BTM 直接运营。"
+      - "我们正与相关合作伙伴和利益相关方密切合作，以确保平稳有序的过渡。"
+      - "细节确定后，我们将继续发布最新消息。"
 
 features:
   heading: "选择 BitcoinVN BTM 的 9 大理由"

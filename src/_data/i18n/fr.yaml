@@ -80,7 +80,10 @@ site:
   tagline: "La manière la plus rapide et la plus privée d'acheter et de vendre du Bitcoin en espèces"
   description: "Distributeurs Bitcoin en libre-service à Ho Chi Minh City et Vung Tau. Pas de compte bancaire, pas de virements. Entrez, échangez votre argent contre du Bitcoin, repartez."
   notice:
-    message: "La distribution des SMS pour les codes OTP est actuellement perturbée par des changements dans les télécoms domestiques. Notre équipe support reste disponible pour vous aider à finaliser votre transaction via Telegram ou Facebook."
+    message:
+      - "Après plus d'une décennie d'exploitation de distributeurs automatiques de Bitcoin (BTM) au Vietnam, l'équipe BitcoinVN se retirera progressivement de l'exploitation directe des BTM sur le marché vietnamien au cours des prochaines semaines."
+      - "Nous travaillons en étroite collaboration avec les partenaires et parties prenantes concernés afin d'assurer une transition ordonnée."
+      - "D'autres informations suivront à mesure que les détails seront finalisés."
 
 features:
   heading: "9 raisons d'utiliser un BTM BitcoinVN"

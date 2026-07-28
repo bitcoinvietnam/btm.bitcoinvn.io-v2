@@ -14,7 +14,7 @@ contact:
     handle: "@BitcoinATMHCMC"
 
 notice:
-  enabled: false
+  enabled: true
 
 supported_assets:
   - ticker: "BTC"

@@ -80,7 +80,10 @@ site:
   tagline: "A forma mais rápida e privada de comprar e vender Bitcoin em dinheiro"
   description: "Caixas eletrônicos de Bitcoin em autoatendimento em Ho Chi Minh City e Vung Tau. Sem conta bancária, sem transferências. Entre, troque dinheiro por Bitcoin e siga seu caminho."
   notice:
-    message: "A entrega de SMS para códigos OTP está atualmente afetada por mudanças nas operadoras locais. Nossa equipe de suporte está à disposição para auxiliar você na sua transação pelo Telegram ou pelo Facebook."
+    message:
+      - "Após mais de uma década operando caixas eletrônicos de Bitcoin (BTMs) no Vietnã, a equipe BitcoinVN se retirará gradualmente da operação direta de BTMs no mercado vietnamita nas próximas semanas."
+      - "Estamos trabalhando em estreita colaboração com os parceiros e partes interessadas relevantes para garantir uma transição ordenada."
+      - "Novas atualizações serão divulgadas à medida que os detalhes forem finalizados."
 
 features:
   heading: "9 motivos para usar um BTM BitcoinVN"
